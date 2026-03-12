@@ -1,6 +1,6 @@
 from typing import Optional
 
-import torch
+import numpy as np
 from typing_extensions import override
 
 from comfy_api.latest import IO, ComfyExtension
@@ -68,7 +68,7 @@ class LumaReferenceNode(IO.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, image: torch.Tensor, weight: float, luma_ref: LumaReferenceChain = None) -> IO.NodeOutput:
+    def execute(cls, image: np.ndarray, weight: float, luma_ref: LumaReferenceChain = None) -> IO.NodeOutput:
         if luma_ref is not None:
             luma_ref = luma_ref.clone()
         else:
@@ -213,8 +213,8 @@ class LumaImageGenerationNode(IO.ComfyNode):
         seed,
         style_image_weight: float,
         image_luma_ref: Optional[LumaReferenceChain] = None,
-        style_image: Optional[torch.Tensor] = None,
-        character_image: Optional[torch.Tensor] = None,
+        style_image: Optional[np.ndarray] = None,
+        character_image: Optional[np.ndarray] = None,
     ) -> IO.NodeOutput:
         validate_string(prompt, strip_whitespace=True, min_length=3)
         # handle image_luma_ref
@@ -265,7 +265,7 @@ class LumaImageGenerationNode(IO.ComfyNode):
         return luma_ref.create_api_model(download_urls=luma_urls, max_refs=max_refs)
 
     @classmethod
-    async def _convert_style_image(cls, style_image: torch.Tensor, weight: float):
+    async def _convert_style_image(cls, style_image: np.ndarray, weight: float):
         chain = LumaReferenceChain(first_ref=LumaReference(image=style_image, weight=weight))
         return await cls._convert_luma_refs(chain, max_refs=1)
 
@@ -336,7 +336,7 @@ class LumaImageModifyNode(IO.ComfyNode):
         cls,
         prompt: str,
         model: str,
-        image: torch.Tensor,
+        image: np.ndarray,
         image_weight: float,
         seed,
     ) -> IO.NodeOutput:
@@ -545,8 +545,8 @@ class LumaImageToVideoGenerationNode(IO.ComfyNode):
         duration: str,
         loop: bool,
         seed,
-        first_image: torch.Tensor = None,
-        last_image: torch.Tensor = None,
+        first_image: np.ndarray = None,
+        last_image: np.ndarray = None,
         luma_concepts: LumaConceptChain = None,
     ) -> IO.NodeOutput:
         if first_image is None and last_image is None:
@@ -581,8 +581,8 @@ class LumaImageToVideoGenerationNode(IO.ComfyNode):
     @classmethod
     async def _convert_to_keyframes(
         cls,
-        first_image: torch.Tensor = None,
-        last_image: torch.Tensor = None,
+        first_image: np.ndarray = None,
+        last_image: np.ndarray = None,
     ):
         if first_image is None and last_image is None:
             return None

@@ -1,6 +1,6 @@
 from typing import Optional
 
-import torch
+import numpy as np
 from pydantic import BaseModel, Field
 from typing_extensions import override
 
@@ -117,7 +117,7 @@ class OpenAIVideoSora2(IO.ComfyNode):
         size: str = "1280x720",
         duration: int = 8,
         seed: int = 0,
-        image: Optional[torch.Tensor] = None,
+        image: Optional[np.ndarray] = None,
     ):
         if model == "sora-2" and size not in ("720x1280", "1280x720"):
             raise ValueError("Invalid size for sora-2 model, only 720x1280 and 1280x720 are supported.")

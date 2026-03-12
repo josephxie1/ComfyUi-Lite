@@ -3,16 +3,16 @@ from io import BytesIO
 from pathlib import Path
 from typing import IO
 
-import torch
+import numpy as np
 
 
 class VOXEL:
-    def __init__(self, data: torch.Tensor):
+    def __init__(self, data: np.ndarray):
         self.data = data
 
 
 class MESH:
-    def __init__(self, vertices: torch.Tensor, faces: torch.Tensor):
+    def __init__(self, vertices: np.ndarray, faces: np.ndarray):
         self.vertices = vertices
         self.faces = faces
 

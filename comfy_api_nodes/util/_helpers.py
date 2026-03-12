@@ -9,7 +9,11 @@ from io import BytesIO
 from yarl import URL
 
 from comfy.cli_args import args
-from comfy.model_management import processing_interrupted
+try:
+    from comfy.model_management import processing_interrupted
+except ImportError:
+    def processing_interrupted():
+        return False
 from comfy_api.latest import IO
 
 from .common_exceptions import ProcessingInterrupted

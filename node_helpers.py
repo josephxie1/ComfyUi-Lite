@@ -1,5 +1,5 @@
 import hashlib
-import torch
+import numpy as np
 import logging
 
 from comfy.cli_args import args
@@ -75,17 +75,18 @@ def hasher():
     return hashfuncs[args.default_hashing_function]
 
 def string_to_torch_dtype(string):
-    if string == "fp32":
-        return torch.float32
-    if string == "fp16":
-        return torch.float16
-    if string == "bf16":
-        return torch.bfloat16
+    dtype_map = {
+        "fp32": np.float32,
+        "fp16": np.float16,
+        "bf16": np.float32,  # numpy has no bfloat16, use float32
+    }
+    return dtype_map.get(string, np.float32)
 
 def image_alpha_fix(destination, source):
     if destination.shape[-1] < source.shape[-1]:
         source = source[...,:destination.shape[-1]]
     elif destination.shape[-1] > source.shape[-1]:
-        destination = torch.nn.functional.pad(destination, (0, 1))
+        destination = np.pad(destination, [(0, 0)] * (len(destination.shape) - 1) + [(0, 1)], mode='constant')
         destination[..., -1] = 1.0
     return destination, source
+

@@ -1,7 +1,7 @@
 import logging
 import math
 
-import torch
+import numpy as np
 from typing_extensions import override
 
 from comfy_api.latest import IO, ComfyExtension, Input
@@ -385,7 +385,7 @@ class ByteDanceSeedreamNode(IO.ComfyNode):
         urls = [str(d["url"]) for d in response.data if isinstance(d, dict) and "url" in d]
         if fail_on_partial and len(urls) < len(response.data):
             raise RuntimeError(f"Only {len(urls)} of {len(response.data)} images were generated before error.")
-        return IO.NodeOutput(torch.cat([await download_url_to_image_tensor(i) for i in urls]))
+        return IO.NodeOutput(np.concatenate([await download_url_to_image_tensor(i) for i in urls], axis=0))
 
 
 class ByteDanceTextToVideoNode(IO.ComfyNode):

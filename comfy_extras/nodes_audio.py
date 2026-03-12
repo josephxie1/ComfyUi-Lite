@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import av
-import torchaudio
-import torch
-import comfy.model_management
+import numpy as np
+from scipy import signal as scipy_signal
+try:
+    import comfy.model_management
+except ImportError:
+    pass
 import folder_paths
 import os
 import hashlib
@@ -31,7 +34,7 @@ class EmptyLatentAudio(IO.ComfyNode):
     @classmethod
     def execute(cls, seconds, batch_size) -> IO.NodeOutput:
         length = round((seconds * 44100 / 2048) / 2) * 2
-        latent = torch.zeros([batch_size, 64, length], device=comfy.model_management.intermediate_device())
+        latent = np.zeros([batch_size, 64, length], dtype=np.float32)
         return IO.NodeOutput({"samples":latent, "type": "audio"})
 
     generate = execute  # TODO: remove
@@ -84,11 +87,11 @@ class VAEEncodeAudio(IO.ComfyNode):
         sample_rate = audio["sample_rate"]
         vae_sample_rate = getattr(vae, "audio_sample_rate", 44100)
         if vae_sample_rate != sample_rate:
-            waveform = torchaudio.functional.resample(audio["waveform"], sample_rate, vae_sample_rate)
+            waveform = _resample_audio(audio["waveform"], sample_rate, vae_sample_rate)
         else:
             waveform = audio["waveform"]
 
-        t = vae.encode(waveform.movedim(1, -1))
+        t = vae.encode(np.moveaxis(waveform, 1, -1))
         return IO.NodeOutput({"samples": t})
 
     encode = execute  # TODO: remove
@@ -96,11 +99,11 @@ class VAEEncodeAudio(IO.ComfyNode):
 
 def vae_decode_audio(vae, samples, tile=None, overlap=None):
     if tile is not None:
-        audio = vae.decode_tiled(samples["samples"], tile_x=tile, tile_y=tile, overlap=overlap).movedim(-1, 1)
+        audio = np.moveaxis(vae.decode_tiled(samples["samples"], tile_x=tile, tile_y=tile, overlap=overlap), -1, 1)
     else:
-        audio = vae.decode(samples["samples"]).movedim(-1, 1)
+        audio = np.moveaxis(vae.decode(samples["samples"]), -1, 1)
 
-    std = torch.std(audio, dim=[1, 2], keepdim=True) * 5.0
+    std = np.std(audio, axis=(1, 2), keepdims=True) * 5.0
     std[std < 1.0] = 1.0
     audio /= std
     vae_sample_rate = getattr(vae, "audio_sample_rate", 44100)
@@ -255,17 +258,29 @@ class PreviewAudio(IO.ComfyNode):
     save_flac = execute  # TODO: remove
 
 
-def f32_pcm(wav: torch.Tensor) -> torch.Tensor:
+def _resample_audio(waveform, orig_sr, target_sr):
+    """Resample audio waveform using scipy."""
+    if orig_sr == target_sr:
+        return waveform
+    ratio = target_sr / orig_sr
+    target_length = int(round(waveform.shape[-1] * ratio))
+    # Resample each batch and channel
+    result = np.zeros((*waveform.shape[:-1], target_length), dtype=waveform.dtype)
+    for idx in np.ndindex(waveform.shape[:-1]):
+        result[idx] = scipy_signal.resample(waveform[idx], target_length)
+    return result
+
+def f32_pcm(wav: np.ndarray) -> np.ndarray:
     """Convert audio to float 32 bits PCM format."""
-    if wav.dtype.is_floating_point:
-        return wav
-    elif wav.dtype == torch.int16:
-        return wav.float() / (2 ** 15)
-    elif wav.dtype == torch.int32:
-        return wav.float() / (2 ** 31)
+    if np.issubdtype(wav.dtype, np.floating):
+        return wav.astype(np.float32)
+    elif wav.dtype == np.int16:
+        return wav.astype(np.float32) / (2 ** 15)
+    elif wav.dtype == np.int32:
+        return wav.astype(np.float32) / (2 ** 31)
     raise ValueError(f"Unsupported wav dtype: {wav.dtype}")
 
-def load(filepath: str) -> tuple[torch.Tensor, int]:
+def load(filepath: str) -> tuple[np.ndarray, int]:
     with av.open(filepath) as af:
         if not af.streams.audio:
             raise ValueError("No audio stream found in the file.")
@@ -277,9 +292,9 @@ def load(filepath: str) -> tuple[torch.Tensor, int]:
         frames = []
         length = 0
         for frame in af.decode(streams=stream.index):
-            buf = torch.from_numpy(frame.to_ndarray())
+            buf = frame.to_ndarray()
             if buf.shape[0] != n_channels:
-                buf = buf.view(-1, n_channels).t()
+                buf = buf.reshape(-1, n_channels).T
 
             frames.append(buf)
             length += buf.shape[1]
@@ -287,7 +302,7 @@ def load(filepath: str) -> tuple[torch.Tensor, int]:
         if not frames:
             raise ValueError("No audio frames decoded.")
 
-        wav = torch.cat(frames, dim=1)
+        wav = np.concatenate(frames, axis=1)
         wav = f32_pcm(wav)
         return wav, sr
 
@@ -312,7 +327,7 @@ class LoadAudio(IO.ComfyNode):
     def execute(cls, audio) -> IO.NodeOutput:
         audio_path = folder_paths.get_annotated_filepath(audio)
         waveform, sample_rate = load(audio_path)
-        audio = {"waveform": waveform.unsqueeze(0), "sample_rate": sample_rate}
+        audio = {"waveform": waveform[np.newaxis, ...], "sample_rate": sample_rate}
         return IO.NodeOutput(audio)
 
     @classmethod
@@ -351,7 +366,7 @@ class RecordAudio(IO.ComfyNode):
         audio_path = folder_paths.get_annotated_filepath(audio)
 
         waveform, sample_rate = load(audio_path)
-        audio = {"waveform": waveform.unsqueeze(0), "sample_rate": sample_rate}
+        audio = {"waveform": waveform[np.newaxis, ...], "sample_rate": sample_rate}
         return IO.NodeOutput(audio)
 
     load = execute  # TODO: remove
@@ -491,7 +506,7 @@ class JoinAudioChannels(IO.ComfyNode):
         # Join the channels into stereo
         left_channel = waveform_left[..., 0:1, :]
         right_channel = waveform_right[..., 0:1, :]
-        stereo_waveform = torch.cat([left_channel, right_channel], dim=1)
+        stereo_waveform = np.concatenate([left_channel, right_channel], axis=1)
 
         return IO.NodeOutput({"waveform": stereo_waveform, "sample_rate": output_sample_rate})
 
@@ -499,11 +514,11 @@ class JoinAudioChannels(IO.ComfyNode):
 def match_audio_sample_rates(waveform_1, sample_rate_1, waveform_2, sample_rate_2):
     if sample_rate_1 != sample_rate_2:
         if sample_rate_1 > sample_rate_2:
-            waveform_2 = torchaudio.functional.resample(waveform_2, sample_rate_2, sample_rate_1)
+            waveform_2 = _resample_audio(waveform_2, sample_rate_2, sample_rate_1)
             output_sample_rate = sample_rate_1
             logging.info(f"Resampling audio2 from {sample_rate_2}Hz to {sample_rate_1}Hz for merging.")
         else:
-            waveform_1 = torchaudio.functional.resample(waveform_1, sample_rate_1, sample_rate_2)
+            waveform_1 = _resample_audio(waveform_1, sample_rate_1, sample_rate_2)
             output_sample_rate = sample_rate_2
             logging.info(f"Resampling audio1 from {sample_rate_1}Hz to {sample_rate_2}Hz for merging.")
     else:
@@ -541,18 +556,18 @@ class AudioConcat(IO.ComfyNode):
         sample_rate_2 = audio2["sample_rate"]
 
         if waveform_1.shape[1] == 1:
-            waveform_1 = waveform_1.repeat(1, 2, 1)
+            waveform_1 = np.tile(waveform_1, (1, 2, 1))
             logging.info("AudioConcat: Converted mono audio1 to stereo by duplicating the channel.")
         if waveform_2.shape[1] == 1:
-            waveform_2 = waveform_2.repeat(1, 2, 1)
+            waveform_2 = np.tile(waveform_2, (1, 2, 1))
             logging.info("AudioConcat: Converted mono audio2 to stereo by duplicating the channel.")
 
         waveform_1, waveform_2, output_sample_rate = match_audio_sample_rates(waveform_1, sample_rate_1, waveform_2, sample_rate_2)
 
         if direction == 'after':
-            concatenated_audio = torch.cat((waveform_1, waveform_2), dim=2)
+            concatenated_audio = np.concatenate((waveform_1, waveform_2), axis=2)
         elif direction == 'before':
-            concatenated_audio = torch.cat((waveform_2, waveform_1), dim=2)
+            concatenated_audio = np.concatenate((waveform_2, waveform_1), axis=2)
 
         return IO.NodeOutput({"waveform": concatenated_audio, "sample_rate": output_sample_rate})
 
@@ -599,8 +614,8 @@ class AudioMerge(IO.ComfyNode):
             logging.info(f"AudioMerge: Padding audio2 from {length_2} to {length_1} samples to match audio1 length.")
             pad_shape = list(waveform_2.shape)
             pad_shape[-1] = length_1 - length_2
-            pad_tensor = torch.zeros(pad_shape, dtype=waveform_2.dtype, device=waveform_2.device)
-            waveform_2 = torch.cat((waveform_2, pad_tensor), dim=-1)
+            pad_tensor = np.zeros(pad_shape, dtype=waveform_2.dtype)
+            waveform_2 = np.concatenate((waveform_2, pad_tensor), axis=-1)
 
         if merge_method == "add":
             waveform = waveform_1 + waveform_2
@@ -611,7 +626,7 @@ class AudioMerge(IO.ComfyNode):
         elif merge_method == "mean":
             waveform = (waveform_1 + waveform_2) / 2
 
-        max_val = waveform.abs().max()
+        max_val = np.abs(waveform).max()
         if max_val > 1.0:
             waveform = waveform / max_val
 
@@ -696,10 +711,65 @@ class EmptyAudio(IO.ComfyNode):
     @classmethod
     def execute(cls, duration, sample_rate, channels) -> IO.NodeOutput:
         num_samples = int(round(duration * sample_rate))
-        waveform = torch.zeros((1, channels, num_samples), dtype=torch.float32)
+        waveform = np.zeros((1, channels, num_samples), dtype=np.float32)
         return IO.NodeOutput({"waveform": waveform, "sample_rate": sample_rate})
 
     create_empty_audio = execute  # TODO: remove
+
+
+def _bass_shelf_sos(sample_rate, gain_dB, freq, Q):
+    """Low-shelf biquad (Audio EQ Cookbook)."""
+    import math
+    A = 10 ** (gain_dB / 40.0)
+    w0 = 2 * math.pi * freq / sample_rate
+    alpha = math.sin(w0) / (2 * Q)
+    cos_w0 = math.cos(w0)
+    two_sqrt_A_alpha = 2 * math.sqrt(A) * alpha
+    b0 = A * ((A + 1) - (A - 1) * cos_w0 + two_sqrt_A_alpha)
+    b1 = 2 * A * ((A - 1) - (A + 1) * cos_w0)
+    b2 = A * ((A + 1) - (A - 1) * cos_w0 - two_sqrt_A_alpha)
+    a0 = (A + 1) + (A - 1) * cos_w0 + two_sqrt_A_alpha
+    a1 = -2 * ((A - 1) + (A + 1) * cos_w0)
+    a2 = (A + 1) + (A - 1) * cos_w0 - two_sqrt_A_alpha
+    return np.array([[b0/a0, b1/a0, b2/a0, 1.0, a1/a0, a2/a0]])
+
+def _treble_shelf_sos(sample_rate, gain_dB, freq, Q):
+    """High-shelf biquad (Audio EQ Cookbook)."""
+    import math
+    A = 10 ** (gain_dB / 40.0)
+    w0 = 2 * math.pi * freq / sample_rate
+    alpha = math.sin(w0) / (2 * Q)
+    cos_w0 = math.cos(w0)
+    two_sqrt_A_alpha = 2 * math.sqrt(A) * alpha
+    b0 = A * ((A + 1) + (A - 1) * cos_w0 + two_sqrt_A_alpha)
+    b1 = -2 * A * ((A - 1) + (A + 1) * cos_w0)
+    b2 = A * ((A + 1) + (A - 1) * cos_w0 - two_sqrt_A_alpha)
+    a0 = (A + 1) - (A - 1) * cos_w0 + two_sqrt_A_alpha
+    a1 = 2 * ((A - 1) - (A + 1) * cos_w0)
+    a2 = (A + 1) - (A - 1) * cos_w0 - two_sqrt_A_alpha
+    return np.array([[b0/a0, b1/a0, b2/a0, 1.0, a1/a0, a2/a0]])
+
+def _peaking_eq_sos(sample_rate, gain_dB, freq, Q):
+    """Peaking EQ biquad (Audio EQ Cookbook)."""
+    import math
+    A = 10 ** (gain_dB / 40.0)
+    w0 = 2 * math.pi * freq / sample_rate
+    alpha = math.sin(w0) / (2 * Q)
+    cos_w0 = math.cos(w0)
+    b0 = 1 + alpha * A
+    b1 = -2 * cos_w0
+    b2 = 1 - alpha * A
+    a0 = 1 + alpha / A
+    a1 = -2 * cos_w0
+    a2 = 1 - alpha / A
+    return np.array([[b0/a0, b1/a0, b2/a0, 1.0, a1/a0, a2/a0]])
+
+def _apply_sos(waveform, sos):
+    """Apply SOS filter to waveform array of shape (batch, channels, samples)."""
+    result = np.empty_like(waveform)
+    for idx in np.ndindex(waveform.shape[:-1]):
+        result[idx] = scipy_signal.sosfilt(sos, waveform[idx])
+    return result
 
 
 class AudioEqualizer3Band(IO.ComfyNode):
@@ -728,37 +798,22 @@ class AudioEqualizer3Band(IO.ComfyNode):
     def execute(cls, audio, low_gain_dB, low_freq, mid_gain_dB, mid_freq, mid_q, high_gain_dB, high_freq) -> IO.NodeOutput:
         waveform = audio["waveform"]
         sample_rate = audio["sample_rate"]
-        eq_waveform = waveform.clone()
+        eq_waveform = waveform.copy()
 
-        # 1. Apply Low Shelf (Bass)
+        # 1. Apply Low Shelf (Bass) using scipy biquad
         if low_gain_dB != 0:
-            eq_waveform = torchaudio.functional.bass_biquad(
-                eq_waveform,
-                sample_rate,
-                gain=low_gain_dB,
-                central_freq=float(low_freq),
-                Q=0.707
-            )
+            sos = _bass_shelf_sos(sample_rate, low_gain_dB, float(low_freq), 0.707)
+            eq_waveform = _apply_sos(eq_waveform, sos)
 
         # 2. Apply Peaking EQ (Mids)
         if mid_gain_dB != 0:
-            eq_waveform = torchaudio.functional.equalizer_biquad(
-                eq_waveform,
-                sample_rate,
-                center_freq=float(mid_freq),
-                gain=mid_gain_dB,
-                Q=mid_q
-            )
+            sos = _peaking_eq_sos(sample_rate, mid_gain_dB, float(mid_freq), mid_q)
+            eq_waveform = _apply_sos(eq_waveform, sos)
 
         # 3. Apply High Shelf (Treble)
         if high_gain_dB != 0:
-            eq_waveform = torchaudio.functional.treble_biquad(
-                eq_waveform,
-                sample_rate,
-                gain=high_gain_dB,
-                central_freq=float(high_freq),
-                Q=0.707
-            )
+            sos = _treble_shelf_sos(sample_rate, high_gain_dB, float(high_freq), 0.707)
+            eq_waveform = _apply_sos(eq_waveform, sos)
 
         return IO.NodeOutput({"waveform": eq_waveform, "sample_rate": sample_rate})
 

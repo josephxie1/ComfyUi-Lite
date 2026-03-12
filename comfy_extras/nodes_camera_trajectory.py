@@ -1,5 +1,4 @@
 import nodes
-import torch
 import numpy as np
 from einops import rearrange
 from typing_extensions import override
@@ -64,9 +63,9 @@ def process_pose_params(cam_params, width=672, height=384, original_pose_width=1
                             cam_param.cy * height]
                             for cam_param in cam_params], dtype=np.float32)
 
-    K = torch.as_tensor(intrinsic)[None]  # [1, 1, 4]
+    K = np.asarray(intrinsic)[None]  # [1, 1, 4]
     c2ws = get_relative_pose(cam_params)  # Assuming this function is defined elsewhere
-    c2ws = torch.as_tensor(c2ws)[None]  # [1, n_frame, 4, 4]
+    c2ws = np.asarray(c2ws)[None]  # [1, n_frame, 4, 4]
     plucker_embedding = ray_condition(K, c2ws, height, width, device=device)[0].permute(0, 3, 1, 2).contiguous()  # V, 6, H, W
     plucker_embedding = plucker_embedding[None]
     plucker_embedding = rearrange(plucker_embedding, "b f c h w -> b f h w c")[0]
@@ -93,9 +92,9 @@ def ray_condition(K, c2w, H, W, device):
 
     B = K.shape[0]
 
-    j, i = torch.meshgrid(
-        torch.linspace(0, H - 1, H, device=device, dtype=c2w.dtype),
-        torch.linspace(0, W - 1, W, device=device, dtype=c2w.dtype),
+    j, i = np.meshgrid(
+        np.linspace(0, H - 1, H),
+        np.linspace(0, W - 1, W),
         indexing='ij'
     )
     i = i.reshape([1, 1, H * W]).expand([B, 1, H * W]) + 0.5  # [B, HxW]
@@ -103,20 +102,20 @@ def ray_condition(K, c2w, H, W, device):
 
     fx, fy, cx, cy = K.chunk(4, dim=-1)  # B,V, 1
 
-    zs = torch.ones_like(i)  # [B, HxW]
+    zs = np.ones_like(i)  # [B, HxW]
     xs = (i - cx) / fx * zs
     ys = (j - cy) / fy * zs
     zs = zs.expand_as(ys)
 
-    directions = torch.stack((xs, ys, zs), dim=-1)  # B, V, HW, 3
+    directions = np.stack((xs, ys, zs), axis=-1)  # B, V, HW, 3
     directions = directions / directions.norm(dim=-1, keepdim=True)  # B, V, HW, 3
 
     rays_d = directions @ c2w[..., :3, :3].transpose(-1, -2)  # B, V, 3, HW
     rays_o = c2w[..., :3, 3]  # B, V, 3
     rays_o = rays_o[:, :, None].expand_as(rays_d)  # B, V, 3, HW
     # c2w @ dirctions
-    rays_dxo = torch.cross(rays_o, rays_d)
-    plucker = torch.cat([rays_dxo, rays_d], dim=-1)
+    rays_dxo = np.cross(rays_o, rays_d)
+    plucker = np.concatenate([rays_dxo, rays_d], axis=-1)
     plucker = plucker.reshape(B, c2w.shape[1], H, W, 6)  # B, V, H, W, 6
     # plucker = plucker.permute(0, 1, 4, 2, 3)
     return plucker
@@ -213,9 +212,9 @@ class WanCameraEmbedding(io.ComfyNode):
         control_camera_video = process_pose_params(cam_params, width=width, height=height)
         control_camera_video = control_camera_video.permute([3, 0, 1, 2]).unsqueeze(0).to(device=comfy.model_management.intermediate_device())
 
-        control_camera_video = torch.concat(
+        control_camera_video = np.concatenate(
             [
-                torch.repeat_interleave(control_camera_video[:, :, 0:1], repeats=4, dim=2),
+                np.repeat(control_camera_video[:, :, 0:1], repeats=4, axis=2),
                 control_camera_video[:, :, 1:]
             ], dim=2
         ).transpose(1, 2)

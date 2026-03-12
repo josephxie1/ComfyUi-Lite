@@ -27,7 +27,10 @@ import logging
 import mimetypes
 from comfy.cli_args import args
 import comfy.utils
-import comfy.model_management
+try:
+    import comfy.model_management
+except ImportError:
+    pass
 from comfy_api import feature_flags
 import node_helpers
 from comfyui_version import __version__
@@ -579,6 +582,92 @@ class PromptServer():
 
             return web.Response(status=404)
 
+        @routes.delete("/view")
+        async def delete_image(request):
+            if "filename" in request.rel_url.query:
+                filename = request.rel_url.query["filename"]
+                filename, output_dir = folder_paths.annotated_filepath(filename)
+
+                if not filename:
+                    return web.Response(status=400)
+
+                # validation for security: prevent accessing arbitrary path
+                if filename[0] == '/' or '..' in filename:
+                    return web.Response(status=400)
+
+                if output_dir is None:
+                    type = request.rel_url.query.get("type", "output")
+                    output_dir = folder_paths.get_directory_by_type(type)
+
+                if output_dir is None:
+                    return web.Response(status=400)
+
+                if "subfolder" in request.rel_url.query:
+                    full_output_dir = os.path.join(output_dir, request.rel_url.query["subfolder"])
+                    if os.path.commonpath((os.path.abspath(full_output_dir), output_dir)) != output_dir:
+                        return web.Response(status=403)
+                    output_dir = full_output_dir
+
+                filename = os.path.basename(filename)
+                file = os.path.join(output_dir, filename)
+
+                if os.path.isfile(file):
+                    try:
+                        os.remove(file)
+                        return web.Response(status=200)
+                    except Exception as e:
+                        logging.error(f"Failed to delete {file}: {e}")
+                        return web.Response(status=500, text=str(e))
+                else:
+                    return web.Response(status=404, text="File not found")
+
+            # Batch deletion via JSON body: {"files": ["file1.png", "subfolder/file2.png"]}
+            try:
+                body = await request.json()
+            except Exception:
+                return web.Response(status=400, text="Invalid JSON or no filename provided")
+
+            files = body.get("files", [])
+            type = body.get("type", "output")
+            if not isinstance(files, list) or len(files) == 0:
+                return web.Response(status=400, text="Invalid files payload")
+
+            base_dir = folder_paths.get_directory_by_type(type)
+            if base_dir is None:
+                return web.Response(status=400, text="Invalid type")
+
+            deleted = []
+            failed = {}
+            for filename in files:
+                try:
+                    annotated_filename, output_dir = folder_paths.annotated_filepath(filename)
+                    if not annotated_filename or annotated_filename[0] == '/' or '..' in annotated_filename:
+                        failed[filename] = "Invalid path"
+                        continue
+
+                    if output_dir is None:
+                        output_dir = base_dir
+
+                    target_file = os.path.join(output_dir, os.path.normpath(annotated_filename))
+
+                    # verify file is within allowed tree
+                    if os.path.commonpath((os.path.abspath(target_file), base_dir)) != base_dir:
+                        failed[filename] = "Forbidden"
+                        continue
+
+                    if os.path.isfile(target_file):
+                        os.remove(target_file)
+                        deleted.append(filename)
+                    else:
+                        failed[filename] = "Not found"
+                except Exception as e:
+                    failed[filename] = str(e)
+
+            if len(failed) > 0:
+                return web.json_response({"deleted": deleted, "failed": failed}, status=207)
+
+            return web.json_response({"deleted": deleted})
+
         @routes.get("/view_metadata/{folder_name}")
         async def view_metadata(request):
             folder_name = request.match_info.get("folder_name", None)
@@ -604,16 +693,43 @@ class PromptServer():
 
         @routes.get("/system_stats")
         async def system_stats(request):
-            device = comfy.model_management.get_torch_device()
-            device_name = comfy.model_management.get_torch_device_name(device)
-            cpu_device = comfy.model_management.torch.device("cpu")
-            ram_total = comfy.model_management.get_total_memory(cpu_device)
-            ram_free = comfy.model_management.get_free_memory(cpu_device)
-            vram_total, torch_vram_total = comfy.model_management.get_total_memory(device, torch_total_too=True)
-            vram_free, torch_vram_free = comfy.model_management.get_free_memory(device, torch_free_too=True)
+            import psutil
             required_frontend_version = FrontendManager.get_required_frontend_version()
             installed_templates_version = FrontendManager.get_installed_templates_version()
             required_templates_version = FrontendManager.get_required_templates_version()
+
+            if hasattr(comfy, 'model_management') and comfy.model_management is not None:
+                device = comfy.model_management.get_torch_device()
+                device_name = comfy.model_management.get_torch_device_name(device)
+                cpu_device = comfy.model_management.torch.device("cpu")
+                ram_total = comfy.model_management.get_total_memory(cpu_device)
+                ram_free = comfy.model_management.get_free_memory(cpu_device)
+                vram_total, torch_vram_total = comfy.model_management.get_total_memory(device, torch_total_too=True)
+                vram_free, torch_vram_free = comfy.model_management.get_free_memory(device, torch_free_too=True)
+                pytorch_version = comfy.model_management.torch_version
+                devices_info = [{
+                    "name": device_name,
+                    "type": device.type,
+                    "index": device.index,
+                    "vram_total": vram_total,
+                    "vram_free": vram_free,
+                    "torch_vram_total": torch_vram_total,
+                    "torch_vram_free": torch_vram_free,
+                }]
+            else:
+                mem = psutil.virtual_memory()
+                ram_total = mem.total
+                ram_free = mem.available
+                pytorch_version = "N/A (API-only mode)"
+                devices_info = [{
+                    "name": "cpu",
+                    "type": "cpu",
+                    "index": 0,
+                    "vram_total": 0,
+                    "vram_free": 0,
+                    "torch_vram_total": 0,
+                    "torch_vram_free": 0,
+                }]
 
             system_stats = {
                 "system": {
@@ -625,21 +741,11 @@ class PromptServer():
                     "installed_templates_version": installed_templates_version,
                     "required_templates_version": required_templates_version,
                     "python_version": sys.version,
-                    "pytorch_version": comfy.model_management.torch_version,
+                    "pytorch_version": pytorch_version,
                     "embedded_python": os.path.split(os.path.split(sys.executable)[0])[1] == "python_embeded",
                     "argv": sys.argv
                 },
-                "devices": [
-                    {
-                        "name": device_name,
-                        "type": device.type,
-                        "index": device.index,
-                        "vram_total": vram_total,
-                        "vram_free": vram_free,
-                        "torch_vram_total": torch_vram_total,
-                        "torch_vram_free": torch_vram_free,
-                    }
-                ]
+                "devices": devices_info
             }
             return web.json_response(system_stats)
 
@@ -705,7 +811,13 @@ class PromptServer():
                 out = {}
                 for x in nodes.NODE_CLASS_MAPPINGS:
                     try:
-                        out[x] = node_info(x)
+                        info = node_info(x)
+                        # 按分类禁用节点
+                        if hasattr(nodes, 'DISABLED_CATEGORIES') and nodes.DISABLED_CATEGORIES:
+                            cat = info.get('category', '')
+                            if any(cat.startswith(c) for c in nodes.DISABLED_CATEGORIES):
+                                continue
+                        out[x] = info
                     except Exception:
                         logging.error(f"[ERROR] An error occurred while retrieving information for the '{x}' node.")
                         logging.error(traceback.format_exc())
@@ -716,7 +828,13 @@ class PromptServer():
             node_class = request.match_info.get("node_class", None)
             out = {}
             if (node_class is not None) and (node_class in nodes.NODE_CLASS_MAPPINGS):
-                out[node_class] = node_info(node_class)
+                info = node_info(node_class)
+                # 按分类禁用节点
+                if hasattr(nodes, 'DISABLED_CATEGORIES') and nodes.DISABLED_CATEGORIES:
+                    cat = info.get('category', '')
+                    if any(cat.startswith(c) for c in nodes.DISABLED_CATEGORIES):
+                        return web.json_response(out)
+                out[node_class] = info
             return web.json_response(out)
 
         @routes.get("/api/jobs")

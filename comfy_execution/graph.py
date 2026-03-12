@@ -200,6 +200,7 @@ class ExecutionList(TopologicalSort):
         super().__init__(dynprompt)
         self.output_cache = output_cache
         self.staged_node_id = None
+        self.staged_node_ids = set()
         self.execution_cache = {}
         self.execution_cache_listeners = {}
 
@@ -308,6 +309,7 @@ class ExecutionList(TopologicalSort):
 
     def unstage_node_execution(self):
         assert self.staged_node_id is not None
+        self.staged_node_ids.discard(self.staged_node_id)
         self.staged_node_id = None
 
     def complete_node_execution(self):
@@ -315,7 +317,52 @@ class ExecutionList(TopologicalSort):
         self.pop_node(node_id)
         self.execution_cache.pop(node_id, None)
         self.execution_cache_listeners.pop(node_id, None)
+        self.staged_node_ids.discard(node_id)
         self.staged_node_id = None
+
+    async def stage_batch_execution(self):
+        """Stage ALL ready nodes for concurrent execution.
+        Returns (node_ids, error, ex) where node_ids is a list of ready node IDs."""
+        assert len(self.staged_node_ids) == 0
+        if self.is_empty():
+            return [], None, None
+        available = self.get_ready_nodes()
+        while len(available) == 0 and self.externalBlocks > 0:
+            await self.unblockedEvent.wait()
+            self.unblockedEvent.clear()
+            available = self.get_ready_nodes()
+        if len(available) == 0:
+            cycled_nodes = self.get_nodes_in_cycle()
+            blamed_node = cycled_nodes[0]
+            for node_id in cycled_nodes:
+                display_node_id = self.dynprompt.get_display_node_id(node_id)
+                if display_node_id != node_id:
+                    blamed_node = display_node_id
+                    break
+            ex = DependencyCycleError("Dependency cycle detected")
+            error_details = {
+                "node_id": blamed_node,
+                "exception_message": str(ex),
+                "exception_type": "graph.DependencyCycleError",
+                "traceback": [],
+                "current_inputs": []
+            }
+            return [], error_details, ex
+
+        self.staged_node_ids = set(available)
+        return list(available), None, None
+
+    def complete_batch_execution(self, node_ids):
+        """Complete multiple nodes that were executed concurrently."""
+        for node_id in node_ids:
+            self.pop_node(node_id)
+            self.execution_cache.pop(node_id, None)
+            self.execution_cache_listeners.pop(node_id, None)
+        self.staged_node_ids -= set(node_ids)
+
+    def unstage_batch_node(self, node_id):
+        """Unstage a single node from the batch (for PENDING results)."""
+        self.staged_node_ids.discard(node_id)
 
     def get_nodes_in_cycle(self):
         # We'll dissolve the graph in reverse topological order to leave only the nodes in the cycle.

@@ -11,7 +11,8 @@ from typing import Any, Callable, Literal, TypedDict, TypeVar, TYPE_CHECKING
 from typing_extensions import NotRequired, final
 
 # used for type hinting
-import torch
+import numpy as np
+_Tensor = np.ndarray
 
 if TYPE_CHECKING:
     from spandrel import ImageModelDescriptor
@@ -417,12 +418,12 @@ class MultiCombo(ComfyTypeI):
 
 @comfytype(io_type="IMAGE")
 class Image(ComfyTypeIO):
-    Type = torch.Tensor
+    Type = np.ndarray
 
 
 @comfytype(io_type="WAN_CAMERA_EMBEDDING")
 class WanCameraEmbedding(ComfyTypeIO):
-    Type = torch.Tensor
+    Type = _Tensor
 
 
 @comfytype(io_type="WEBCAM")
@@ -441,15 +442,15 @@ class Webcam(ComfyTypeIO):
 
 @comfytype(io_type="MASK")
 class Mask(ComfyTypeIO):
-    Type = torch.Tensor
+    Type = np.ndarray
 
 @comfytype(io_type="LATENT")
 class Latent(ComfyTypeIO):
     '''Latents are stored as a dictionary.'''
     class LatentDict(TypedDict):
-        samples: torch.Tensor
+        samples: _Tensor
         '''Latent tensors.'''
-        noise_mask: NotRequired[torch.Tensor]
+        noise_mask: NotRequired[_Tensor]
         batch_index: NotRequired[list[int]]
         type: NotRequired[str]
         '''Only needed if dealing with these types: audio, hunyuan3dv2'''
@@ -458,17 +459,17 @@ class Latent(ComfyTypeIO):
 @comfytype(io_type="CONDITIONING")
 class Conditioning(ComfyTypeIO):
     class PooledDict(TypedDict):
-        pooled_output: torch.Tensor
+        pooled_output: _Tensor
         '''Pooled output from CLIP.'''
         control: NotRequired[ControlNet]
         '''ControlNet to apply to conditioning.'''
         control_apply_to_uncond: NotRequired[bool]
         '''Whether to apply ControlNet to matching negative conditioning at sample time, if applicable.'''
-        cross_attn_controlnet: NotRequired[torch.Tensor]
+        cross_attn_controlnet: NotRequired[_Tensor]
         '''CrossAttn from CLIP to use for controlnet only.'''
-        pooled_output_controlnet: NotRequired[torch.Tensor]
+        pooled_output_controlnet: NotRequired[_Tensor]
         '''Pooled output from CLIP to use for controlnet only.'''
-        gligen: NotRequired[tuple[str, Gligen, list[tuple[torch.Tensor, int, ...]]]]
+        gligen: NotRequired[tuple[str, Gligen, list[tuple[_Tensor, int, ...]]]]
         '''GLIGEN to apply to conditioning.'''
         area: NotRequired[tuple[int, ...] | tuple[str, float, ...]]
         '''Set area of conditioning. First half of values apply to dimensions, the second half apply to coordinates.
@@ -479,17 +480,17 @@ class Conditioning(ComfyTypeIO):
         ("percentage", 0.5, 0.5, 0, 0) would apply conditioning to the top-left 50% of the image.''' # TODO: verify its actually top-left
         strength: NotRequired[float]
         '''Strength of conditioning. Default strength is 1.0.'''
-        mask: NotRequired[torch.Tensor]
+        mask: NotRequired[_Tensor]
         '''Mask to apply conditioning to.'''
         mask_strength: NotRequired[float]
         '''Strength of conditioning mask. Default strength is 1.0.'''
         set_area_to_bounds: NotRequired[bool]
         '''Whether conditioning mask should determine bounds of area - if set to false, latents are sampled at full resolution and result is applied in mask.'''
-        concat_latent_image: NotRequired[torch.Tensor]
+        concat_latent_image: NotRequired[_Tensor]
         '''Used for inpainting and specific models.'''
-        concat_mask: NotRequired[torch.Tensor]
+        concat_mask: NotRequired[_Tensor]
         '''Used for inpainting and specific models.'''
-        concat_image: NotRequired[torch.Tensor]
+        concat_image: NotRequired[_Tensor]
         '''Used by SD_4XUpscale_Conditioning.'''
         noise_augmentation: NotRequired[float]
         '''Used by SD_4XUpscale_Conditioning.'''
@@ -505,13 +506,13 @@ class Conditioning(ComfyTypeIO):
         '''Internal variable for conditioning scheduling - start of application, expressed as a float between 0.0 and 1.0.'''
         clip_end_percent: NotRequired[float]
         '''Internal variable for conditioning scheduling - end of application, expressed as a float between 0.0 and 1.0.'''
-        attention_mask: NotRequired[torch.Tensor]
+        attention_mask: NotRequired[_Tensor]
         '''Masks text conditioning; used by StyleModel among others.'''
         attention_mask_img_shape: NotRequired[tuple[int, ...]]
         '''Masks text conditioning; used by StyleModel among others.'''
         unclip_conditioning: NotRequired[list[dict]]
         '''Used by unCLIP.'''
-        conditioning_lyrics: NotRequired[torch.Tensor]
+        conditioning_lyrics: NotRequired[_Tensor]
         '''Used by AceT5Model.'''
         seconds_start: NotRequired[float]
         '''Used by StableAudio.'''
@@ -533,19 +534,19 @@ class Conditioning(ComfyTypeIO):
         '''Used by CLIPTextEncodeSDXL.'''
         target_height: NotRequired[int]
         '''Used by CLIPTextEncodeSDXL.'''
-        reference_latents: NotRequired[list[torch.Tensor]]
+        reference_latents: NotRequired[list[_Tensor]]
         '''Used by ReferenceLatent.'''
         guidance: NotRequired[float]
         '''Used by Flux-like models with guidance embed.'''
         guiding_frame_index: NotRequired[int]
         '''Used by Hunyuan ImageToVideo.'''
-        ref_latent: NotRequired[torch.Tensor]
+        ref_latent: NotRequired[_Tensor]
         '''Used by Hunyuan ImageToVideo.'''
         keyframe_idxs: NotRequired[list[int]]
         '''Used by LTXV.'''
         frame_rate: NotRequired[float]
         '''Used by LTXV.'''
-        stable_cascade_prior: NotRequired[torch.Tensor]
+        stable_cascade_prior: NotRequired[_Tensor]
         '''Used by StableCascade.'''
         elevation: NotRequired[list[float]]
         '''Used by SV3D.'''
@@ -559,20 +560,20 @@ class Conditioning(ComfyTypeIO):
         '''Used by SVD-like models.'''
         clip_vision_output: NotRequired[ClipVisionOutput_]
         '''Used by WAN-like models.'''
-        vace_frames: NotRequired[torch.Tensor]
+        vace_frames: NotRequired[_Tensor]
         '''Used by WAN VACE.'''
-        vace_mask: NotRequired[torch.Tensor]
+        vace_mask: NotRequired[_Tensor]
         '''Used by WAN VACE.'''
         vace_strength: NotRequired[float]
         '''Used by WAN VACE.'''
         camera_conditions: NotRequired[Any] # TODO: assign proper type once defined
         '''Used by WAN Camera.'''
-        time_dim_concat: NotRequired[torch.Tensor]
+        time_dim_concat: NotRequired[_Tensor]
         '''Used by WAN Phantom Subject.'''
-        time_dim_replace: NotRequired[torch.Tensor]
+        time_dim_replace: NotRequired[_Tensor]
         '''Used by Kandinsky5 I2V.'''
 
-    CondList = list[tuple[torch.Tensor, PooledDict]]
+    CondList = list[tuple[_Tensor, PooledDict]]
     Type = CondList
 
 @comfytype(io_type="SAMPLER")
@@ -582,11 +583,11 @@ class Sampler(ComfyTypeIO):
 
 @comfytype(io_type="SIGMAS")
 class Sigmas(ComfyTypeIO):
-    Type = torch.Tensor
+    Type = _Tensor
 
 @comfytype(io_type="NOISE")
 class Noise(ComfyTypeIO):
-    Type = torch.Tensor
+    Type = _Tensor
 
 @comfytype(io_type="GUIDER")
 class Guider(ComfyTypeIO):
@@ -646,7 +647,7 @@ class LatentUpscaleModel(ComfyTypeIO):
 @comfytype(io_type="AUDIO")
 class Audio(ComfyTypeIO):
     class AudioDict(TypedDict):
-        waveform: torch.Tensor
+        waveform: _Tensor
         sampler_rate: int
     Type = AudioDict
 
@@ -661,12 +662,12 @@ class SVG(ComfyTypeIO):
 
 @comfytype(io_type="LORA_MODEL")
 class LoraModel(ComfyTypeIO):
-    Type = dict[str, torch.Tensor]
+    Type = dict[str, _Tensor]
 
 @comfytype(io_type="LOSS_MAP")
 class LossMap(ComfyTypeIO):
     class LossMapDict(TypedDict):
-        loss: list[torch.Tensor]
+        loss: list[_Tensor]
     Type = LossMapDict
 
 @comfytype(io_type="VOXEL")
@@ -737,7 +738,7 @@ class TimestepsRange(ComfyTypeIO):
 
 @comfytype(io_type="LATENT_OPERATION")
 class LatentOperation(ComfyTypeIO):
-    Type = Callable[[torch.Tensor], torch.Tensor]
+    Type = Callable[[_Tensor], _Tensor]
 
 @comfytype(io_type="FLOW_CONTROL")
 class FlowControl(ComfyTypeIO):
@@ -821,8 +822,8 @@ class AudioEncoderOutput(ComfyTypeIO):
 @comfytype(io_type="TRACKS")
 class Tracks(ComfyTypeIO):
     class TrackDict(TypedDict):
-        track_path: torch.Tensor
-        track_visibility: torch.Tensor
+        track_path: _Tensor
+        track_visibility: _Tensor
     Type = TrackDict
 
 @comfytype(io_type="COMFY_MULTITYPED_V3")

@@ -8,7 +8,7 @@ import logging
 import math
 import re
 
-import torch
+import numpy as np
 from typing_extensions import override
 
 from comfy_api.latest import IO, ComfyExtension, Input, InputImpl
@@ -348,7 +348,7 @@ def validate_image_result_response(response) -> None:
         raise Exception(error_msg)
 
 
-def validate_input_image(image: torch.Tensor) -> None:
+def validate_input_image(image: np.ndarray) -> None:
     """
     Validates the input image adheres to the expectations of the Kling API:
     - The image resolution should not be less than 300*300px
@@ -404,7 +404,7 @@ def get_images_urls_from_response(response) -> str | None:
 
 async def image_result_to_node_output(
     images: list[KlingImageResult],
-) -> torch.Tensor:
+) -> np.ndarray:
     """
     Converts a KlingImageResult to a tuple containing a [B, H, W, C] tensor.
     If multiple images are returned, they will be stacked along the batch dimension.
@@ -412,7 +412,7 @@ async def image_result_to_node_output(
     if len(images) == 1:
         return await download_url_to_image_tensor(str(images[0].url))
     else:
-        return torch.cat([await download_url_to_image_tensor(str(image.url)) for image in images])
+        return np.concatenate([await download_url_to_image_tensor(str(image.url)) for image in images], axis=0)
 
 
 async def execute_text2video(
@@ -461,7 +461,7 @@ async def execute_text2video(
 
 async def execute_image2video(
     cls: type[IO.ComfyNode],
-    start_frame: torch.Tensor,
+    start_frame: np.ndarray,
     prompt: str,
     negative_prompt: str,
     model_name: str,
@@ -470,7 +470,7 @@ async def execute_image2video(
     aspect_ratio: str,
     duration: str,
     camera_control: KlingCameraControl | None = None,
-    end_frame: torch.Tensor | None = None,
+    end_frame: np.ndarray | None = None,
 ) -> IO.NodeOutput:
     validate_prompts(prompt, negative_prompt, MAX_PROMPT_LENGTH_I2V)
     validate_input_image(start_frame)
@@ -525,8 +525,8 @@ async def execute_video_effect(
     effect_scene: KlingDualCharacterEffectsScene | KlingSingleImageEffectsScene,
     model_name: str,
     duration: KlingVideoGenDuration,
-    image_1: torch.Tensor,
-    image_2: torch.Tensor | None = None,
+    image_1: np.ndarray,
+    image_2: np.ndarray | None = None,
     model_mode: KlingVideoGenMode | None = None,
 ) -> tuple[InputImpl.VideoFromFile, str, str]:
     if dual_character:
@@ -1679,7 +1679,7 @@ class OmniProImageNode(IO.ComfyNode):
         )
         images = final_response.data.task_result.series_images or final_response.data.task_result.images
         tensors = [await download_url_to_image_tensor(img.url) for img in images]
-        return IO.NodeOutput(torch.cat(tensors, dim=0))
+        return IO.NodeOutput(np.concatenate(tensors, axis=0))
 
 
 class KlingCameraControlT2VNode(IO.ComfyNode):
@@ -1817,7 +1817,7 @@ class KlingImage2VideoNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        start_frame: torch.Tensor,
+        start_frame: np.ndarray,
         prompt: str,
         negative_prompt: str,
         model_name: str,
@@ -1826,7 +1826,7 @@ class KlingImage2VideoNode(IO.ComfyNode):
         aspect_ratio: str,
         duration: str,
         camera_control: KlingCameraControl | None = None,
-        end_frame: torch.Tensor | None = None,
+        end_frame: np.ndarray | None = None,
     ) -> IO.NodeOutput:
         return await execute_image2video(
             cls,
@@ -1893,7 +1893,7 @@ class KlingCameraControlI2VNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        start_frame: torch.Tensor,
+        start_frame: np.ndarray,
         prompt: str,
         negative_prompt: str,
         cfg_scale: float,
@@ -1990,8 +1990,8 @@ class KlingStartEndFrameNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        start_frame: torch.Tensor,
-        end_frame: torch.Tensor,
+        start_frame: np.ndarray,
+        end_frame: np.ndarray,
         prompt: str,
         negative_prompt: str,
         cfg_scale: float,
@@ -2162,8 +2162,8 @@ class KlingDualCharacterVideoEffectNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image_left: torch.Tensor,
-        image_right: torch.Tensor,
+        image_left: np.ndarray,
+        image_right: np.ndarray,
         effect_scene: KlingDualCharacterEffectsScene,
         model_name: KlingCharacterEffectModelName,
         mode: KlingVideoGenMode,
@@ -2236,7 +2236,7 @@ class KlingSingleImageVideoEffectNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image: torch.Tensor,
+        image: np.ndarray,
         effect_scene: KlingSingleImageEffectsScene,
         model_name: KlingSingleImageEffectModelName,
         duration: KlingVideoGenDuration,
@@ -2411,8 +2411,8 @@ class KlingVirtualTryOnNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        human_image: torch.Tensor,
-        cloth_image: torch.Tensor,
+        human_image: np.ndarray,
+        cloth_image: np.ndarray,
         model_name: KlingVirtualTryOnModelName,
     ) -> IO.NodeOutput:
         task_creation_response = await sync_op(
@@ -2541,7 +2541,7 @@ class KlingImageGenerationNode(IO.ComfyNode):
         human_fidelity: float,
         n: int,
         aspect_ratio: KlingImageGenAspectRatio,
-        image: torch.Tensor | None = None,
+        image: np.ndarray | None = None,
         seed: int = 0,
     ) -> IO.NodeOutput:
         _ = seed

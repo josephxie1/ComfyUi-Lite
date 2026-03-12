@@ -7,7 +7,7 @@ from io import BytesIO
 from urllib.parse import urlparse
 
 import aiohttp
-import torch
+import numpy as np
 from pydantic import BaseModel, Field
 
 from comfy_api.latest import IO, Input, Types
@@ -43,7 +43,7 @@ class UploadResponse(BaseModel):
 
 async def upload_images_to_comfyapi(
     cls: type[IO.ComfyNode],
-    image: torch.Tensor | list[torch.Tensor],
+    image: np.ndarray | list[np.ndarray],
     *,
     max_images: int = 8,
     mime_type: str | None = None,
@@ -55,29 +55,29 @@ async def upload_images_to_comfyapi(
     Uploads images to ComfyUI API and returns download URLs.
     To upload multiple images, stack them in the batch dimension first.
     """
-    tensors: list[torch.Tensor] = []
+    arrays: list[np.ndarray] = []
     if isinstance(image, list):
         for img in image:
             is_batch = len(img.shape) > 3
             if is_batch:
-                tensors.extend(img[i] for i in range(img.shape[0]))
+                arrays.extend(img[i] for i in range(img.shape[0]))
             else:
-                tensors.append(img)
+                arrays.append(img)
     else:
         is_batch = len(image.shape) > 3
         if is_batch:
-            tensors.extend(image[i] for i in range(image.shape[0]))
+            arrays.extend(image[i] for i in range(image.shape[0]))
         else:
-            tensors.append(image)
+            arrays.append(image)
 
     # if batched, try to upload each file if max_images is greater than 0
     download_urls: list[str] = []
-    num_to_upload = min(len(tensors), max_images)
+    num_to_upload = min(len(arrays), max_images)
     batch_start_ts = time.monotonic()
 
     for idx in range(num_to_upload):
-        tensor = tensors[idx]
-        img_io = tensor_to_bytesio(tensor, total_pixels=total_pixels, mime_type=mime_type)
+        arr = arrays[idx]
+        img_io = tensor_to_bytesio(arr, total_pixels=total_pixels, mime_type=mime_type)
 
         effective_label = wait_label
         if wait_label and show_batch_index and num_to_upload > 1:
@@ -90,7 +90,7 @@ async def upload_images_to_comfyapi(
 
 async def upload_image_to_comfyapi(
     cls: type[IO.ComfyNode],
-    image: torch.Tensor,
+    image: np.ndarray,
     *,
     mime_type: str | None = None,
     wait_label: str | None = "Uploading",
@@ -123,7 +123,7 @@ async def upload_audio_to_comfyapi(
     Encodes the raw waveform into the specified format before uploading.
     """
     sample_rate: int = audio["sample_rate"]
-    waveform: torch.Tensor = audio["waveform"]
+    waveform = audio["waveform"]
     audio_data_np = audio_tensor_to_contiguous_ndarray(waveform)
     audio_bytes_io = audio_ndarray_to_bytesio(audio_data_np, sample_rate, container_format, codec_name)
     return await upload_file_to_comfyapi(cls, audio_bytes_io, f"{uuid.uuid4()}.{container_format}", mime_type)

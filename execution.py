@@ -10,14 +10,21 @@ from enum import Enum
 from typing import List, Literal, NamedTuple, Optional, Union
 import asyncio
 
-import torch
+import contextlib
 
 from comfy.cli_args import args
-import comfy.memory_management
-import comfy.model_management
-import comfy_aimdo.model_vbar
+import comfy
+try:
+    import comfy.memory_management
+    import comfy.model_management
+    import comfy_aimdo.model_vbar
+except ImportError:
+    pass
 
-from latent_preview import set_preview_method
+try:
+    from latent_preview import set_preview_method
+except ImportError:
+    set_preview_method = None
 import nodes
 from comfy_execution.caching import (
     BasicCache,
@@ -523,7 +530,7 @@ async def execute(server, dynprompt, caches, current_item, extra_data, executed,
             try:
                 output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
             finally:
-                if comfy.memory_management.aimdo_enabled:
+                if hasattr(comfy, 'memory_management') and hasattr(comfy.memory_management, 'aimdo_enabled') and comfy.memory_management.aimdo_enabled:
                     if args.verbose == "DEBUG":
                         comfy_aimdo.control.analyze()
                     comfy.model_management.reset_cast_buffers()
@@ -590,16 +597,14 @@ async def execute(server, dynprompt, caches, current_item, extra_data, executed,
         execution_list.cache_update(unique_id, cache_entry)
         caches.outputs.set(unique_id, cache_entry)
 
-    except comfy.model_management.InterruptProcessingException as iex:
-        logging.info("Processing interrupted")
-
-        # skip formatting inputs/outputs
-        error_details = {
-            "node_id": real_node_id,
-        }
-
-        return (ExecutionResult.FAILURE, error_details, iex)
     except Exception as ex:
+        if hasattr(comfy, 'model_management') and comfy.model_management and isinstance(ex, comfy.model_management.InterruptProcessingException):
+            logging.info("Processing interrupted")
+            error_details = {
+                "node_id": real_node_id,
+            }
+            return (ExecutionResult.FAILURE, error_details, ex)
+
         typ, _, tb = sys.exc_info()
         exception_type = full_type_name(typ)
         input_data_formatted = {}
@@ -612,7 +617,7 @@ async def execute(server, dynprompt, caches, current_item, extra_data, executed,
         logging.error(traceback.format_exc())
         tips = ""
 
-        if isinstance(ex, comfy.model_management.OOM_EXCEPTION):
+        if hasattr(comfy, 'model_management') and comfy.model_management and isinstance(ex, comfy.model_management.OOM_EXCEPTION):
             tips = "This error means you ran out of memory on your GPU.\n\nTIPS: If the workflow worked before you might have accidentally set the batch_size to a large number."
             logging.info("Memory summary: {}".format(comfy.model_management.debug_memory_summary()))
             logging.error("Got an OOM, unloading all loaded models.")
@@ -662,7 +667,7 @@ class PromptExecutor:
 
         # First, send back the status to the frontend depending
         # on the exception type
-        if isinstance(ex, comfy.model_management.InterruptProcessingException):
+        if hasattr(comfy, 'model_management') and comfy.model_management and isinstance(ex, comfy.model_management.InterruptProcessingException):
             mes = {
                 "prompt_id": prompt_id,
                 "node_id": node_id,
@@ -688,7 +693,8 @@ class PromptExecutor:
         asyncio.run(self.execute_async(prompt, prompt_id, extra_data, execute_outputs))
 
     async def execute_async(self, prompt, prompt_id, extra_data={}, execute_outputs=[]):
-        set_preview_method(extra_data.get("preview_method"))
+        if set_preview_method is not None:
+            set_preview_method(extra_data.get("preview_method"))
 
         nodes.interrupt_processing(False)
 
@@ -700,7 +706,7 @@ class PromptExecutor:
         self.status_messages = []
         self.add_message("execution_start", { "prompt_id": prompt_id}, broadcast=False)
 
-        with torch.inference_mode():
+        with contextlib.nullcontext():
             dynamic_prompt = DynamicPrompt(prompt)
             reset_progress_state(prompt_id, dynamic_prompt)
             add_progress_handler(WebUIProgressHandler(self.server))
@@ -714,7 +720,8 @@ class PromptExecutor:
                 if self.caches.outputs.get(node_id) is not None:
                     cached_nodes.append(node_id)
 
-            comfy.model_management.cleanup_models_gc()
+            if hasattr(comfy, 'model_management') and comfy.model_management:
+                comfy.model_management.cleanup_models_gc()
             self.add_message("execution_cached",
                           { "nodes": cached_nodes, "prompt_id": prompt_id},
                           broadcast=False)
@@ -728,21 +735,38 @@ class PromptExecutor:
                 execution_list.add_node(node_id)
 
             while not execution_list.is_empty():
-                node_id, error, ex = await execution_list.stage_node_execution()
+                ready_nodes, error, ex = await execution_list.stage_batch_execution()
                 if error is not None:
                     self.handle_execution_error(prompt_id, dynamic_prompt.original_prompt, current_outputs, executed, error, ex)
                     break
 
-                assert node_id is not None, "Node ID should not be None at this point"
-                result, error, ex = await execute(self.server, dynamic_prompt, self.caches, node_id, extra_data, executed, prompt_id, execution_list, pending_subgraph_results, pending_async_nodes, ui_node_outputs)
-                self.success = result != ExecutionResult.FAILURE
-                if result == ExecutionResult.FAILURE:
-                    self.handle_execution_error(prompt_id, dynamic_prompt.original_prompt, current_outputs, executed, error, ex)
+                if len(ready_nodes) == 0:
                     break
-                elif result == ExecutionResult.PENDING:
-                    execution_list.unstage_node_execution()
-                else: # result == ExecutionResult.SUCCESS:
-                    execution_list.complete_node_execution()
+
+                # Execute all ready nodes concurrently
+                async def _execute_one(nid):
+                    return nid, await execute(self.server, dynamic_prompt, self.caches, nid, extra_data, executed, prompt_id, execution_list, pending_subgraph_results, pending_async_nodes, ui_node_outputs)
+
+                results = await asyncio.gather(*[_execute_one(nid) for nid in ready_nodes])
+
+                # Process results
+                completed_nodes = []
+                had_failure = False
+                for nid, (result, err, exc) in results:
+                    if result == ExecutionResult.FAILURE:
+                        self.success = False
+                        self.handle_execution_error(prompt_id, dynamic_prompt.original_prompt, current_outputs, executed, err, exc)
+                        had_failure = True
+                        break
+                    elif result == ExecutionResult.PENDING:
+                        execution_list.unstage_batch_node(nid)
+                    else:  # SUCCESS
+                        completed_nodes.append(nid)
+
+                if had_failure:
+                    break
+
+                execution_list.complete_batch_execution(completed_nodes)
                 self.caches.outputs.poll(ram_headroom=self.cache_args["ram"])
             else:
                 # Only execute when the while-loop ends without break
@@ -758,7 +782,7 @@ class PromptExecutor:
                 "meta": meta_outputs,
             }
             self.server.last_node_id = None
-            if comfy.model_management.DISABLE_SMART_MEMORY:
+            if hasattr(comfy, 'model_management') and comfy.model_management and comfy.model_management.DISABLE_SMART_MEMORY:
                 comfy.model_management.unload_all_models()
 
 

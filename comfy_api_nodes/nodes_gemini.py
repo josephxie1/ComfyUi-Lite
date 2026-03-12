@@ -10,7 +10,7 @@ from fnmatch import fnmatch
 from io import BytesIO
 from typing import Literal
 
-import torch
+import numpy as np
 from typing_extensions import override
 
 import folder_paths
@@ -199,8 +199,8 @@ async def get_image_from_response(response: GeminiGenerateContentResponse) -> In
             returned_image = await download_url_to_image_tensor(part.fileData.fileUri)
         image_tensors.append(returned_image)
     if len(image_tensors) == 0:
-        return torch.zeros((1, 1024, 1024, 4))
-    return torch.cat(image_tensors, dim=0)
+        return np.zeros((1, 1024, 1024, 4))
+    return np.concatenate(image_tensors, axis=0)
 
 
 def calculate_tokens_price(response: GeminiGenerateContentResponse) -> float | None:

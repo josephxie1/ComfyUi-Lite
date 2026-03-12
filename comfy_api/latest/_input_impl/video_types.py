@@ -10,7 +10,6 @@ import itertools
 import json
 import numpy as np
 import math
-import torch
 from .._util import VideoContainer, VideoCodec, VideoComponents
 
 
@@ -249,10 +248,10 @@ class VideoFromFile(VideoInput):
             if self.__duration and frame.pts >= end_pts:
                 break
             img = frame.to_ndarray(format='rgb24')  # shape: (H, W, 3)
-            img = torch.from_numpy(img) / 255.0  # shape: (H, W, 3)
+            img = img.astype(np.float32) / 255.0  # shape: (H, W, 3)
             frames.append(img)
 
-        images = torch.stack(frames) if len(frames) > 0 else torch.zeros(0, 3, 0, 0)
+        images = np.stack(frames) if len(frames) > 0 else np.zeros((0, 0, 0, 3), dtype=np.float32)
 
         # Get frame rate
         frame_rate = Fraction(video_stream.average_rate) if video_stream.average_rate else Fraction(1)
@@ -288,7 +287,7 @@ class VideoFromFile(VideoInput):
                 if self.__duration:
                     audio_data = audio_data[..., :int(self.__duration * audio_stream.sample_rate)]
 
-                audio_tensor = torch.from_numpy(audio_data).unsqueeze(0)  # shape: (1, channels, total_samples)
+                audio_tensor = audio_data[np.newaxis, ...]  # shape: (1, channels, total_samples)
                 audio = AudioInput({
                     "waveform": audio_tensor,
                     "sample_rate": int(audio_stream.sample_rate) if audio_stream.sample_rate else 1,
@@ -438,7 +437,7 @@ class VideoFromComponents(VideoInput):
 
             # Encode video
             for i, frame in enumerate(self.__components.images):
-                img = (frame * 255).clamp(0, 255).byte().cpu().numpy() # shape: (H, W, 3)
+                img = np.clip(frame * 255, 0, 255).astype(np.uint8) # shape: (H, W, 3)
                 frame = av.VideoFrame.from_ndarray(img, format='rgb24')
                 frame = frame.reformat(format='yuv420p')  # Convert to YUV420P as required by h264
                 packet = video_stream.encode(frame)
@@ -449,7 +448,8 @@ class VideoFromComponents(VideoInput):
             output.mux(packet)
 
             if audio_stream and self.__components.audio:
-                frame = av.AudioFrame.from_ndarray(waveform.float().cpu().contiguous().numpy(), format='fltp', layout=layout)
+                audio_np = np.ascontiguousarray(np.asarray(waveform, dtype=np.float32))
+                frame = av.AudioFrame.from_ndarray(audio_np, format='fltp', layout=layout)
                 frame.sample_rate = audio_sample_rate
                 frame.pts = 0
                 output.mux(audio_stream.encode(frame))

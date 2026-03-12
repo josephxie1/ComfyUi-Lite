@@ -1,5 +1,8 @@
-import torch
-import comfy.model_management
+import numpy as np
+try:
+    import comfy.model_management
+except ImportError:
+    pass
 from typing_extensions import override
 from comfy_api.latest import ComfyExtension, io
 
@@ -30,8 +33,8 @@ class Morphology(io.ComfyNode):
 
     @classmethod
     def execute(cls, image, operation, kernel_size) -> io.NodeOutput:
-        device = comfy.model_management.get_torch_device()
-        kernel = torch.ones(kernel_size, kernel_size, device=device)
+        # device removed - using numpy
+        kernel = np.ones(kernel_size, kernel_size, device=device)
         image_k = image.to(device).movedim(-1, 1)
         if operation == "erode":
             output = erosion(image_k, kernel)
@@ -72,7 +75,7 @@ class ImageRGBToYUV(io.ComfyNode):
 
     @classmethod
     def execute(cls, image) -> io.NodeOutput:
-        out = kornia.color.rgb_to_ycbcr(image.movedim(-1, 1)).movedim(1, -1)
+        out = kornia.color.rgb_to_ycbcr(np.moveaxis(image, -1, 1)).movedim(1, -1)
         return io.NodeOutput(out[..., 0:1].expand_as(image), out[..., 1:2].expand_as(image), out[..., 2:3].expand_as(image))
 
 class ImageYUVToRGB(io.ComfyNode):
@@ -94,8 +97,8 @@ class ImageYUVToRGB(io.ComfyNode):
 
     @classmethod
     def execute(cls, Y, U, V) -> io.NodeOutput:
-        image = torch.cat([torch.mean(Y, dim=-1, keepdim=True), torch.mean(U, dim=-1, keepdim=True), torch.mean(V, dim=-1, keepdim=True)], dim=-1)
-        out = kornia.color.ycbcr_to_rgb(image.movedim(-1, 1)).movedim(1, -1)
+        image = np.concatenate([np.mean(Y, axis=-1, keepdims=True), np.mean(U, axis=-1, keepdims=True), np.mean(V, axis=-1, keepdims=True)], axis=-1)
+        out = kornia.color.ycbcr_to_rgb(np.moveaxis(image, -1, 1)).movedim(1, -1)
         return io.NodeOutput(out)
 
 

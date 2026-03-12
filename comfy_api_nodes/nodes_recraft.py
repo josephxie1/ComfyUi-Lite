@@ -1,7 +1,7 @@
 from io import BytesIO
 
 import aiohttp
-import torch
+import numpy as np
 from PIL import UnidentifiedImageError
 from typing_extensions import override
 
@@ -37,9 +37,9 @@ from comfy_extras.nodes_images import SVG
 
 async def handle_recraft_file_request(
     cls: type[IO.ComfyNode],
-    image: torch.Tensor,
+    image: np.ndarray,
     path: str,
-    mask: torch.Tensor | None = None,
+    mask: np.ndarray | None = None,
     total_pixels: int = 4096 * 4096,
     timeout: int = 1024,
     request=None,
@@ -503,7 +503,7 @@ class RecraftTextToImageNode(IO.ComfyNode):
                 image = image.unsqueeze(0)
             images.append(image)
 
-        return IO.NodeOutput(torch.cat(images, dim=0))
+        return IO.NodeOutput(np.concatenate(images, axis=0))
 
 
 class RecraftImageToImageNode(IO.ComfyNode):
@@ -574,7 +574,7 @@ class RecraftImageToImageNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image: torch.Tensor,
+        image: np.ndarray,
         prompt: str,
         n: int,
         strength: float,
@@ -618,10 +618,10 @@ class RecraftImageToImageNode(IO.ComfyNode):
                 request=request,
             )
             with handle_recraft_image_output():
-                images.append(torch.cat([bytesio_to_image_tensor(x) for x in sub_bytes], dim=0))
+                images.append(np.concatenate([bytesio_to_image_tensor(x) for x in sub_bytes], axis=0))
             pbar.update(1)
 
-        return IO.NodeOutput(torch.cat(images, dim=0))
+        return IO.NodeOutput(np.concatenate(images, axis=0))
 
 
 class RecraftImageInpaintingNode(IO.ComfyNode):
@@ -679,8 +679,8 @@ class RecraftImageInpaintingNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image: torch.Tensor,
-        mask: torch.Tensor,
+        image: np.ndarray,
+        mask: np.ndarray,
         prompt: str,
         n: int,
         seed,
@@ -720,10 +720,10 @@ class RecraftImageInpaintingNode(IO.ComfyNode):
                 request=request,
             )
             with handle_recraft_image_output():
-                images.append(torch.cat([bytesio_to_image_tensor(x) for x in sub_bytes], dim=0))
+                images.append(np.concatenate([bytesio_to_image_tensor(x) for x in sub_bytes], axis=0))
             pbar.update(1)
 
-        return IO.NodeOutput(torch.cat(images, dim=0))
+        return IO.NodeOutput(np.concatenate(images, axis=0))
 
 
 class RecraftTextToVectorNode(IO.ComfyNode):
@@ -853,7 +853,7 @@ class RecraftVectorizeImageNode(IO.ComfyNode):
         )
 
     @classmethod
-    async def execute(cls, image: torch.Tensor) -> IO.NodeOutput:
+    async def execute(cls, image: np.ndarray) -> IO.NodeOutput:
         svgs = []
         total = image.shape[0]
         pbar = ProgressBar(total)
@@ -916,7 +916,7 @@ class RecraftReplaceBackgroundNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image: torch.Tensor,
+        image: np.ndarray,
         prompt: str,
         n: int,
         seed,
@@ -950,10 +950,10 @@ class RecraftReplaceBackgroundNode(IO.ComfyNode):
                 path="/proxy/recraft/images/replaceBackground",
                 request=request,
             )
-            images.append(torch.cat([bytesio_to_image_tensor(x) for x in sub_bytes], dim=0))
+            images.append(np.concatenate([bytesio_to_image_tensor(x) for x in sub_bytes], axis=0))
             pbar.update(1)
 
-        return IO.NodeOutput(torch.cat(images, dim=0))
+        return IO.NodeOutput(np.concatenate(images, axis=0))
 
 
 class RecraftRemoveBackgroundNode(IO.ComfyNode):
@@ -984,7 +984,7 @@ class RecraftRemoveBackgroundNode(IO.ComfyNode):
         )
 
     @classmethod
-    async def execute(cls, image: torch.Tensor) -> IO.NodeOutput:
+    async def execute(cls, image: np.ndarray) -> IO.NodeOutput:
         images = []
         total = image.shape[0]
         pbar = ProgressBar(total)
@@ -994,10 +994,10 @@ class RecraftRemoveBackgroundNode(IO.ComfyNode):
                 image=image[i],
                 path="/proxy/recraft/images/removeBackground",
             )
-            images.append(torch.cat([bytesio_to_image_tensor(x) for x in sub_bytes], dim=0))
+            images.append(np.concatenate([bytesio_to_image_tensor(x) for x in sub_bytes], axis=0))
             pbar.update(1)
 
-        images_tensor = torch.cat(images, dim=0)
+        images_tensor = np.concatenate(images, axis=0)
         # use alpha channel as masks, in B,H,W format
         masks_tensor = images_tensor[:, :, :, -1:].squeeze(-1)
         return IO.NodeOutput(images_tensor, masks_tensor)
@@ -1033,7 +1033,7 @@ class RecraftCrispUpscaleNode(IO.ComfyNode):
         )
 
     @classmethod
-    async def execute(cls, image: torch.Tensor) -> IO.NodeOutput:
+    async def execute(cls, image: np.ndarray) -> IO.NodeOutput:
         images = []
         total = image.shape[0]
         pbar = ProgressBar(total)
@@ -1043,10 +1043,10 @@ class RecraftCrispUpscaleNode(IO.ComfyNode):
                 image=image[i],
                 path=cls.RECRAFT_PATH,
             )
-            images.append(torch.cat([bytesio_to_image_tensor(x) for x in sub_bytes], dim=0))
+            images.append(np.concatenate([bytesio_to_image_tensor(x) for x in sub_bytes], axis=0))
             pbar.update(1)
 
-        return IO.NodeOutput(torch.cat(images, dim=0))
+        return IO.NodeOutput(np.concatenate(images, axis=0))
 
 
 class RecraftCreativeUpscaleNode(RecraftCrispUpscaleNode):
@@ -1200,7 +1200,7 @@ class RecraftV4TextToImageNode(IO.ComfyNode):
             if len(image.shape) < 4:
                 image = image.unsqueeze(0)
             images.append(image)
-        return IO.NodeOutput(torch.cat(images, dim=0))
+        return IO.NodeOutput(np.concatenate(images, axis=0))
 
 
 class RecraftV4TextToVectorNode(IO.ComfyNode):

@@ -7,7 +7,7 @@ from typing import IO
 from urllib.parse import urljoin, urlparse
 
 import aiohttp
-import torch
+import numpy as np
 from aiohttp.client_exceptions import ClientError, ContentTypeError
 
 from comfy_api.latest import IO as COMFY_IO
@@ -221,8 +221,8 @@ async def download_url_to_image_tensor(
     *,
     timeout: float = None,
     cls: type[COMFY_IO.ComfyNode] = None,
-) -> torch.Tensor:
-    """Downloads an image from a URL and returns a [B, H, W, C] tensor."""
+) -> np.ndarray:
+    """Downloads an image from a URL and returns a [B, H, W, C] ndarray."""
     result = BytesIO()
     await download_url_to_bytesio(url, result, timeout=timeout, cls=cls)
     return bytesio_to_image_tensor(result)

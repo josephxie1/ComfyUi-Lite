@@ -16,17 +16,31 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+try:
+    import torch
+    TORCH_AVAILABLE = True
+except ImportError:
+    torch = None
+    TORCH_AVAILABLE = False
 
-import torch
 import math
 import struct
-import comfy.memory_management
-import safetensors.torch
+try:
+    import comfy.memory_management
+except ImportError:
+    pass
+try:
+    import safetensors.torch
+except ImportError:
+    pass
 import numpy as np
 from PIL import Image
 import logging
 import itertools
-from torch.nn.functional import interpolate
+try:
+    from torch.nn.functional import interpolate
+except ImportError:
+    interpolate = None
 from tqdm.auto import trange
 from einops import rearrange
 from comfy.cli_args import args
@@ -39,7 +53,7 @@ MMAP_TORCH_FILES = args.mmap_torch_files
 DISABLE_MMAP = args.disable_mmap
 
 
-if True:  # ckpt/pt file whitelist for safe loading of old sd files
+if TORCH_AVAILABLE:  # ckpt/pt file whitelist for safe loading of old sd files
     class ModelCheckpoint:
         pass
     ModelCheckpoint.__module__ = "pytorch_lightning.callbacks.model_checkpoint"
@@ -60,25 +74,28 @@ if True:  # ckpt/pt file whitelist for safe loading of old sd files
 
 
 # Current as of safetensors 0.7.0
-_TYPES = {
-    "F64": torch.float64,
-    "F32": torch.float32,
-    "F16": torch.float16,
-    "BF16": torch.bfloat16,
-    "I64": torch.int64,
-    "I32": torch.int32,
-    "I16": torch.int16,
-    "I8": torch.int8,
-    "U8": torch.uint8,
-    "BOOL": torch.bool,
-    "F8_E4M3": torch.float8_e4m3fn,
-    "F8_E5M2": torch.float8_e5m2,
-    "C64": torch.complex64,
+if TORCH_AVAILABLE:
+    _TYPES = {
+        "F64": torch.float64,
+        "F32": torch.float32,
+        "F16": torch.float16,
+        "BF16": torch.bfloat16,
+        "I64": torch.int64,
+        "I32": torch.int32,
+        "I16": torch.int16,
+        "I8": torch.int8,
+        "U8": torch.uint8,
+        "BOOL": torch.bool,
+        "F8_E4M3": torch.float8_e4m3fn,
+        "F8_E5M2": torch.float8_e5m2,
+        "C64": torch.complex64,
 
-    "U64": torch.uint64,
-    "U32": torch.uint32,
-    "U16": torch.uint16,
-}
+        "U64": torch.uint64,
+        "U32": torch.uint32,
+        "U16": torch.uint16,
+    }
+else:
+    _TYPES = {}
 
 def load_safetensors(ckpt):
     f = open(ckpt, "rb")
@@ -807,6 +824,19 @@ def z_image_to_diffusers(mmdit_config, output_prefix=""):
     return key_map
 
 def repeat_to_batch_size(tensor, batch_size, dim=0):
+    if isinstance(tensor, np.ndarray):
+        if tensor.shape[dim] > batch_size:
+            slices = [slice(None)] * len(tensor.shape)
+            slices[dim] = slice(0, batch_size)
+            return tensor[tuple(slices)]
+        elif tensor.shape[dim] < batch_size:
+            reps = [1] * len(tensor.shape)
+            reps[dim] = math.ceil(batch_size / tensor.shape[dim])
+            result = np.tile(tensor, reps)
+            slices = [slice(None)] * len(result.shape)
+            slices[dim] = slice(0, batch_size)
+            return result[tuple(slices)]
+        return tensor
     if tensor.shape[dim] > batch_size:
         return tensor.narrow(dim, 0, batch_size)
     elif tensor.shape[dim] < batch_size:
@@ -1003,19 +1033,31 @@ def bislerp(samples, width, height):
     return result.to(orig_dtype)
 
 def lanczos(samples, width, height):
+    is_numpy = isinstance(samples, np.ndarray)
     #the below API is strict and expects grayscale to be squeezed
-    samples = samples.squeeze(1) if samples.shape[1] == 1 else samples.movedim(1, -1)
-    images = [Image.fromarray(np.clip(255. * image.cpu().numpy(), 0, 255).astype(np.uint8)) for image in samples]
-    images = [image.resize((width, height), resample=Image.Resampling.LANCZOS) for image in images]
-    images = [torch.from_numpy(np.array(image).astype(np.float32) / 255.0).movedim(-1, 0) for image in images]
-    result = torch.stack(images)
-    return result.to(samples.device, samples.dtype)
+    if is_numpy:
+        s = np.squeeze(samples, axis=1) if samples.shape[1] == 1 else np.moveaxis(samples, 1, -1)
+        images = [Image.fromarray(np.clip(255. * image, 0, 255).astype(np.uint8)) for image in s]
+        images = [image.resize((width, height), resample=Image.Resampling.LANCZOS) for image in images]
+        images = [np.moveaxis(np.array(image).astype(np.float32) / 255.0, -1, 0) if image.mode != 'L' else np.array(image).astype(np.float32)[np.newaxis] / 255.0 for image in images]
+        return np.stack(images).astype(samples.dtype)
+    else:
+        samples = samples.squeeze(1) if samples.shape[1] == 1 else samples.movedim(1, -1)
+        images = [Image.fromarray(np.clip(255. * image.cpu().numpy(), 0, 255).astype(np.uint8)) for image in samples]
+        images = [image.resize((width, height), resample=Image.Resampling.LANCZOS) for image in images]
+        images = [torch.from_numpy(np.array(image).astype(np.float32) / 255.0).movedim(-1, 0) for image in images]
+        result = torch.stack(images)
+        return result.to(samples.device, samples.dtype)
 
 def common_upscale(samples, width, height, upscale_method, crop):
+        is_numpy = isinstance(samples, np.ndarray)
         orig_shape = tuple(samples.shape)
         if len(orig_shape) > 4:
             samples = samples.reshape(samples.shape[0], samples.shape[1], -1, samples.shape[-2], samples.shape[-1])
-            samples = samples.movedim(2, 1)
+            if is_numpy:
+                samples = np.moveaxis(samples, 2, 1)
+            else:
+                samples = samples.movedim(2, 1)
             samples = samples.reshape(-1, orig_shape[1], orig_shape[-2], orig_shape[-1])
         if crop == "center":
             old_width = samples.shape[-1]
@@ -1028,7 +1070,10 @@ def common_upscale(samples, width, height, upscale_method, crop):
                 x = round((old_width - old_width * (new_aspect / old_aspect)) / 2)
             elif old_aspect < new_aspect:
                 y = round((old_height - old_height * (old_aspect / new_aspect)) / 2)
-            s = samples.narrow(-2, y, old_height - y * 2).narrow(-1, x, old_width - x * 2)
+            if is_numpy:
+                s = samples[..., y:old_height - y, x:old_width - x]
+            else:
+                s = samples.narrow(-2, y, old_height - y * 2).narrow(-1, x, old_width - x * 2)
         else:
             s = samples
 
@@ -1036,6 +1081,20 @@ def common_upscale(samples, width, height, upscale_method, crop):
             out = bislerp(s, width, height)
         elif upscale_method == "lanczos":
             out = lanczos(s, width, height)
+        elif is_numpy:
+            # For numpy, use PIL resize per-sample
+            from PIL import Image as _PILResize
+            _mode_map = {"bilinear": _PILResize.BILINEAR, "nearest-exact": _PILResize.NEAREST, "area": _PILResize.BOX, "bicubic": _PILResize.BICUBIC}
+            _resample = _mode_map.get(upscale_method, _PILResize.BILINEAR)
+            results = []
+            for batch_i in range(s.shape[0]):
+                channels = []
+                for ch_i in range(s.shape[1]):
+                    pil = _PILResize.fromarray((np.clip(s[batch_i, ch_i], 0, 1) * 255).astype(np.uint8), mode='L')
+                    pil = pil.resize((width, height), resample=_resample)
+                    channels.append(np.array(pil).astype(np.float32) / 255.0)
+                results.append(np.stack(channels, axis=0))
+            out = np.stack(results, axis=0).astype(s.dtype)
         else:
             out = torch.nn.functional.interpolate(s, size=(height, width), mode=upscale_method)
 
@@ -1043,6 +1102,8 @@ def common_upscale(samples, width, height, upscale_method, crop):
             return out
 
         out = out.reshape((orig_shape[0], -1, orig_shape[1]) + (height, width))
+        if is_numpy:
+            return np.moveaxis(out, 2, 1).reshape(orig_shape[:-2] + (height, width))
         return out.movedim(2, 1).reshape(orig_shape[:-2] + (height, width))
 
 def get_tiled_scale_steps(width, height, tile_x, tile_y, overlap):
@@ -1050,7 +1111,7 @@ def get_tiled_scale_steps(width, height, tile_x, tile_y, overlap):
     cols = 1 if width <= tile_x else math.ceil((width - overlap) / (tile_x - overlap))
     return rows * cols
 
-@torch.inference_mode()
+@(torch.inference_mode() if TORCH_AVAILABLE else lambda fn: fn)
 def tiled_scale_multidim(samples, function, tile=(64, 64), overlap=8, upscale_amount=4, out_channels=3, output_device="cpu", downscale=False, index_formulas=None, pbar=None):
     dims = len(tile)
 
@@ -1269,7 +1330,7 @@ def reshape_mask(input_mask, output_shape):
     mask = repeat_to_batch_size(mask, output_shape[0])
     return mask
 
-def upscale_dit_mask(mask: torch.Tensor, img_size_in, img_size_out):
+def upscale_dit_mask(mask, img_size_in, img_size_out):
         hi, wi = img_size_in
         ho, wo = img_size_out
         # if it's already the correct size, no need to do anything

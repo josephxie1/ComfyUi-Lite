@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 
-import torch
+import numpy as np
 
 from enum import Enum
 from typing import Optional, Union
@@ -16,7 +16,7 @@ class LumaIO:
 
 
 class LumaReference:
-    def __init__(self, image: torch.Tensor, weight: float):
+    def __init__(self, image: np.ndarray, weight: float):
         self.image = image
         self.weight = weight
 

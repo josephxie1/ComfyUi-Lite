@@ -1,0 +1,19 @@
+name: Build - All Platforms
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test-e2e-windows:
+    secrets: inherit
+    uses: ./.github/workflows/integration_test_windows.yml
+  build-apple-debug-all:
+    secrets: inherit
+    uses: ./.github/workflows/debug_macos.yml

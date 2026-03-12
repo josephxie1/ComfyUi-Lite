@@ -1,5 +1,12 @@
+## Python
 __pycache__/
 *.py[cod]
+*.egg-info/
+*.whl
+venv*/
+.venv/
+
+## ComfyUI runtime data
 /output/
 /input/
 !/input/example.png
@@ -7,20 +14,45 @@ __pycache__/
 /temp/
 /custom_nodes/
 !custom_nodes/example_node.py.example
+/user/
 extra_model_paths.yaml
-/.vs
+web_custom_versions/
+
+## Frontend
+ComfyUI_frontend/dist/
+ComfyUI_frontend/node_modules/
+ComfyUI_frontend/pip_package/dist/
+ComfyUI_frontend/pip_package/build/
+ComfyUI_frontend/pip_package/*.egg-info/
+ComfyUI_frontend/pip_package/comfyui_frontend_package/static/
+
+## Desktop (Electron)
+desktop/dist/
+desktop/.vite/
+desktop/node_modules/
+
+## ComfyUI Lite - excluded
+/comfy_lite/
+/releases/
+/workflow_templates/
+
+## IDE & Agent
 .vscode/
 .idea/
-venv*/
-.venv/
-/web/extensions/*
-!/web/extensions/logging.js.example
-!/web/extensions/core/
-/tests-ui/data/object_info.json
-/user/
-*.log
-web_custom_versions/
+/.vs
+.agents/
+
+## OS
 .DS_Store
+Thumbs.db
+
+## Misc
+*.log
 openapi.yaml
 filtered-openapi.yaml
 uv.lock
+.env
+.env.*
+!.env.example
+*.db
+workflow_templates/.nx/

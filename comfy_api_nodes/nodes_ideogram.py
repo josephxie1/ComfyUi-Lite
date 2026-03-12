@@ -3,7 +3,6 @@ from typing_extensions import override
 from comfy_api.latest import IO, ComfyExtension
 from PIL import Image
 import numpy as np
-import torch
 from comfy_api_nodes.apis.ideogram import (
     IdeogramGenerateRequest,
     IdeogramGenerateResponse,
@@ -215,12 +214,12 @@ async def download_and_process_images(image_urls):
     for image_url in image_urls:
         # Using functions from apinode_utils.py to handle downloading and processing
         image_bytesio = await download_url_as_bytesio(image_url)  # Download image content to BytesIO
-        img_tensor = bytesio_to_image_tensor(image_bytesio, mode="RGB")  # Convert to torch.Tensor with RGB mode
+        img_tensor = bytesio_to_image_tensor(image_bytesio, mode="RGB")  # Convert to np.ndarray with RGB mode
         image_tensors.append(img_tensor)
 
     # Stack tensors to match (N, width, height, channels)
     if image_tensors:
-        stacked_tensors = torch.cat(image_tensors, dim=0)
+        stacked_tensors = np.concatenate(image_tensors, axis=0)
     else:
         raise Exception("No valid images were processed")
 

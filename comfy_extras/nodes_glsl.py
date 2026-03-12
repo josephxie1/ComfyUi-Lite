@@ -7,7 +7,6 @@ import importlib.util
 from typing import TypedDict
 
 import numpy as np
-import torch
 
 import nodes
 from comfy_api.latest import ComfyExtension, io, ui
@@ -836,7 +835,7 @@ class GLSLShader(io.ComfyNode):
         # Prepare batches
         image_batches = []
         for batch_idx in range(batch_size):
-            batch_images = [img_tensor[batch_idx].cpu().numpy().astype(np.float32) for img_tensor in image_list]
+            batch_images = [img_tensor[batch_idx].copy().astype(np.float32) for img_tensor in image_list]
             image_batches.append(batch_images)
 
         all_batch_outputs = _render_shader_batch(
@@ -852,9 +851,9 @@ class GLSLShader(io.ComfyNode):
         all_outputs = [[] for _ in range(MAX_OUTPUTS)]
         for batch_outputs in all_batch_outputs:
             for i, out_img in enumerate(batch_outputs):
-                all_outputs[i].append(torch.from_numpy(out_img))
+                all_outputs[i].append(out_img)
 
-        output_tensors = [torch.stack(all_outputs[i], dim=0) for i in range(MAX_OUTPUTS)]
+        output_tensors = [np.stack(all_outputs[i], axis=0) for i in range(MAX_OUTPUTS)]
         return io.NodeOutput(
             *output_tensors,
             ui=cls._build_ui_output(image_list, output_tensors[0]),
@@ -862,7 +861,7 @@ class GLSLShader(io.ComfyNode):
 
     @classmethod
     def _build_ui_output(
-        cls, image_list: list[torch.Tensor], output_batch: torch.Tensor
+        cls, image_list: list[np.ndarray], output_batch: np.ndarray
     ) -> dict[str, list]:
         """Build UI output with input and output images for client-side shader execution."""
         input_images_ui = []

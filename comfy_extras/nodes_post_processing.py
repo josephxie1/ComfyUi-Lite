@@ -1,15 +1,24 @@
 from typing_extensions import override
 import numpy as np
-import torch
-import torch.nn.functional as F
+from scipy.ndimage import uniform_filter, gaussian_filter
 from PIL import Image
 import math
 from enum import Enum
 from typing import TypedDict, Literal
 
 import comfy.utils
-import comfy.model_management
-from comfy_extras.nodes_latent import reshape_latent_to
+try:
+    import comfy.model_management
+except ImportError:
+    pass
+
+def reshape_latent_to(target_shape, latent, repeat_batch=True):
+    if latent.shape[1:] != target_shape[1:]:
+        latent = comfy.utils.common_upscale(latent, target_shape[-1], target_shape[-2], "bilinear", "center")
+    if repeat_batch:
+        return comfy.utils.repeat_to_batch_size(latent, target_shape[0])
+    else:
+        return latent
 import node_helpers
 from comfy_api.latest import ComfyExtension, io
 from nodes import MAX_RESOLUTION
@@ -33,7 +42,7 @@ class Blend(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, image1: torch.Tensor, image2: torch.Tensor, blend_factor: float, blend_mode: str) -> io.NodeOutput:
+    def execute(cls, image1: np.ndarray, image2: np.ndarray, blend_factor: float, blend_mode: str) -> io.NodeOutput:
         image1, image2 = node_helpers.image_alpha_fix(image1, image2)
         image2 = image2.to(image1.device)
         if image1.shape != image2.shape:
@@ -43,7 +52,7 @@ class Blend(io.ComfyNode):
 
         blended_image = cls.blend_mode(image1, image2, blend_mode)
         blended_image = image1 * (1 - blend_factor) + blended_image * blend_factor
-        blended_image = torch.clamp(blended_image, 0, 1)
+        blended_image = np.clip(blended_image, 0, 1)
         return io.NodeOutput(blended_image)
 
     @classmethod
@@ -55,21 +64,21 @@ class Blend(io.ComfyNode):
         elif mode == "screen":
             return 1 - (1 - img1) * (1 - img2)
         elif mode == "overlay":
-            return torch.where(img1 <= 0.5, 2 * img1 * img2, 1 - 2 * (1 - img1) * (1 - img2))
+            return np.where(img1 <= 0.5, 2 * img1 * img2, 1 - 2 * (1 - img1) * (1 - img2))
         elif mode == "soft_light":
-            return torch.where(img2 <= 0.5, img1 - (1 - 2 * img2) * img1 * (1 - img1), img1 + (2 * img2 - 1) * (cls.g(img1) - img1))
+            return np.where(img2 <= 0.5, img1 - (1 - 2 * img2) * img1 * (1 - img1), img1 + (2 * img2 - 1) * (cls.g(img1) - img1))
         elif mode == "difference":
             return img1 - img2
         raise ValueError(f"Unsupported blend mode: {mode}")
 
     @classmethod
     def g(cls, x):
-        return torch.where(x <= 0.25, ((16 * x - 12) * x + 4) * x, torch.sqrt(x))
+        return np.where(x <= 0.25, ((16 * x - 12) * x + 4) * x, np.sqrt(x))
 
 def gaussian_kernel(kernel_size: int, sigma: float, device=None):
-    x, y = torch.meshgrid(torch.linspace(-1, 1, kernel_size, device=device), torch.linspace(-1, 1, kernel_size, device=device), indexing="ij")
-    d = torch.sqrt(x * x + y * y)
-    g = torch.exp(-(d * d) / (2.0 * sigma * sigma))
+    x, y = np.meshgrid(np.linspace(-1, 1, kernel_size), np.linspace(-1, 1, kernel_size), indexing="ij")
+    d = np.sqrt(x * x + y * y)
+    g = np.exp(-(d * d) / (2.0 * sigma * sigma))
     return g / g.sum()
 
 class Blur(io.ComfyNode):
@@ -90,11 +99,11 @@ class Blur(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, image: torch.Tensor, blur_radius: int, sigma: float) -> io.NodeOutput:
+    def execute(cls, image: np.ndarray, blur_radius: int, sigma: float) -> io.NodeOutput:
         if blur_radius == 0:
             return io.NodeOutput(image)
 
-        image = image.to(comfy.model_management.get_torch_device())
+        # numpy, no device needed
         batch_size, height, width, channels = image.shape
 
         kernel_size = blur_radius * 2 + 1
@@ -137,26 +146,26 @@ class Quantize(io.ComfyNode):
         num_colors = len(pal_im.getpalette()) // 3
         spread = 2 * 256 / num_colors
         bayer_n = int(math.log2(order))
-        bayer_matrix = torch.from_numpy(spread * normalized_bayer_matrix(bayer_n) + 0.5)
+        bayer_matrix = spread * normalized_bayer_matrix(bayer_n + 0.5)
 
-        result = torch.from_numpy(np.array(im).astype(np.float32))
+        result = np.array(im.astype(np.float32))
         tw = math.ceil(result.shape[0] / bayer_matrix.shape[0])
         th = math.ceil(result.shape[1] / bayer_matrix.shape[1])
         tiled_matrix = bayer_matrix.tile(tw, th).unsqueeze(-1)
         result.add_(tiled_matrix[:result.shape[0],:result.shape[1]]).clamp_(0, 255)
-        result = result.to(dtype=torch.uint8)
+        result = result.astype(np.uint8)
 
-        im = Image.fromarray(result.cpu().numpy())
+        im = Image.fromarray(result.copy())
         im = im.quantize(palette=pal_im, dither=Image.Dither.NONE)
         return im
 
     @classmethod
-    def execute(cls, image: torch.Tensor, colors: int, dither: str) -> io.NodeOutput:
+    def execute(cls, image: np.ndarray, colors: int, dither: str) -> io.NodeOutput:
         batch_size, height, width, _ = image.shape
-        result = torch.zeros_like(image)
+        result = np.zeros_like(image)
 
         for b in range(batch_size):
-            im = Image.fromarray((image[b] * 255).to(torch.uint8).numpy(), mode='RGB')
+            im = Image.fromarray((image[b] * 255).clip(0, 255).astype(np.uint8), mode='RGB')
 
             pal_im = im.quantize(colors=colors) # Required as described in https://github.com/python-pillow/Pillow/issues/5836
 
@@ -168,7 +177,7 @@ class Quantize(io.ComfyNode):
                 order = int(dither.split('-')[-1])
                 quantized_image = Quantize.bayer(im, pal_im, order)
 
-            quantized_array = torch.tensor(np.array(quantized_image.convert("RGB"))).float() / 255
+            quantized_array = np.array(quantized_image.convert("RGB")).astype(np.float32) / 255
             result[b] = quantized_array
 
         return io.NodeOutput(result)
@@ -191,12 +200,12 @@ class Sharpen(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, image: torch.Tensor, sharpen_radius: int, sigma:float, alpha: float) -> io.NodeOutput:
+    def execute(cls, image: np.ndarray, sharpen_radius: int, sigma:float, alpha: float) -> io.NodeOutput:
         if sharpen_radius == 0:
             return io.NodeOutput(image)
 
         batch_size, height, width, channels = image.shape
-        image = image.to(comfy.model_management.get_torch_device())
+        # numpy, no device needed
 
         kernel_size = sharpen_radius * 2 + 1
         kernel = gaussian_kernel(kernel_size, sigma, device=image.device) * -(alpha*10)
@@ -210,7 +219,7 @@ class Sharpen(io.ComfyNode):
         sharpened = F.conv2d(tensor_image, kernel, padding=center, groups=channels)[:,:,sharpen_radius:-sharpen_radius, sharpen_radius:-sharpen_radius]
         sharpened = sharpened.permute(0, 2, 3, 1)
 
-        result = torch.clamp(sharpened, 0, 1)
+        result = np.clip(sharpened, 0, 1)
 
         return io.NodeOutput(result.to(comfy.model_management.intermediate_device()))
 
@@ -236,7 +245,7 @@ class ImageScaleToTotalPixels(io.ComfyNode):
 
     @classmethod
     def execute(cls, image, upscale_method, megapixels, resolution_steps) -> io.NodeOutput:
-        samples = image.movedim(-1,1)
+        samples = np.moveaxis(image, -1, 1)
         total = megapixels * 1024 * 1024
 
         scale_by = math.sqrt(total / (samples.shape[3] * samples.shape[2]))
@@ -244,7 +253,7 @@ class ImageScaleToTotalPixels(io.ComfyNode):
         height = round(samples.shape[2] * scale_by / resolution_steps) * resolution_steps
 
         s = comfy.utils.common_upscale(samples, int(width), int(height), upscale_method, "disabled")
-        s = s.movedim(1,-1)
+        s = np.moveaxis(s, 1, -1)
         return io.NodeOutput(s)
 
 class ResizeType(str, Enum):
@@ -258,26 +267,26 @@ class ResizeType(str, Enum):
     MATCH_SIZE = "match size"
     SCALE_TO_MULTIPLE = "scale to multiple"
 
-def is_image(input: torch.Tensor) -> bool:
+def is_image(input: np.ndarray) -> bool:
     # images have 4 dimensions: [batch, height, width, channels]
     # masks have 3 dimensions: [batch, height, width]
     return len(input.shape) == 4
 
-def init_image_mask_input(input: torch.Tensor, is_type_image: bool) -> torch.Tensor:
+def init_image_mask_input(input: np.ndarray, is_type_image: bool) -> np.ndarray:
     if is_type_image:
-        input = input.movedim(-1, 1)
+        input = np.moveaxis(input, -1, 1)
     else:
         input = input.unsqueeze(1)
     return input
 
-def finalize_image_mask_input(input: torch.Tensor, is_type_image: bool) -> torch.Tensor:
+def finalize_image_mask_input(input: np.ndarray, is_type_image: bool) -> np.ndarray:
     if is_type_image:
-        input = input.movedim(1, -1)
+        input = np.moveaxis(input, 1, -1)
     else:
         input = input.squeeze(1)
     return input
 
-def scale_by(input: torch.Tensor, multiplier: float, scale_method: str) -> torch.Tensor:
+def scale_by(input: np.ndarray, multiplier: float, scale_method: str) -> np.ndarray:
     is_type_image = is_image(input)
     input = init_image_mask_input(input, is_type_image)
     width = round(input.shape[-1] * multiplier)
@@ -287,7 +296,7 @@ def scale_by(input: torch.Tensor, multiplier: float, scale_method: str) -> torch
     input = finalize_image_mask_input(input, is_type_image)
     return input
 
-def scale_dimensions(input: torch.Tensor, width: int, height: int, scale_method: str, crop: str="disabled") -> torch.Tensor:
+def scale_dimensions(input: np.ndarray, width: int, height: int, scale_method: str, crop: str="disabled") -> np.ndarray:
     if width == 0 and height == 0:
         return input
     is_type_image = is_image(input)
@@ -302,7 +311,7 @@ def scale_dimensions(input: torch.Tensor, width: int, height: int, scale_method:
     input = finalize_image_mask_input(input, is_type_image)
     return input
 
-def scale_longer_dimension(input: torch.Tensor, longer_size: int, scale_method: str) -> torch.Tensor:
+def scale_longer_dimension(input: np.ndarray, longer_size: int, scale_method: str) -> np.ndarray:
     is_type_image = is_image(input)
     input = init_image_mask_input(input, is_type_image)
     width = input.shape[-1]
@@ -322,7 +331,7 @@ def scale_longer_dimension(input: torch.Tensor, longer_size: int, scale_method: 
     input = finalize_image_mask_input(input, is_type_image)
     return input
 
-def scale_shorter_dimension(input: torch.Tensor, shorter_size: int, scale_method: str) -> torch.Tensor:
+def scale_shorter_dimension(input: np.ndarray, shorter_size: int, scale_method: str) -> np.ndarray:
     is_type_image = is_image(input)
     input = init_image_mask_input(input, is_type_image)
     width = input.shape[-1]
@@ -342,7 +351,7 @@ def scale_shorter_dimension(input: torch.Tensor, shorter_size: int, scale_method
     input = finalize_image_mask_input(input, is_type_image)
     return input
 
-def scale_total_pixels(input: torch.Tensor, megapixels: float, scale_method: str) -> torch.Tensor:
+def scale_total_pixels(input: np.ndarray, megapixels: float, scale_method: str) -> np.ndarray:
     is_type_image = is_image(input)
     input = init_image_mask_input(input, is_type_image)
     total = int(megapixels * 1024 * 1024)
@@ -355,7 +364,7 @@ def scale_total_pixels(input: torch.Tensor, megapixels: float, scale_method: str
     input = finalize_image_mask_input(input, is_type_image)
     return input
 
-def scale_match_size(input: torch.Tensor, match: torch.Tensor, scale_method: str, crop: str) -> torch.Tensor:
+def scale_match_size(input: np.ndarray, match: np.ndarray, scale_method: str, crop: str) -> np.ndarray:
     is_type_image = is_image(input)
     input = init_image_mask_input(input, is_type_image)
     match = init_image_mask_input(match, is_image(match))
@@ -366,7 +375,7 @@ def scale_match_size(input: torch.Tensor, match: torch.Tensor, scale_method: str
     input = finalize_image_mask_input(input, is_type_image)
     return input
 
-def scale_to_multiple_cover(input: torch.Tensor, multiple: int, scale_method: str) -> torch.Tensor:
+def scale_to_multiple_cover(input: np.ndarray, multiple: int, scale_method: str) -> np.ndarray:
     if multiple <= 1:
         return input
     is_type_image = is_image(input)
@@ -505,34 +514,34 @@ class ResizeImageMaskNode(io.ComfyNode):
             return io.NodeOutput(scale_to_multiple_cover(input, resize_type["multiple"], scale_method))
         raise ValueError(f"Unsupported resize type: {selected_type}")
 
-def batch_images(images: list[torch.Tensor]) -> torch.Tensor | None:
+def batch_images(images: list[np.ndarray]) -> np.ndarray | None:
     if len(images) == 0:
         return None
     # first, get the max channels count
     max_channels = max(image.shape[-1] for image in images)
     # then, pad all images to have the same channels count
-    padded_images: list[torch.Tensor] = []
+    padded_images: list[np.ndarray] = []
     for image in images:
         if image.shape[-1] < max_channels:
-            padded_images.append(torch.nn.functional.pad(image, (0,1), mode='constant', value=1.0))
+            padded_images.append(np.pad(image, ((0,0),(0,0),(0,0),(0,1)), mode='constant', constant_values=1.0))
         else:
             padded_images.append(image)
     # resize all images to be the same size as the first image
-    resized_images: list[torch.Tensor] = []
+    resized_images: list[np.ndarray] = []
     first_image_shape = padded_images[0].shape
     for image in padded_images:
         if image.shape[1:] != first_image_shape[1:]:
-            resized_images.append(comfy.utils.common_upscale(image.movedim(-1,1), first_image_shape[2], first_image_shape[1], "bilinear", "center").movedim(1,-1))
+            resized_images.append(comfy.utils.common_upscale(np.moveaxis(image, -1, 1), first_image_shape[2], first_image_shape[1], "bilinear", "center").movedim(1,-1))
         else:
             resized_images.append(image)
     # batch the images in the format [b, h, w, c]
-    return torch.cat(resized_images, dim=0)
+    return np.concatenate(resized_images, axis=0)
 
-def batch_masks(masks: list[torch.Tensor]) -> torch.Tensor | None:
+def batch_masks(masks: list[np.ndarray]) -> np.ndarray | None:
     if len(masks) == 0:
         return None
     # resize all masks to be the same size as the first mask
-    resized_masks: list[torch.Tensor] = []
+    resized_masks: list[np.ndarray] = []
     first_mask_shape = masks[0].shape
     for mask in masks:
         if mask.shape[1:] != first_mask_shape[1:]:
@@ -542,21 +551,21 @@ def batch_masks(masks: list[torch.Tensor]) -> torch.Tensor | None:
         else:
             resized_masks.append(mask)
     # batch the masks in the format [b, h, w]
-    return torch.cat(resized_masks, dim=0)
+    return np.concatenate(resized_masks, axis=0)
 
-def batch_latents(latents: list[dict[str, torch.Tensor]]) -> dict[str, torch.Tensor] | None:
+def batch_latents(latents: list[dict[str, np.ndarray]]) -> dict[str, np.ndarray] | None:
     if len(latents) == 0:
         return None
     samples_out = latents[0].copy()
     samples_out["batch_index"] = []
     first_samples = latents[0]["samples"]
-    tensors: list[torch.Tensor] = []
+    tensors: list[np.ndarray] = []
     for latent in latents:
         # first, deal with latent tensors
         tensors.append(reshape_latent_to(first_samples.shape, latent["samples"], repeat_batch=False))
         # next, deal with batch_index
         samples_out["batch_index"].extend(latent.get("batch_index", [x for x in range(0, latent["samples"].shape[0])]))
-    samples_out["samples"] = torch.cat(tensors, dim=0)
+    samples_out["samples"] = np.concatenate(tensors, axis=0)
     return samples_out
 
 class BatchImagesNode(io.ComfyNode):

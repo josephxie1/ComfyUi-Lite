@@ -7,7 +7,7 @@ import json
 import os
 import re
 import math
-import torch
+import numpy as np
 import comfy.utils
 
 from server import PromptServer
@@ -117,7 +117,7 @@ class RepeatImageBatch(IO.ComfyNode):
 
     @classmethod
     def execute(cls, image, amount) -> IO.NodeOutput:
-        s = image.repeat((amount, 1,1,1))
+        s = np.tile(image, (amount, 1, 1, 1))
         return IO.NodeOutput(s)
 
     repeat = execute  # TODO: remove
@@ -143,7 +143,7 @@ class ImageFromBatch(IO.ComfyNode):
         s_in = image
         batch_index = min(s_in.shape[0] - 1, batch_index)
         length = min(s_in.shape[0] - batch_index, length)
-        s = s_in[batch_index:batch_index + length].clone()
+        s = s_in[batch_index:batch_index + length].copy()
         return IO.NodeOutput(s)
 
     frombatch = execute  # TODO: remove
@@ -173,8 +173,9 @@ class ImageAddNoise(IO.ComfyNode):
 
     @classmethod
     def execute(cls, image, seed, strength) -> IO.NodeOutput:
-        generator = torch.manual_seed(seed)
-        s = torch.clip((image + strength * torch.randn(image.size(), generator=generator, device="cpu").to(image)), min=0.0, max=1.0)
+        rng = np.random.default_rng(seed)
+        noise = rng.standard_normal(image.shape).astype(np.float32)
+        s = np.clip(image + strength * noise, 0.0, 1.0)
         return IO.NodeOutput(s)
 
     repeat = execute  # TODO: remove
@@ -290,12 +291,12 @@ class ImageStitch(IO.ComfyNode):
         if image1.shape[0] != image2.shape[0]:
             max_batch = max(image1.shape[0], image2.shape[0])
             if image1.shape[0] < max_batch:
-                image1 = torch.cat(
-                    [image1, image1[-1:].repeat(max_batch - image1.shape[0], 1, 1, 1)]
+                image1 = np.concatenate(
+                    [image1, np.tile(image1[-1:], (max_batch - image1.shape[0], 1, 1, 1))], axis=0
                 )
             if image2.shape[0] < max_batch:
-                image2 = torch.cat(
-                    [image2, image2[-1:].repeat(max_batch - image2.shape[0], 1, 1, 1)]
+                image2 = np.concatenate(
+                    [image2, np.tile(image2[-1:], (max_batch - image2.shape[0], 1, 1, 1))], axis=0
                 )
 
         # Match image sizes if requested
@@ -309,9 +310,9 @@ class ImageStitch(IO.ComfyNode):
             else:  # up, down
                 target_w, target_h = w1, int(w1 / aspect_ratio)
 
-            image2 = comfy.utils.common_upscale(
-                image2.movedim(-1, 1), target_w, target_h, "lanczos", "disabled"
-            ).movedim(1, -1)
+            image2 = np.moveaxis(comfy.utils.common_upscale(
+                np.moveaxis(image2, -1, 1), target_w, target_h, "lanczos", "disabled"
+            ), 1, -1)
 
         color_map = {
             "white": 1.0,
@@ -338,11 +339,11 @@ class ImageStitch(IO.ComfyNode):
                     if h1 < target_h:
                         pad_h = target_h - h1
                         pad_top, pad_bottom = pad_h // 2, pad_h - pad_h // 2
-                        image1 = torch.nn.functional.pad(image1, (0, 0, 0, 0, pad_top, pad_bottom), mode='constant', value=pad_value)
+                        image1 = np.pad(image1, ((pad_top, pad_bottom), (0, 0), (0, 0), (0, 0)), mode='constant', constant_values=pad_value)
                     if h2 < target_h:
                         pad_h = target_h - h2
                         pad_top, pad_bottom = pad_h // 2, pad_h - pad_h // 2
-                        image2 = torch.nn.functional.pad(image2, (0, 0, 0, 0, pad_top, pad_bottom), mode='constant', value=pad_value)
+                        image2 = np.pad(image2, ((pad_top, pad_bottom), (0, 0), (0, 0), (0, 0)), mode='constant', constant_values=pad_value)
             else:  # up, down
                 # For vertical concat, pad widths to match
                 if w1 != w2:
@@ -350,38 +351,38 @@ class ImageStitch(IO.ComfyNode):
                     if w1 < target_w:
                         pad_w = target_w - w1
                         pad_left, pad_right = pad_w // 2, pad_w - pad_w // 2
-                        image1 = torch.nn.functional.pad(image1, (0, 0, pad_left, pad_right), mode='constant', value=pad_value)
+                        image1 = np.pad(image1, ((0, 0), (0, 0), (pad_left, pad_right), (0, 0)), mode='constant', constant_values=pad_value)
                     if w2 < target_w:
                         pad_w = target_w - w2
                         pad_left, pad_right = pad_w // 2, pad_w - pad_w // 2
-                        image2 = torch.nn.functional.pad(image2, (0, 0, pad_left, pad_right), mode='constant', value=pad_value)
+                        image2 = np.pad(image2, ((0, 0), (0, 0), (pad_left, pad_right), (0, 0)), mode='constant', constant_values=pad_value)
 
         # Ensure same number of channels
         if image1.shape[-1] != image2.shape[-1]:
             max_channels = max(image1.shape[-1], image2.shape[-1])
             if image1.shape[-1] < max_channels:
-                image1 = torch.cat(
+                image1 = np.concatenate(
                     [
                         image1,
-                        torch.ones(
-                            *image1.shape[:-1],
-                            max_channels - image1.shape[-1],
-                            device=image1.device,
+                        np.ones(
+                            (*image1.shape[:-1],
+                            max_channels - image1.shape[-1]),
+                            dtype=np.float32,
                         ),
                     ],
-                    dim=-1,
+                    axis=-1,
                 )
             if image2.shape[-1] < max_channels:
-                image2 = torch.cat(
+                image2 = np.concatenate(
                     [
                         image2,
-                        torch.ones(
-                            *image2.shape[:-1],
-                            max_channels - image2.shape[-1],
-                            device=image2.device,
+                        np.ones(
+                            (*image2.shape[:-1],
+                            max_channels - image2.shape[-1]),
+                            dtype=np.float32,
                         ),
                     ],
-                    dim=-1,
+                    axis=-1,
                 )
 
         # Add spacing if specified
@@ -403,7 +404,7 @@ class ImageStitch(IO.ComfyNode):
                     image1.shape[-1],
                 )
 
-            spacing = torch.full(spacing_shape, 0.0, device=image1.device)
+            spacing = np.full(spacing_shape, 0.0, dtype=np.float32)
             if isinstance(color_val, tuple):
                 for i, c in enumerate(color_val):
                     if i < spacing.shape[-1]:
@@ -421,7 +422,7 @@ class ImageStitch(IO.ComfyNode):
             images.insert(1, spacing)
 
         concat_dim = 2 if direction in ["left", "right"] else 1
-        return IO.NodeOutput(torch.cat(images, dim=concat_dim))
+        return IO.NodeOutput(np.concatenate(images, axis=concat_dim))
 
     stitch = execute  # TODO: remove
 
@@ -454,16 +455,15 @@ class ResizeAndPadImage(IO.ComfyNode):
         new_width = int(orig_width * scale)
         new_height = int(orig_height * scale)
 
-        image_permuted = image.permute(0, 3, 1, 2)
+        image_permuted = np.transpose(image, (0, 3, 1, 2))
 
         resized = comfy.utils.common_upscale(image_permuted, new_width, new_height, interpolation, "disabled")
 
         pad_value = 0.0 if padding_color == "black" else 1.0
-        padded = torch.full(
+        padded = np.full(
             (batch_size, channels, target_height, target_width),
             pad_value,
-            dtype=image.dtype,
-            device=image.device
+            dtype=image.dtype
         )
 
         y_offset = (target_height - new_height) // 2
@@ -471,7 +471,7 @@ class ResizeAndPadImage(IO.ComfyNode):
 
         padded[:, :, y_offset:y_offset + new_height, x_offset:x_offset + new_width] = resized
 
-        output = padded.permute(0, 2, 3, 1)
+        output = np.transpose(padded, (0, 2, 3, 1))
         return IO.NodeOutput(output)
 
     resize_and_pad = execute  # TODO: remove
@@ -610,7 +610,7 @@ class ImageRotate(IO.ComfyNode):
         elif rotation.startswith("270"):
             rotate_by = 3
 
-        image = torch.rot90(image, k=rotate_by, dims=[2, 1])
+        image = np.rot90(image, k=rotate_by, axes=(2, 1))
         return IO.NodeOutput(image)
 
     rotate = execute  # TODO: remove
@@ -633,9 +633,9 @@ class ImageFlip(IO.ComfyNode):
     @classmethod
     def execute(cls, image, flip_method) -> IO.NodeOutput:
         if flip_method.startswith("x"):
-            image = torch.flip(image, dims=[1])
+            image = np.flip(image, axis=1)
         elif flip_method.startswith("y"):
-            image = torch.flip(image, dims=[2])
+            image = np.flip(image, axis=2)
 
         return IO.NodeOutput(image)
 
@@ -675,9 +675,9 @@ class ImageScaleToMaxDimension(IO.ComfyNode):
             height = largest_size
             width = largest_size
 
-        samples = image.movedim(-1, 1)
+        samples = np.moveaxis(image, -1, 1)
         s = comfy.utils.common_upscale(samples, width, height, upscale_method, "disabled")
-        s = s.movedim(1, -1)
+        s = np.moveaxis(s, 1, -1)
         return IO.NodeOutput(s)
 
     upscale = execute    # TODO: remove
@@ -773,26 +773,26 @@ class ImageMergeTileList(IO.ComfyNode):
 
         first_tile = image_list[0]
         b, t_h, t_w, c = first_tile.shape
-        device = first_tile.device
+        # no device for numpy
         dtype = first_tile.dtype
 
         coords = SplitImageToTileList.get_grid_coords(w, h, t_w, t_h, ovlp)
 
-        canvas = torch.zeros((b, h, w, c), device=device, dtype=dtype)
-        weights = torch.zeros((b, h, w, 1), device=device, dtype=dtype)
+        canvas = np.zeros((b, h, w, c), dtype=dtype)
+        weights = np.zeros((b, h, w, 1), dtype=dtype)
 
         if ovlp > 0:
-            y_w = torch.sin(math.pi * torch.linspace(0, 1, t_h, device=device, dtype=dtype))
-            x_w = torch.sin(math.pi * torch.linspace(0, 1, t_w, device=device, dtype=dtype))
-            y_w = torch.clamp(y_w, min=1e-5)
-            x_w = torch.clamp(x_w, min=1e-5)
+            y_w = np.sin(math.pi * np.linspace(0, 1, t_h))
+            x_w = np.sin(math.pi * np.linspace(0, 1, t_w))
+            y_w = np.clip(y_w, a_min=1e-5, a_max=None)
+            x_w = np.clip(x_w, a_min=1e-5, a_max=None)
 
-            sine_mask = (y_w.unsqueeze(1) * x_w.unsqueeze(0)).unsqueeze(0).unsqueeze(-1)
-            flat_mask = torch.ones_like(sine_mask)
+            sine_mask = (y_w[:, np.newaxis] * x_w[np.newaxis, :])[np.newaxis, :, :, np.newaxis]
+            flat_mask = np.ones_like(sine_mask)
 
-            weight_mask = torch.lerp(flat_mask, sine_mask, feather_str)
+            weight_mask = flat_mask + feather_str * (sine_mask - flat_mask)
         else:
-            weight_mask = torch.ones((1, t_h, t_w, 1), device=device, dtype=dtype)
+            weight_mask = np.ones((1, t_h, t_w, 1), dtype=dtype)
 
         for i, (x_start, y_start, x_end, y_end) in enumerate(coords):
             if i >= len(image_list):

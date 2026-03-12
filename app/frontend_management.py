@@ -40,12 +40,19 @@ def is_valid_version(version: str) -> bool:
 
 def get_installed_frontend_version():
     """Get the currently installed frontend package version."""
-    frontend_version_str = version("comfyui-frontend-package")
-    return frontend_version_str
+    try:
+        return version("comfyui-lite-frontend")
+    except Exception:
+        pass
+    try:
+        return version("comfyui-frontend-package")
+    except Exception:
+        return "0.0.0"
 
 
 def get_required_frontend_version():
-    return get_required_packages_versions().get("comfyui-frontend-package", None)
+    req = get_required_packages_versions().get("comfyui-frontend-package", None)
+    return req or "0.0.0"
 
 
 def check_frontend_version():
@@ -192,7 +199,7 @@ class FrontendManager:
     def get_installed_templates_version(cls) -> str:
         """Get the currently installed workflow templates package version."""
         try:
-            templates_version_str = version("comfyui-workflow-templates")
+            templates_version_str = version("comfyui-workflow-templates-core")
             return templates_version_str
         except Exception:
             return None
@@ -225,21 +232,13 @@ comfyui-frontend-package is not installed.
     def template_asset_map(cls) -> Optional[Dict[str, str]]:
         """Return a mapping of template asset names to their absolute paths."""
         try:
-            from comfyui_workflow_templates import (
+            from comfyui_workflow_templates_core.loader import (
                 get_asset_path,
                 iter_templates,
             )
         except ImportError:
-            logging.error(
-                f"""
-********** ERROR ***********
-
-comfyui-workflow-templates is not installed.
-
-{frontend_install_warning_message()}
-
-********** ERROR ***********
-""".strip()
+            logging.warning(
+                "comfyui-workflow-templates-core is not installed. No templates will be available."
             )
             return None
 
@@ -250,18 +249,19 @@ comfyui-workflow-templates is not installed.
             return None
 
         asset_map: Dict[str, str] = {}
-        try:
-            for entry in template_entries:
-                for asset in entry.assets:
+        for entry in template_entries:
+            for asset in entry.assets:
+                try:
                     asset_map[asset.filename] = get_asset_path(
                         entry.template_id, asset.filename
                     )
-        except Exception as exc:
-            logging.error(f"Failed to resolve template asset paths: {exc}")
-            return None
+                except (FileNotFoundError, KeyError) as exc:
+                    # Skip templates whose media packages are not installed
+                    logging.debug(f"Skipping template asset {asset.filename}: {exc}")
+                    continue
 
         if not asset_map:
-            logging.error("No workflow template assets found. Did the packages install correctly?")
+            logging.warning("No workflow template assets found. Did the packages install correctly?")
             return None
 
         return asset_map
@@ -271,23 +271,13 @@ comfyui-workflow-templates is not installed.
     def legacy_templates_path(cls) -> Optional[str]:
         """Return the legacy templates directory shipped inside the meta package."""
         try:
-            import comfyui_workflow_templates
+            import comfyui_workflow_templates_core
 
             return str(
-                importlib.resources.files(comfyui_workflow_templates) / "templates"
+                importlib.resources.files(comfyui_workflow_templates_core) / "templates"
             )
         except ImportError:
-            logging.error(
-                f"""
-********** ERROR ***********
-
-comfyui-workflow-templates is not installed.
-
-{frontend_install_warning_message()}
-
-********** ERROR ***********
-""".strip()
-            )
+            logging.debug("comfyui-workflow-templates-core is not installed.")
             return None
 
     @classmethod
@@ -411,8 +401,57 @@ comfyui-workflow-templates is not installed.
         if not assets:
             return None
 
+        # Build a set of available template names from asset map
+        available_template_names = set()
+        for filename in assets:
+            # Template names are the base names without extension/suffix
+            # e.g. "api_gemini_image-1.webp" -> "api_gemini_image"
+            if filename.endswith('.json'):
+                available_template_names.add(filename[:-5])  # strip .json
+
+        # Try to load index.json from the workflow_templates source directory
+        index_cache = {}
+        templates_source_dir = Path(__file__).parents[1] / "workflow_templates" / "templates"
+        for index_name in ["index.json", "index_logo.json"]:
+            index_path = templates_source_dir / index_name
+            if index_path.exists():
+                try:
+                    import json as _json
+                    with open(index_path, 'r') as f:
+                        data = _json.load(f)
+
+                    if index_name == "index.json" and isinstance(data, list):
+                        # Filter categories to only include templates that have available assets
+                        filtered_categories = []
+                        for category in data:
+                            templates = category.get("templates", [])
+                            filtered_templates = [
+                                t for t in templates
+                                if t.get("name") in available_template_names
+                            ]
+                            if filtered_templates:
+                                cat_copy = dict(category)
+                                cat_copy["templates"] = filtered_templates
+                                filtered_categories.append(cat_copy)
+                        index_cache[index_name] = _json.dumps(filtered_categories)
+                        total = sum(len(c["templates"]) for c in filtered_categories)
+                        logging.info(f"Template catalog: {total} templates in {len(filtered_categories)} categories (filtered from {len(data)})")
+                    else:
+                        index_cache[index_name] = _json.dumps(data)
+                except Exception as exc:
+                    logging.warning(f"Failed to load {index_name}: {exc}")
+
         async def serve_template(request: web.Request) -> web.StreamResponse:
             rel_path = request.match_info.get("path", "")
+
+            # Serve cached catalog files (index.json, index_logo.json)
+            if rel_path in index_cache:
+                return web.Response(
+                    text=index_cache[rel_path],
+                    content_type="application/json"
+                )
+
+            # Serve individual template assets
             target = assets.get(rel_path)
             if target is None:
                 raise web.HTTPNotFound()

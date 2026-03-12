@@ -1,4 +1,4 @@
-import torch
+import numpy as np
 from pydantic import BaseModel
 from typing_extensions import override
 
@@ -30,8 +30,8 @@ def convert_mask_to_image(mask: Input.Image):
     """
     Make mask have the expected amount of dims (4) and channels (3) to be recognized as an image.
     """
-    mask = mask.unsqueeze(-1)
-    mask = torch.cat([mask] * 3, dim=-1)
+    mask = mask[..., np.newaxis]
+    mask = np.concatenate([mask] * 3, axis=-1)
     return mask
 
 

@@ -67,8 +67,75 @@ class InternalRoutes:
                 (entry for entry in os.scandir(directory) if is_visible_file(entry)),
                 key=lambda entry: -entry.stat().st_mtime
             )
+
+            full_info = request.rel_url.query.get('full_info', 'false').lower() == 'true'
+            if full_info:
+                result = []
+                for entry in sorted_files:
+                    stat = entry.stat()
+                    result.append({
+                        'name': entry.name,
+                        'size': stat.st_size,
+                        'mtime': stat.st_mtime
+                    })
+                return web.json_response(result, status=200)
+
             return web.json_response([entry.name for entry in sorted_files], status=200)
 
+        # -----------------------------------------------
+        # Workflow Version Control Routes
+        # -----------------------------------------------
+        @self.routes.get('/workflow-versions/{path:.*}')
+        async def get_workflow_versions(request):
+            """List all versions for a workflow file."""
+            from app.workflow_versions import list_versions
+            rel_path = request.match_info['path']
+            workflow_path = self._resolve_workflow_path(request, rel_path)
+            if workflow_path is None:
+                return web.json_response({"error": "Invalid path"}, status=400)
+            versions = list_versions(workflow_path)
+            return web.json_response(versions)
+
+        @self.routes.get('/workflow-version-content/{path:.*}')
+        async def get_workflow_version_content(request):
+            """Get the full content of a specific version."""
+            from app.workflow_versions import get_version_content
+            rel_path = request.match_info['path']
+            version_id = request.rel_url.query.get('version_id', '')
+            if not version_id:
+                return web.json_response({"error": "version_id required"}, status=400)
+            workflow_path = self._resolve_workflow_path(request, rel_path)
+            if workflow_path is None:
+                return web.json_response({"error": "Invalid path"}, status=400)
+            content = get_version_content(workflow_path, version_id)
+            if content is None:
+                return web.json_response({"error": "Version not found"}, status=404)
+            return web.json_response({"content": content})
+
+        @self.routes.post('/workflow-version-revert/{path:.*}')
+        async def post_workflow_version_revert(request):
+            """Revert a workflow to a specific version."""
+            from app.workflow_versions import revert_to_version
+            rel_path = request.match_info['path']
+            version_id = request.rel_url.query.get('version_id', '')
+            if not version_id:
+                return web.json_response({"error": "version_id required"}, status=400)
+            workflow_path = self._resolve_workflow_path(request, rel_path)
+            if workflow_path is None:
+                return web.json_response({"error": "Invalid path"}, status=400)
+            success = revert_to_version(workflow_path, version_id)
+            if success:
+                return web.json_response({"success": True})
+            return web.json_response({"error": "Revert failed"}, status=500)
+
+    def _resolve_workflow_path(self, request, rel_path: str) -> str | None:
+        """Resolve a relative workflow path to an absolute path."""
+        try:
+            user_manager = self.prompt_server.user_manager
+            user_path = user_manager.get_request_user_filepath(request, rel_path, create_dir=False)
+            return user_path
+        except Exception:
+            return None
 
     def get_app(self):
         if self._app is None:

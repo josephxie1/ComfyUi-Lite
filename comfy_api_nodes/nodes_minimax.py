@@ -1,6 +1,6 @@
 from typing import Optional
 
-import torch
+import numpy as np
 from typing_extensions import override
 
 from comfy_api.latest import IO, ComfyExtension
@@ -31,8 +31,8 @@ async def _generate_mm_video(
     prompt_text: str,
     seed: int,
     model: str,
-    image: Optional[torch.Tensor] = None,  # used for ImageToVideo
-    subject: Optional[torch.Tensor] = None,  # used for SubjectToVideo
+    image: Optional[np.ndarray] = None,  # used for ImageToVideo
+    subject: Optional[np.ndarray] = None,  # used for SubjectToVideo
     average_duration: Optional[int] = None,
 ) -> IO.NodeOutput:
     if image is None:
@@ -208,7 +208,7 @@ class MinimaxImageToVideoNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image: torch.Tensor,
+        image: np.ndarray,
         prompt_text: str,
         model: str = "I2V-01",
         seed: int = 0,
@@ -272,7 +272,7 @@ class MinimaxSubjectToVideoNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        subject: torch.Tensor,
+        subject: np.ndarray,
         prompt_text: str,
         model: str = "S2V-01",
         seed: int = 0,
@@ -367,7 +367,7 @@ class MinimaxHailuoVideoNode(IO.ComfyNode):
         cls,
         prompt_text: str,
         seed: int = 0,
-        first_frame_image: Optional[torch.Tensor] = None,  # used for ImageToVideo
+        first_frame_image: Optional[np.ndarray] = None,  # used for ImageToVideo
         prompt_optimizer: bool = True,
         duration: int = 6,
         resolution: str = "768P",

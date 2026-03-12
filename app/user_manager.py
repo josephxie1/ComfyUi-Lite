@@ -377,6 +377,18 @@ class UserManager():
             try:
                 body = await request.read()
 
+                # Auto-version workflow files before overwrite
+                if path.endswith('.json') and os.path.exists(path):
+                    try:
+                        from .workflow_versions import create_version
+                        # Check if this is a workflow file by examining path components
+                        norm_path = path.replace(os.sep, '/')
+                        if '/workflows/' in norm_path:
+                            logging.info("Creating version snapshot for: %s", path)
+                            create_version(path)
+                    except Exception as e:
+                        logging.warning(f"Workflow versioning failed (non-fatal): {e}", exc_info=True)
+
                 with open(path, "wb") as f:
                     f.write(body)
             except OSError as e:

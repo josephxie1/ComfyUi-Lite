@@ -32,7 +32,7 @@ from comfy_api_nodes.util import (
     ApiEndpoint,
 )
 
-import torch
+import numpy as np
 import base64
 from io import BytesIO
 from enum import Enum
@@ -141,7 +141,7 @@ class StabilityStableImageUltraNode(IO.ComfyNode):
         aspect_ratio: str,
         style_preset: str,
         seed: int,
-        image: Optional[torch.Tensor] = None,
+        image: Optional[np.ndarray] = None,
         negative_prompt: str = "",
         image_denoise: Optional[float] = 0.5,
     ) -> IO.NodeOutput:
@@ -292,7 +292,7 @@ class StabilityStableImageSD_3_5Node(IO.ComfyNode):
         style_preset: str,
         seed: int,
         cfg_scale: float,
-        image: Optional[torch.Tensor] = None,
+        image: Optional[np.ndarray] = None,
         negative_prompt: str = "",
         image_denoise: Optional[float] = 0.5,
     ) -> IO.NodeOutput:
@@ -408,7 +408,7 @@ class StabilityUpscaleConservativeNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image: torch.Tensor,
+        image: np.ndarray,
         prompt: str,
         creativity: float,
         seed: int,
@@ -517,7 +517,7 @@ class StabilityUpscaleCreativeNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image: torch.Tensor,
+        image: np.ndarray,
         prompt: str,
         creativity: float,
         style_preset: str,
@@ -598,7 +598,7 @@ class StabilityUpscaleFastNode(IO.ComfyNode):
         )
 
     @classmethod
-    async def execute(cls, image: torch.Tensor) -> IO.NodeOutput:
+    async def execute(cls, image: np.ndarray) -> IO.NodeOutput:
         image_binary = tensor_to_bytesio(image, total_pixels=4096*4096).read()
 
         files = {

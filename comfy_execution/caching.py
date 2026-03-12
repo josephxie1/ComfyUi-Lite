@@ -3,7 +3,7 @@ import gc
 import itertools
 import psutil
 import time
-import torch
+import numpy as np
 from typing import Sequence, Mapping, Dict
 from comfy_execution.graph import DynamicPrompt
 from abc import ABC, abstractmethod
@@ -404,10 +404,10 @@ class RAMPressureCache(LRUCache):
                 for output in outputs:
                     if isinstance(output, list):
                         scan_list_for_ram_usage(output)
-                    elif isinstance(output, torch.Tensor) and output.device.type == 'cpu':
-                        #score Tensors at a 50% discount for RAM usage as they are likely to
+                    elif isinstance(output, np.ndarray):
+                        #score arrays at a 50% discount for RAM usage as they are likely to
                         #be high value intermediates
-                        ram_usage += (output.numel() * output.element_size()) * 0.5
+                        ram_usage += (output.nbytes) * 0.5
                     elif hasattr(output, "get_ram_usage"):
                         ram_usage += output.get_ram_usage()
             scan_list_for_ram_usage(outputs)

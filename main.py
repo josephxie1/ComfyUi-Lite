@@ -23,9 +23,12 @@ if __name__ == "__main__":
 
 setup_logger(log_level=args.verbose, use_stdout=args.log_stdout)
 
-import comfy_aimdo.control
+try:
+    import comfy_aimdo.control
+except ImportError:
+    comfy_aimdo = None
 
-if enables_dynamic_vram():
+if enables_dynamic_vram() and comfy_aimdo:
     comfy_aimdo.control.init()
 
 if os.name == "nt":
@@ -56,9 +59,12 @@ if __name__ == "__main__":
         if 'CUBLAS_WORKSPACE_CONFIG' not in os.environ:
             os.environ['CUBLAS_WORKSPACE_CONFIG'] = ":4096:8"
 
-    import cuda_malloc
-    if "rocm" in cuda_malloc.get_torch_version_noimport():
-        os.environ['OCL_SET_SVM_SIZE'] = '262144'  # set at the request of AMD
+    try:
+        import cuda_malloc
+        if "rocm" in cuda_malloc.get_torch_version_noimport():
+            os.environ['OCL_SET_SVM_SIZE'] = '262144'  # set at the request of AMD
+    except ImportError:
+        cuda_malloc = None
 
 
 def handle_comfyui_manager_unavailable():
@@ -184,15 +190,24 @@ import execution
 import server
 from protocol import BinaryEventTypes
 import nodes
-import comfy.model_management
+try:
+    import comfy.model_management
+except ImportError:
+    comfy.model_management = None
 import comfyui_version
 import app.logger
-import hook_breaker_ac10a0
+try:
+    import hook_breaker_ac10a0
+except ImportError:
+    hook_breaker_ac10a0 = None
 
-import comfy.memory_management
-import comfy.model_patcher
+try:
+    import comfy.memory_management
+    import comfy.model_patcher
+except ImportError:
+    pass
 
-if enables_dynamic_vram() and comfy.model_management.is_nvidia() and not comfy.model_management.is_wsl():
+if enables_dynamic_vram() and comfy_aimdo and hasattr(comfy, 'model_management') and comfy.model_management and comfy.model_management.is_nvidia() and not comfy.model_management.is_wsl():
     if comfy.model_management.torch_version_numeric < (2, 8):
         logging.warning("Unsupported Pytorch detected. DynamicVRAM support requires Pytorch version 2.8 or later. Falling back to legacy ModelPatcher. VRAM estimates may be unreliable especially on Windows")
     elif comfy_aimdo.control.init_device(comfy.model_management.get_torch_device().index):
@@ -215,8 +230,13 @@ if enables_dynamic_vram() and comfy.model_management.is_nvidia() and not comfy.m
 
 
 def cuda_malloc_warning():
-    device = comfy.model_management.get_torch_device()
-    device_name = comfy.model_management.get_torch_device_name(device)
+    if not hasattr(comfy, 'model_management') or comfy.model_management is None:
+        return
+    try:
+        device = comfy.model_management.get_torch_device()
+        device_name = comfy.model_management.get_torch_device_name(device)
+    except Exception:
+        return
     cuda_malloc_warning = False
     if "cudaMallocAsync" in device_name:
         for b in cuda_malloc.blacklist:
@@ -285,7 +305,8 @@ def prompt_worker(q, server_instance):
         free_memory = flags.get("free_memory", False)
 
         if flags.get("unload_models", free_memory):
-            comfy.model_management.unload_all_models()
+            if hasattr(comfy, 'model_management') and comfy.model_management:
+                comfy.model_management.unload_all_models()
             need_gc = True
             last_gc_collect = 0
 
@@ -298,10 +319,12 @@ def prompt_worker(q, server_instance):
             current_time = time.perf_counter()
             if (current_time - last_gc_collect) > gc_collect_interval:
                 gc.collect()
-                comfy.model_management.soft_empty_cache()
+                if hasattr(comfy, 'model_management') and comfy.model_management:
+                    comfy.model_management.soft_empty_cache()
                 last_gc_collect = current_time
                 need_gc = False
-                hook_breaker_ac10a0.restore_functions()
+                if hook_breaker_ac10a0:
+                    hook_breaker_ac10a0.restore_functions()
 
 
 async def run(server_instance, address='', port=8188, verbose=True, call_on_start=None):
@@ -319,7 +342,8 @@ def hijack_progress(server_instance):
             prompt_id = executing_context.prompt_id
         if node_id is None and executing_context is not None:
             node_id = executing_context.node_id
-        comfy.model_management.throw_exception_if_processing_interrupted()
+        if hasattr(comfy, 'model_management') and comfy.model_management:
+            comfy.model_management.throw_exception_if_processing_interrupted()
         if prompt_id is None:
             prompt_id = server_instance.last_prompt_id
         if node_id is None:
@@ -387,12 +411,14 @@ def start_comfyui(asyncio_loop=None):
     if args.enable_manager and not args.disable_manager_ui:
         comfyui_manager.start()
 
-    hook_breaker_ac10a0.save_functions()
+    if hook_breaker_ac10a0:
+        hook_breaker_ac10a0.save_functions()
     asyncio_loop.run_until_complete(nodes.init_extra_nodes(
         init_custom_nodes=(not args.disable_all_custom_nodes) or len(args.whitelist_custom_nodes) > 0,
         init_api_nodes=not args.disable_api_nodes
     ))
-    hook_breaker_ac10a0.restore_functions()
+    if hook_breaker_ac10a0:
+        hook_breaker_ac10a0.restore_functions()
 
     cuda_malloc_warning()
     setup_database()

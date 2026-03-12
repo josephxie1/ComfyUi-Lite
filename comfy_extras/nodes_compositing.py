@@ -1,4 +1,4 @@
-import torch
+import numpy as np
 import comfy.utils
 from enum import Enum
 from typing_extensions import override
@@ -6,7 +6,14 @@ from comfy_api.latest import ComfyExtension, io
 
 
 def resize_mask(mask, shape):
-    return torch.nn.functional.interpolate(mask.reshape((-1, 1, mask.shape[-2], mask.shape[-1])), size=(shape[0], shape[1]), mode="bilinear").squeeze(1)
+    from PIL import Image as _PILImg
+    _b = mask.shape[0]
+    _results = []
+    for _i in range(_b):
+        _p = _PILImg.fromarray((mask[_i] * 255).clip(0, 255).astype(np.uint8), mode='L')
+        _p = _p.resize((shape[1], shape[0]), _PILImg.BILINEAR)
+        _results.append(np.array(_p).astype(np.float32) / 255.0)
+    return np.stack(_results, axis=0)
 
 class PorterDuffMode(Enum):
     ADD = 0
@@ -29,7 +36,7 @@ class PorterDuffMode(Enum):
     XOR = 17
 
 
-def porter_duff_composite(src_image: torch.Tensor, src_alpha: torch.Tensor, dst_image: torch.Tensor, dst_alpha: torch.Tensor, mode: PorterDuffMode):
+def porter_duff_composite(src_image: np.ndarray, src_alpha: np.ndarray, dst_image: np.ndarray, dst_alpha: np.ndarray, mode: PorterDuffMode):
     # convert mask to alpha
     src_alpha = 1 - src_alpha
     dst_alpha = 1 - dst_alpha
@@ -39,14 +46,14 @@ def porter_duff_composite(src_image: torch.Tensor, src_alpha: torch.Tensor, dst_
 
     # composite ops below assume alpha-premultiplied images
     if mode == PorterDuffMode.ADD:
-        out_alpha = torch.clamp(src_alpha + dst_alpha, 0, 1)
-        out_image = torch.clamp(src_image + dst_image, 0, 1)
+        out_alpha = np.clip(src_alpha + dst_alpha, 0, 1)
+        out_image = np.clip(src_image + dst_image, 0, 1)
     elif mode == PorterDuffMode.CLEAR:
-        out_alpha = torch.zeros_like(dst_alpha)
-        out_image = torch.zeros_like(dst_image)
+        out_alpha = np.zeros_like(dst_alpha)
+        out_image = np.zeros_like(dst_image)
     elif mode == PorterDuffMode.DARKEN:
         out_alpha = src_alpha + dst_alpha - src_alpha * dst_alpha
-        out_image = (1 - dst_alpha) * src_image + (1 - src_alpha) * dst_image + torch.min(src_image, dst_image)
+        out_image = (1 - dst_alpha) * src_image + (1 - src_alpha) * dst_image + np.minimum(src_image, dst_image)
     elif mode == PorterDuffMode.DST:
         out_alpha = dst_alpha
         out_image = dst_image
@@ -64,13 +71,13 @@ def porter_duff_composite(src_image: torch.Tensor, src_alpha: torch.Tensor, dst_
         out_image = dst_image + (1 - dst_alpha) * src_image
     elif mode == PorterDuffMode.LIGHTEN:
         out_alpha = src_alpha + dst_alpha - src_alpha * dst_alpha
-        out_image = (1 - dst_alpha) * src_image + (1 - src_alpha) * dst_image + torch.max(src_image, dst_image)
+        out_image = (1 - dst_alpha) * src_image + (1 - src_alpha) * dst_image + np.maximum(src_image, dst_image)
     elif mode == PorterDuffMode.MULTIPLY:
         out_alpha = src_alpha * dst_alpha
         out_image = src_image * dst_image
     elif mode == PorterDuffMode.OVERLAY:
         out_alpha = src_alpha + dst_alpha - src_alpha * dst_alpha
-        out_image = torch.where(2 * dst_image < dst_alpha, 2 * src_image * dst_image,
+        out_image = np.where(2 * dst_image < dst_alpha, 2 * src_image * dst_image,
             src_alpha * dst_alpha - 2 * (dst_alpha - src_image) * (src_alpha - dst_image))
     elif mode == PorterDuffMode.SCREEN:
         out_alpha = src_alpha + dst_alpha - src_alpha * dst_alpha
@@ -97,8 +104,8 @@ def porter_duff_composite(src_image: torch.Tensor, src_alpha: torch.Tensor, dst_
         return None, None
 
     # back to non-premultiplied alpha
-    out_image = torch.where(out_alpha > 1e-5, out_image / out_alpha, torch.zeros_like(out_image))
-    out_image = torch.clamp(out_image, 0, 1)
+    out_image = np.where(out_alpha > 1e-5, out_image / out_alpha, np.zeros_like(out_image))
+    out_image = np.clip(out_image, 0, 1)
     # convert alpha to mask
     out_alpha = 1 - out_alpha
     return out_image, out_alpha
@@ -126,7 +133,7 @@ class PorterDuffImageComposite(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, source: torch.Tensor, source_alpha: torch.Tensor, destination: torch.Tensor, destination_alpha: torch.Tensor, mode) -> io.NodeOutput:
+    def execute(cls, source: np.ndarray, source_alpha: np.ndarray, destination: np.ndarray, destination_alpha: np.ndarray, mode) -> io.NodeOutput:
         batch_size = min(len(source), len(source_alpha), len(destination), len(destination_alpha))
         out_images = []
         out_alphas = []
@@ -158,7 +165,7 @@ class PorterDuffImageComposite(io.ComfyNode):
             out_images.append(out_image)
             out_alphas.append(out_alpha.squeeze(2))
 
-        return io.NodeOutput(torch.stack(out_images), torch.stack(out_alphas))
+        return io.NodeOutput(np.stack(out_images, axis=0), np.stack(out_alphas, axis=0))
 
 
 class SplitImageWithAlpha(io.ComfyNode):
@@ -179,10 +186,10 @@ class SplitImageWithAlpha(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, image: torch.Tensor) -> io.NodeOutput:
+    def execute(cls, image: np.ndarray) -> io.NodeOutput:
         out_images = [i[:,:,:3] for i in image]
-        out_alphas = [i[:,:,3] if i.shape[2] > 3 else torch.ones_like(i[:,:,0]) for i in image]
-        return io.NodeOutput(torch.stack(out_images), 1.0 - torch.stack(out_alphas))
+        out_alphas = [i[:,:,3] if i.shape[2] > 3 else np.ones_like(i[:,:,0]) for i in image]
+        return io.NodeOutput(np.stack(out_images, axis=0), 1.0 - np.stack(out_alphas, axis=0))
 
 
 class JoinImageWithAlpha(io.ComfyNode):
@@ -201,15 +208,15 @@ class JoinImageWithAlpha(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, image: torch.Tensor, alpha: torch.Tensor) -> io.NodeOutput:
+    def execute(cls, image: np.ndarray, alpha: np.ndarray) -> io.NodeOutput:
         batch_size = min(len(image), len(alpha))
         out_images = []
 
         alpha = 1.0 - resize_mask(alpha, image.shape[1:])
         for i in range(batch_size):
-           out_images.append(torch.cat((image[i][:,:,:3], alpha[i].unsqueeze(2)), dim=2))
+           out_images.append(np.concatenate((image[i][:,:,:3], alpha[i][:,:,np.newaxis]), axis=2))
 
-        return io.NodeOutput(torch.stack(out_images))
+        return io.NodeOutput(np.stack(out_images, axis=0))
 
 
 class CompositingExtension(ComfyExtension):

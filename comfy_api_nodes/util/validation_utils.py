@@ -1,21 +1,21 @@
 import logging
 
-import torch
+import numpy as np
 
 from comfy_api.latest import Input
 
 
-def get_image_dimensions(image: torch.Tensor) -> tuple[int, int]:
+def get_image_dimensions(image: np.ndarray) -> tuple[int, int]:
     if len(image.shape) == 4:
         return image.shape[1], image.shape[2]
     elif len(image.shape) == 3:
         return image.shape[0], image.shape[1]
     else:
-        raise ValueError("Invalid image tensor shape.")
+        raise ValueError("Invalid image array shape.")
 
 
 def validate_image_dimensions(
-    image: torch.Tensor,
+    image: np.ndarray,
     min_width: int | None = None,
     max_width: int | None = None,
     min_height: int | None = None,
@@ -34,7 +34,7 @@ def validate_image_dimensions(
 
 
 def validate_image_aspect_ratio(
-    image: torch.Tensor,
+    image: np.ndarray,
     min_ratio: tuple[float, float] | None = None,  # e.g. (1, 4)
     max_ratio: tuple[float, float] | None = None,  # e.g. (4, 1)
     *,
@@ -50,8 +50,8 @@ def validate_image_aspect_ratio(
 
 
 def validate_images_aspect_ratio_closeness(
-    first_image: torch.Tensor,
-    second_image: torch.Tensor,
+    first_image: np.ndarray,
+    second_image: np.ndarray,
     min_rel: float,  # e.g. 0.8
     max_rel: float,  # e.g. 1.25
     *,
@@ -152,7 +152,7 @@ def validate_video_frame_count(
 
 
 def get_number_of_images(images):
-    if isinstance(images, torch.Tensor):
+    if isinstance(images, np.ndarray):
         return images.shape[0] if images.ndim >= 4 else 1
     return len(images)
 

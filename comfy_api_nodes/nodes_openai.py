@@ -4,7 +4,6 @@ from enum import Enum
 from io import BytesIO
 
 import numpy as np
-import torch
 from PIL import Image
 from typing_extensions import override
 
@@ -51,15 +50,15 @@ class SupportedOpenAIModel(str, Enum):
     gpt_5_nano = "gpt-5-nano"
 
 
-async def validate_and_cast_response(response, timeout: int = None) -> torch.Tensor:
-    """Validates and casts a response to a torch.Tensor.
+async def validate_and_cast_response(response, timeout: int = None) -> np.ndarray:
+    """Validates and casts a response to a np.ndarray.
 
     Args:
         response: The response to validate and cast.
         timeout: Request timeout in seconds. Defaults to None (no timeout).
 
     Returns:
-        A torch.Tensor representing the image (1, H, W, C).
+        A np.ndarray representing the image (1, H, W, C).
 
     Raises:
         ValueError: If the response is not valid.
@@ -70,7 +69,7 @@ async def validate_and_cast_response(response, timeout: int = None) -> torch.Ten
         raise ValueError("No images returned from API endpoint")
 
     # Initialize list to store image tensors
-    image_tensors: list[torch.Tensor] = []
+    image_tensors: list[np.ndarray] = []
 
     # Process each image in the data array
     for img_data in data:
@@ -84,9 +83,9 @@ async def validate_and_cast_response(response, timeout: int = None) -> torch.Ten
 
         pil_img = Image.open(img_io).convert("RGBA")
         arr = np.asarray(pil_img).astype(np.float32) / 255.0
-        image_tensors.append(torch.from_numpy(arr))
+        image_tensors.append(arr)
 
-    return torch.stack(image_tensors, dim=0)
+    return np.stack(image_tensors, axis=0)
 
 
 class OpenAIDalle2(IO.ComfyNode):
@@ -196,7 +195,7 @@ class OpenAIDalle2(IO.ComfyNode):
 
             input_tensor = image.squeeze().cpu()
             height, width, channels = input_tensor.shape
-            rgba_tensor = torch.ones(height, width, 4, device="cpu")
+            rgba_tensor = np.ones(height, width, 4)
             rgba_tensor[:, :, :channels] = input_tensor
 
             if mask.shape[1:] != image.shape[1:-1]:
@@ -514,7 +513,7 @@ class OpenAIGPTImage1(IO.ComfyNode):
                 if mask.shape[1:] != image.shape[1:-1]:
                     raise Exception("Mask and Image must be the same size")
                 _, height, width = mask.shape
-                rgba_mask = torch.zeros(height, width, 4, device="cpu")
+                rgba_mask = np.zeros(height, width, 4)
                 rgba_mask[:, :, 3] = 1 - mask.squeeze().cpu()
 
                 scaled_mask = downscale_image_tensor(rgba_mask.unsqueeze(0), total_pixels=2048 * 2048).squeeze()
@@ -703,7 +702,7 @@ class OpenAIChatNode(IO.ComfyNode):
         return "No text output found in response"
 
     @classmethod
-    def tensor_to_input_image_content(cls, image: torch.Tensor, detail_level: str = "auto") -> InputImageContent:
+    def tensor_to_input_image_content(cls, image: np.ndarray, detail_level: str = "auto") -> InputImageContent:
         """Convert a tensor to an input image content object."""
         return InputImageContent(
             detail=detail_level,
@@ -715,7 +714,7 @@ class OpenAIChatNode(IO.ComfyNode):
     def create_input_message_contents(
         cls,
         prompt: str,
-        image: torch.Tensor | None = None,
+        image: np.ndarray | None = None,
         files: list[InputFileContent] | None = None,
     ) -> list[InputTextContent | InputImageContent | InputFileContent]:
         """Create a list of input message contents from prompt and optional image."""
@@ -741,7 +740,7 @@ class OpenAIChatNode(IO.ComfyNode):
         prompt: str,
         persist_context: bool = False,
         model: SupportedOpenAIModel = SupportedOpenAIModel.gpt_5.value,
-        images: torch.Tensor | None = None,
+        images: np.ndarray | None = None,
         files: list[InputFileContent] | None = None,
         advanced_options: ModelResponseProperties | None = None,
     ) -> IO.NodeOutput:

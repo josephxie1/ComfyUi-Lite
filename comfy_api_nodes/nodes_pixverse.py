@@ -1,4 +1,4 @@
-import torch
+import numpy as np
 from typing_extensions import override
 from comfy_api.latest import IO, ComfyExtension
 from comfy_api_nodes.apis.pixverse import (
@@ -30,7 +30,7 @@ AVERAGE_DURATION_I2V = 30
 AVERAGE_DURATION_T2T = 52
 
 
-async def upload_image_to_pixverse(cls: type[IO.ComfyNode], image: torch.Tensor):
+async def upload_image_to_pixverse(cls: type[IO.ComfyNode], image: np.ndarray):
     response_upload = await sync_op(
         cls,
         ApiEndpoint(path="/proxy/pixverse/image/upload", method="POST"),
@@ -249,7 +249,7 @@ class PixverseImageToVideoNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        image: torch.Tensor,
+        image: np.ndarray,
         prompt: str,
         quality: str,
         duration_seconds: int,
@@ -363,8 +363,8 @@ class PixverseTransitionVideoNode(IO.ComfyNode):
     @classmethod
     async def execute(
         cls,
-        first_frame: torch.Tensor,
-        last_frame: torch.Tensor,
+        first_frame: np.ndarray,
+        last_frame: np.ndarray,
         prompt: str,
         quality: str,
         duration_seconds: int,

@@ -1,4 +1,4 @@
-import torch
+import numpy as np
 from typing_extensions import override
 
 from comfy_api.latest import IO, ComfyExtension, Input
@@ -140,8 +140,9 @@ class GrokImageNode(IO.ComfyNode):
         if len(response.data) == 1:
             return IO.NodeOutput(await download_url_to_image_tensor(response.data[0].url))
         return IO.NodeOutput(
-            torch.cat(
+            np.concatenate(
                 [await download_url_to_image_tensor(i) for i in [str(d.url) for d in response.data if d.url]],
+                axis=0,
             )
         )
 
@@ -268,8 +269,9 @@ class GrokImageEditNode(IO.ComfyNode):
         if len(response.data) == 1:
             return IO.NodeOutput(await download_url_to_image_tensor(response.data[0].url))
         return IO.NodeOutput(
-            torch.cat(
+            np.concatenate(
                 [await download_url_to_image_tensor(i) for i in [str(d.url) for d in response.data if d.url]],
+                axis=0,
             )
         )
 

@@ -7,24 +7,22 @@ from io import BytesIO
 
 import av
 import numpy as np
-import torch
 from PIL import Image
 
-from comfy.utils import common_upscale
 from comfy_api.latest import Input, InputImpl, Types
 
 from ._helpers import mimetype_to_extension
 
 
-def bytesio_to_image_tensor(image_bytesio: BytesIO, mode: str = "RGBA") -> torch.Tensor:
-    """Converts image data from BytesIO to a torch.Tensor.
+def bytesio_to_image_tensor(image_bytesio: BytesIO, mode: str = "RGBA") -> np.ndarray:
+    """Converts image data from BytesIO to a numpy ndarray.
 
     Args:
         image_bytesio: BytesIO object containing the image data.
         mode: The PIL mode to convert the image to (e.g., "RGB", "RGBA").
 
     Returns:
-        A torch.Tensor representing the image (1, H, W, C).
+        A numpy ndarray representing the image (1, H, W, C), float32 in [0, 1].
 
     Raises:
         PIL.UnidentifiedImageError: If the image data cannot be identified.
@@ -33,38 +31,33 @@ def bytesio_to_image_tensor(image_bytesio: BytesIO, mode: str = "RGBA") -> torch
     image = Image.open(image_bytesio)
     image = image.convert(mode)
     image_array = np.array(image).astype(np.float32) / 255.0
-    return torch.from_numpy(image_array).unsqueeze(0)
+    return image_array[np.newaxis, ...]  # (1, H, W, C)
 
 
-def image_tensor_pair_to_batch(image1: torch.Tensor, image2: torch.Tensor) -> torch.Tensor:
+def image_tensor_pair_to_batch(image1: np.ndarray, image2: np.ndarray) -> np.ndarray:
     """
-    Converts a pair of image tensors to a batch tensor.
+    Converts a pair of image arrays to a batch array.
     If the images are not the same size, the smaller image is resized to
     match the larger image.
     """
     if image1.shape[1:] != image2.shape[1:]:
-        image2 = common_upscale(
-            image2.movedim(-1, 1),
-            image1.shape[2],
-            image1.shape[1],
-            "bilinear",
-            "center",
-        ).movedim(1, -1)
-    return torch.cat((image1, image2), dim=0)
+        target_h, target_w = image1.shape[1], image1.shape[2]
+        image2 = _resize_image_array(image2, target_w, target_h)
+    return np.concatenate((image1, image2), axis=0)
 
 
 def tensor_to_bytesio(
-    image: torch.Tensor,
+    image: np.ndarray,
     *,
     total_pixels: int | None = 2048 * 2048,
     mime_type: str | None = "image/png",
 ) -> BytesIO:
-    """Converts a torch.Tensor image to a named BytesIO object.
+    """Converts a numpy ndarray image to a named BytesIO object.
 
     Args:
-        image: Input torch.Tensor image.
+        image: Input numpy ndarray image (B,H,W,C) or (H,W,C), float32 in [0,1].
         total_pixels: Maximum total pixels for downscaling. If None, no downscaling is performed.
-        mime_type: Target image MIME type (e.g., 'image/png', 'image/jpeg', 'image/webp', 'video/mp4').
+        mime_type: Target image MIME type (e.g., 'image/png', 'image/jpeg', 'image/webp').
 
     Returns:
         Named BytesIO object containing the image data, with pointer set to the start of buffer.
@@ -78,30 +71,28 @@ def tensor_to_bytesio(
     return img_binary
 
 
-def tensor_to_pil(image: torch.Tensor, total_pixels: int | None = 2048 * 2048) -> Image.Image:
-    """Converts a single torch.Tensor image [H, W, C] to a PIL Image, optionally downscaling."""
+def tensor_to_pil(image: np.ndarray, total_pixels: int | None = 2048 * 2048) -> Image.Image:
+    """Converts a single numpy ndarray image [H, W, C] or [B, H, W, C] to a PIL Image, optionally downscaling."""
     if len(image.shape) > 3:
         image = image[0]
-    # TODO: remove alpha if not allowed and present
-    input_tensor = image.cpu()
     if total_pixels is not None:
-        input_tensor = downscale_image_tensor(input_tensor.unsqueeze(0), total_pixels=total_pixels).squeeze()
-    image_np = (input_tensor.numpy() * 255).astype(np.uint8)
+        image = _downscale_array(image, total_pixels=total_pixels)
+    image_np = (image * 255).clip(0, 255).astype(np.uint8)
     img = Image.fromarray(image_np)
     return img
 
 
 def tensor_to_base64_string(
-    image_tensor: torch.Tensor,
+    image_tensor: np.ndarray,
     total_pixels: int | None = 2048 * 2048,
     mime_type: str = "image/png",
 ) -> str:
-    """Convert [B, H, W, C] or [H, W, C] tensor to a base64 string.
+    """Convert [B, H, W, C] or [H, W, C] ndarray to a base64 string.
 
     Args:
-        image_tensor: Input torch.Tensor image.
+        image_tensor: Input numpy ndarray image.
         total_pixels: Maximum total pixels for downscaling. If None, no downscaling is performed.
-        mime_type: Target image MIME type (e.g., 'image/png', 'image/jpeg', 'image/webp', 'video/mp4').
+        mime_type: Target image MIME type (e.g., 'image/png', 'image/jpeg', 'image/webp').
 
     Returns:
         Base64 encoded string of the image.
@@ -109,7 +100,6 @@ def tensor_to_base64_string(
     pil_image = tensor_to_pil(image_tensor, total_pixels=total_pixels)
     img_byte_arr = pil_to_bytesio(pil_image, mime_type=mime_type)
     img_bytes = img_byte_arr.getvalue()
-    # Encode bytes to base64 string
     base64_encoded_string = base64.b64encode(img_bytes).decode("utf-8")
     return base64_encoded_string
 
@@ -120,7 +110,6 @@ def pil_to_bytesio(img: Image.Image, mime_type: str = "image/png") -> BytesIO:
         mime_type = "image/png"
 
     img_byte_arr = BytesIO()
-    # Derive PIL format from MIME type (e.g., 'image/png' -> 'PNG')
     pil_format = mime_type.split("/")[-1].upper()
     if pil_format == "JPG":
         pil_format = "JPEG"
@@ -129,45 +118,76 @@ def pil_to_bytesio(img: Image.Image, mime_type: str = "image/png") -> BytesIO:
     return img_byte_arr
 
 
-def downscale_image_tensor(image: torch.Tensor, total_pixels: int = 1536 * 1024) -> torch.Tensor:
-    """Downscale input image tensor to roughly the specified total pixels."""
-    samples = image.movedim(-1, 1)
-    total = int(total_pixels)
-    scale_by = math.sqrt(total / (samples.shape[3] * samples.shape[2]))
-    if scale_by >= 1:
+def _downscale_array(image: np.ndarray, total_pixels: int = 1536 * 1024) -> np.ndarray:
+    """Downscale a single image array [H, W, C] to roughly the specified total pixels using PIL."""
+    h, w = image.shape[0], image.shape[1]
+    current_pixels = h * w
+    if current_pixels <= total_pixels:
         return image
-    width = round(samples.shape[3] * scale_by)
-    height = round(samples.shape[2] * scale_by)
+    scale = math.sqrt(total_pixels / current_pixels)
+    new_w = round(w * scale)
+    new_h = round(h * scale)
+    pil_img = Image.fromarray((image * 255).clip(0, 255).astype(np.uint8))
+    pil_img = pil_img.resize((new_w, new_h), Image.LANCZOS)
+    return np.array(pil_img).astype(np.float32) / 255.0
 
-    s = common_upscale(samples, width, height, "lanczos", "disabled")
-    s = s.movedim(1, -1)
-    return s
+
+def _resize_image_array(image: np.ndarray, target_w: int, target_h: int) -> np.ndarray:
+    """Resize a batch image array [B, H, W, C] to target dimensions using PIL."""
+    batch_size = image.shape[0]
+    results = []
+    for i in range(batch_size):
+        pil_img = Image.fromarray((image[i] * 255).clip(0, 255).astype(np.uint8))
+        pil_img = pil_img.resize((target_w, target_h), Image.LANCZOS)
+        results.append(np.array(pil_img).astype(np.float32) / 255.0)
+    return np.stack(results, axis=0)
 
 
-def downscale_image_tensor_by_max_side(image: torch.Tensor, *,  max_side: int) -> torch.Tensor:
-    """Downscale input image tensor so the largest dimension is at most max_side pixels."""
-    samples = image.movedim(-1, 1)
-    height, width = samples.shape[2], samples.shape[3]
-    max_dim = max(width, height)
+def downscale_image_tensor(image: np.ndarray, total_pixels: int = 1536 * 1024) -> np.ndarray:
+    """Downscale input image array to roughly the specified total pixels."""
+    if len(image.shape) > 3:
+        # batch: process first image to check if scaling needed
+        h, w = image.shape[1], image.shape[2]
+        current_pixels = h * w
+        if current_pixels <= total_pixels:
+            return image
+        scale = math.sqrt(total_pixels / current_pixels)
+        new_w = round(w * scale)
+        new_h = round(h * scale)
+        return _resize_image_array(image, new_w, new_h)
+    else:
+        return _downscale_array(image, total_pixels=total_pixels)
+
+
+def downscale_image_tensor_by_max_side(image: np.ndarray, *, max_side: int) -> np.ndarray:
+    """Downscale input image array so the largest dimension is at most max_side pixels."""
+    if len(image.shape) > 3:
+        h, w = image.shape[1], image.shape[2]
+    else:
+        h, w = image.shape[0], image.shape[1]
+
+    max_dim = max(w, h)
     if max_dim <= max_side:
         return image
-    scale_by = max_side / max_dim
-    new_width = round(width * scale_by)
-    new_height = round(height * scale_by)
-    s = common_upscale(samples, new_width, new_height, "lanczos", "disabled")
-    s = s.movedim(1, -1)
-    return s
+    scale = max_side / max_dim
+    new_w = round(w * scale)
+    new_h = round(h * scale)
+
+    if len(image.shape) > 3:
+        return _resize_image_array(image, new_w, new_h)
+    else:
+        return _downscale_array(image, total_pixels=new_w * new_h)
 
 
 def tensor_to_data_uri(
-    image_tensor: torch.Tensor,
+    image_tensor: np.ndarray,
     total_pixels: int | None = 2048 * 2048,
     mime_type: str = "image/png",
 ) -> str:
-    """Converts a tensor image to a Data URI string.
+    """Converts a ndarray image to a Data URI string.
 
     Args:
-        image_tensor: Input torch.Tensor image.
+        image_tensor: Input numpy ndarray image.
         total_pixels: Maximum total pixels for downscaling. If None, no downscaling is performed.
         mime_type: Target image MIME type (e.g., 'image/png', 'image/jpeg', 'image/webp').
 
@@ -178,10 +198,13 @@ def tensor_to_data_uri(
     return f"data:{mime_type};base64,{base64_string}"
 
 
+# ── Audio functions ────────────────
+
+
 def audio_to_base64_string(audio: Input.Audio, container_format: str = "mp4", codec_name: str = "aac") -> str:
     """Converts an audio input to a base64 string."""
     sample_rate: int = audio["sample_rate"]
-    waveform: torch.Tensor = audio["waveform"]
+    waveform = audio["waveform"]
     audio_data_np = audio_tensor_to_contiguous_ndarray(waveform)
     audio_bytes_io = audio_ndarray_to_bytesio(audio_data_np, sample_rate, container_format, codec_name)
     audio_bytes = audio_bytes_io.getvalue()
@@ -242,26 +265,26 @@ def audio_ndarray_to_bytesio(
     return audio_bytes_io
 
 
-def audio_tensor_to_contiguous_ndarray(waveform: torch.Tensor) -> np.ndarray:
+def audio_tensor_to_contiguous_ndarray(waveform) -> np.ndarray:
     """
     Prepares audio waveform for av library by converting to a contiguous numpy array.
 
     Args:
-        waveform: a tensor of shape (1, channels, samples) derived from a Comfy `AUDIO` type.
+        waveform: an array/tensor of shape (1, channels, samples) derived from a Comfy `AUDIO` type.
 
     Returns:
         Contiguous numpy array of the audio waveform. If the audio was batched,
             the first item is taken.
     """
     if waveform.ndim != 3 or waveform.shape[0] != 1:
-        raise ValueError("Expected waveform tensor shape (1, channels, samples)")
+        raise ValueError("Expected waveform shape (1, channels, samples)")
 
     # If batch is > 1, take first item
     if waveform.shape[0] > 1:
         waveform = waveform[0]
 
-    # Prepare for av: remove batch dim, move to CPU, make contiguous, convert to numpy array
-    audio_data_np = waveform.squeeze(0).cpu().contiguous().numpy()
+    # Remove batch dim, ensure contiguous numpy array
+    audio_data_np = np.ascontiguousarray(np.squeeze(np.asarray(waveform), axis=0))
     if audio_data_np.dtype != np.float32:
         audio_data_np = audio_data_np.astype(np.float32)
 
@@ -269,7 +292,7 @@ def audio_tensor_to_contiguous_ndarray(waveform: torch.Tensor) -> np.ndarray:
 
 
 def audio_input_to_mp3(audio: Input.Audio) -> BytesIO:
-    waveform = audio["waveform"].cpu()
+    waveform = audio["waveform"]
 
     output_buffer = BytesIO()
     output_container = av.open(output_buffer, mode="w", format="mp3")
@@ -277,10 +300,13 @@ def audio_input_to_mp3(audio: Input.Audio) -> BytesIO:
     out_stream = output_container.add_stream("libmp3lame", rate=audio["sample_rate"])
     out_stream.bit_rate = 320000
 
+    audio_np = np.moveaxis(np.asarray(waveform, dtype=np.float32), 0, 1).reshape(1, -1)
+
+    layout = "mono" if waveform.shape[0] == 1 else "stereo"
     frame = av.AudioFrame.from_ndarray(
-        waveform.movedim(0, 1).reshape(1, -1).float().numpy(),
+        audio_np,
         format="flt",
-        layout="mono" if waveform.shape[0] == 1 else "stereo",
+        layout=layout,
     )
     frame.sample_rate = audio["sample_rate"]
     frame.pts = 0
@@ -399,14 +425,14 @@ def trim_video(video: Input.Video, duration_sec: float) -> Input.Video:
         raise RuntimeError(f"Failed to trim video: {str(e)}") from e
 
 
-def _f32_pcm(wav: torch.Tensor) -> torch.Tensor:
+def _f32_pcm(wav: np.ndarray) -> np.ndarray:
     """Convert audio to float 32 bits PCM format. Copy-paste from nodes_audio.py file."""
-    if wav.dtype.is_floating_point:
-        return wav
-    elif wav.dtype == torch.int16:
-        return wav.float() / (2**15)
-    elif wav.dtype == torch.int32:
-        return wav.float() / (2**31)
+    if np.issubdtype(wav.dtype, np.floating):
+        return wav.astype(np.float32)
+    elif wav.dtype == np.int16:
+        return wav.astype(np.float32) / (2**15)
+    elif wav.dtype == np.int32:
+        return wav.astype(np.float32) / (2**31)
     raise ValueError(f"Unsupported wav dtype: {wav.dtype}")
 
 
@@ -423,53 +449,66 @@ def audio_bytes_to_audio_input(audio_bytes: bytes) -> dict:
         in_sr = int(stream.codec_context.sample_rate)
         out_sr = in_sr
 
-        frames: list[torch.Tensor] = []
+        frames: list[np.ndarray] = []
         n_channels = stream.channels or 1
 
         for frame in af.decode(streams=stream.index):
             arr = frame.to_ndarray()  # shape can be [C, T] or [T, C] or [T]
-            buf = torch.from_numpy(arr)
+            buf = arr
             if buf.ndim == 1:
-                buf = buf.unsqueeze(0)  # [T] -> [1, T]
+                buf = buf[np.newaxis, :]  # [T] -> [1, T]
             elif buf.shape[0] != n_channels and buf.shape[-1] == n_channels:
-                buf = buf.transpose(0, 1).contiguous()  # [T, C] -> [C, T]
+                buf = np.ascontiguousarray(buf.T)  # [T, C] -> [C, T]
             elif buf.shape[0] != n_channels:
-                buf = buf.reshape(-1, n_channels).t().contiguous()  # fallback to [C, T]
+                buf = np.ascontiguousarray(buf.reshape(-1, n_channels).T)  # fallback to [C, T]
             frames.append(buf)
 
     if not frames:
         raise ValueError("Decoded zero audio frames.")
 
-    wav = torch.cat(frames, dim=1)  # [C, T]
+    wav = np.concatenate(frames, axis=1)  # [C, T]
     wav = _f32_pcm(wav)
-    return {"waveform": wav.unsqueeze(0).contiguous(), "sample_rate": out_sr}
+    return {"waveform": np.ascontiguousarray(wav[np.newaxis, ...]), "sample_rate": out_sr}
 
 
 def resize_mask_to_image(
-    mask: torch.Tensor,
-    image: torch.Tensor,
+    mask: np.ndarray,
+    image: np.ndarray,
     upscale_method="nearest-exact",
     crop="disabled",
     allow_gradient=True,
     add_channel_dim=False,
-):
+) -> np.ndarray:
     """Resize mask to be the same dimensions as an image, while maintaining proper format for API calls."""
-    _, height, width, _ = image.shape
-    mask = mask.unsqueeze(-1)
-    mask = mask.movedim(-1, 1)
-    mask = common_upscale(mask, width=width, height=height, upscale_method=upscale_method, crop=crop)
-    mask = mask.movedim(1, -1)
-    if not add_channel_dim:
-        mask = mask.squeeze(-1)
-    if not allow_gradient:
-        mask = (mask > 0.5).float()
-    return mask
+    _, target_h, target_w, _ = image.shape
+    batch_size = mask.shape[0]
+    results = []
+    for i in range(batch_size):
+        # mask shape: (B, H, W), take single mask
+        pil_mask = Image.fromarray((mask[i] * 255).clip(0, 255).astype(np.uint8), mode='L')
+        resample = Image.NEAREST if upscale_method == "nearest-exact" else Image.LANCZOS
+        pil_mask = pil_mask.resize((target_w, target_h), resample)
+        mask_arr = np.array(pil_mask).astype(np.float32) / 255.0
+        if not allow_gradient:
+            mask_arr = (mask_arr > 0.5).astype(np.float32)
+        if add_channel_dim:
+            mask_arr = mask_arr[..., np.newaxis]
+        results.append(mask_arr)
+    if add_channel_dim:
+        return np.stack(results, axis=0)
+    else:
+        return np.stack(results, axis=0)
 
 
-def convert_mask_to_image(mask: Input.Image) -> torch.Tensor:
+def convert_mask_to_image(mask: np.ndarray) -> np.ndarray:
     """Make mask have the expected amount of dims (4) and channels (3) to be recognized as an image."""
-    mask = mask.unsqueeze(-1)
-    return torch.cat([mask] * 3, dim=-1)
+    if mask.ndim == 3:
+        # (B, H, W) -> (B, H, W, 3)
+        return np.repeat(mask[..., np.newaxis], 3, axis=-1)
+    elif mask.ndim == 2:
+        # (H, W) -> (1, H, W, 3)
+        return np.repeat(mask[np.newaxis, ..., np.newaxis], 3, axis=-1)
+    return mask
 
 
 def text_filepath_to_base64_string(filepath: str) -> str:

@@ -1,5 +1,5 @@
 from typing_extensions import override
-import torch
+import numpy as np
 
 from comfy_api.latest import ComfyExtension, io
 
@@ -26,9 +26,16 @@ class LatentRebatch(io.ComfyNode):
         '''prepare a batch out of the list of latents'''
         samples = latents[list_ind]['samples']
         shape = samples.shape
-        mask = latents[list_ind]['noise_mask'] if 'noise_mask' in latents[list_ind] else torch.ones((shape[0], 1, shape[2]*8, shape[3]*8), device='cpu')
+        mask = latents[list_ind]['noise_mask'] if 'noise_mask' in latents[list_ind] else np.ones((shape[0], 1, shape[2]*8, shape[3]*8), device='cpu')
         if mask.shape[-1] != shape[-1] * 8 or mask.shape[-2] != shape[-2]:
-            torch.nn.functional.interpolate(mask.reshape((-1, 1, mask.shape[-2], mask.shape[-1])), size=(shape[-2]*8, shape[-1]*8), mode="bilinear")
+            from PIL import Image as _PILRebatch
+            _rb = mask.shape[0]
+            _rres = []
+            for _ri in range(_rb):
+                _rp = _PILRebatch.fromarray((mask[_ri] * 255).clip(0, 255).astype(np.uint8), mode='L')
+                _rp = _rp.resize((shape[-1]*8, shape[-2]*8), _PILRebatch.BILINEAR)
+                _rres.append(np.array(_rp).astype(np.float32) / 255.0)
+            np.stack(_rres, axis=0)
         if mask.shape[0] < samples.shape[0]:
             mask = mask.repeat((shape[0] - 1) // mask.shape[0] + 1, 1, 1, 1)[:shape[0]]
         if 'batch_index' in latents[list_ind]:
@@ -57,7 +64,7 @@ class LatentRebatch(io.ComfyNode):
     def cat_batch(batch1, batch2):
         if batch1[0] is None:
             return batch2
-        result = [torch.cat((b1, b2)) if torch.is_tensor(b1) else b1 + b2 for b1, b2 in zip(batch1, batch2)]
+        result = [np.concatenate((b1, b2), axis=0) if isinstance(b1, np.ndarray) else b1 + b2 for b1, b2 in zip(batch1, batch2)]
         return result
 
     @classmethod
@@ -135,7 +142,7 @@ class ImageRebatch(io.ComfyNode):
                 all_images.append(img[i:i+1])
 
         for i in range(0, len(all_images), batch_size):
-            output_list.append(torch.cat(all_images[i:i+batch_size], dim=0))
+            output_list.append(np.concatenate(all_images[i:i+batch_size], axis=0))
 
         return io.NodeOutput(output_list)
 

@@ -8,12 +8,11 @@ from io import BytesIO
 
 import av
 import numpy as np
-import torch
 try:
-    import torchaudio
-    TORCH_AUDIO_AVAILABLE = True
-except:
-    TORCH_AUDIO_AVAILABLE = False
+    from scipy import signal as _scipy_signal
+    SCIPY_SIGNAL_AVAILABLE = True
+except ImportError:
+    SCIPY_SIGNAL_AVAILABLE = False
 from PIL import Image as PILImage
 from PIL.PngImagePlugin import PngInfo
 
@@ -77,9 +76,11 @@ class ImageSaveHelper:
     """A helper class with static methods to handle image saving and metadata."""
 
     @staticmethod
-    def _convert_tensor_to_pil(image_tensor: torch.Tensor) -> PILImage.Image:
-        """Converts a single torch tensor to a PIL Image."""
-        return PILImage.fromarray(np.clip(255.0 * image_tensor.cpu().numpy(), 0, 255).astype(np.uint8))
+    def _convert_tensor_to_pil(image_tensor) -> PILImage.Image:
+        """Converts a single image array to a PIL Image."""
+        if not isinstance(image_tensor, np.ndarray):
+            image_tensor = np.array(image_tensor)
+        return PILImage.fromarray(np.clip(255.0 * image_tensor, 0, 255).astype(np.uint8))
 
     @staticmethod
     def _create_png_metadata(cls: type[ComfyNode] | None) -> PngInfo | None:
@@ -283,7 +284,7 @@ class AudioSaveHelper:
                     metadata[x] = json.dumps(cls.hidden.extra_pnginfo[x])
 
         results = []
-        for batch_number, waveform in enumerate(audio["waveform"].cpu()):
+        for batch_number, waveform in enumerate(audio["waveform"]):
             filename_with_batch_num = filename.replace("%batch_num%", str(batch_number))
             file = f"{filename_with_batch_num}_{counter:05}_.{format}"
             output_path = os.path.join(full_output_folder, file)
@@ -306,9 +307,14 @@ class AudioSaveHelper:
 
                 # Resample if necessary
                 if sample_rate != audio["sample_rate"]:
-                    if not TORCH_AUDIO_AVAILABLE:
-                        raise Exception("torchaudio is not available; cannot resample audio.")
-                    waveform = torchaudio.functional.resample(waveform, audio["sample_rate"], sample_rate)
+                    if not SCIPY_SIGNAL_AVAILABLE:
+                        raise Exception("scipy is not available; cannot resample audio.")
+                    ratio = sample_rate / audio["sample_rate"]
+                    target_length = int(round(waveform.shape[-1] * ratio))
+                    resampled = np.zeros((*waveform.shape[:-1], target_length), dtype=np.float32)
+                    for idx in np.ndindex(waveform.shape[:-1]):
+                        resampled[idx] = _scipy_signal.resample(waveform[idx], target_length)
+                    waveform = resampled
 
             # Create output with specified format
             output_buffer = BytesIO()
@@ -344,8 +350,10 @@ class AudioSaveHelper:
             else:  # format == "flac":
                 out_stream = output_container.add_stream("flac", rate=sample_rate, layout=layout)
 
+            # Convert waveform to format for av
+            audio_np = np.moveaxis(np.asarray(waveform, dtype=np.float32), 0, 1).reshape(1, -1)
             frame = av.AudioFrame.from_ndarray(
-                waveform.movedim(0, 1).reshape(1, -1).float().numpy(),
+                audio_np,
                 format="flt",
                 layout=layout,
             )
@@ -406,7 +414,8 @@ class PreviewImage(_UIOutput):
 
 class PreviewMask(PreviewImage):
     def __init__(self, mask: PreviewMask.Type, animated: bool=False, cls: ComfyNode=None, **kwargs):
-        preview = mask.reshape((-1, 1, mask.shape[-2], mask.shape[-1])).movedim(1, -1).expand(-1, -1, -1, 3)
+        preview = np.moveaxis(mask.reshape((-1, 1, mask.shape[-2], mask.shape[-1])), 1, -1)
+        preview = np.repeat(preview, 3, axis=-1)
         super().__init__(preview, animated, cls, **kwargs)
 
 
@@ -440,7 +449,8 @@ class PreviewUI3D(_UIOutput):
         self.bg_image_path = None
         bg_image = kwargs.get("bg_image", None)
         if bg_image is not None:
-            img_array = (bg_image[0].cpu().numpy() * 255).astype(np.uint8)
+            arr = np.asarray(bg_image[0])
+            img_array = (arr * 255).astype(np.uint8)
             img = PILImage.fromarray(img_array)
             temp_dir = folder_paths.get_temp_directory()
             filename = f"bg_{uuid.uuid4().hex}.png"
