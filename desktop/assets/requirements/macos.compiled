@@ -12,8 +12,7 @@ annotated-types==0.7.0
     # via pydantic
 attrs==25.4.0
     # via aiohttp
-av==16.1.0
-    # via -r /tmp/full_requirements.txt
+
 certifi==2026.2.25
     # via requests
 charset-normalizer==3.4.5
@@ -40,14 +39,12 @@ comfyui-workflow-templates-media-other==0.3.131
     # via comfyui-workflow-templates
 comfyui-workflow-templates-media-video==0.3.57
     # via comfyui-workflow-templates
-einops==0.8.2
-    # via -r /tmp/full_requirements.txt
+
 frozenlist==1.8.0
     # via
     #   aiohttp
     #   aiosignal
-glfw==2.10.0
-    # via -r /tmp/full_requirements.txt
+
 idna==3.11
     # via
     #   requests
@@ -61,9 +58,7 @@ multidict==6.7.1
     #   aiohttp
     #   yarl
 numpy==2.4.3
-    # via
-    #   -r /tmp/full_requirements.txt
-    #   scipy
+    # via -r /tmp/full_requirements.txt
 packaging==26.0
     # via -r /tmp/full_requirements.txt
 pillow==12.1.1
@@ -82,20 +77,14 @@ pydantic-core==2.41.5
     # via pydantic
 pydantic-settings==2.13.1
     # via -r /tmp/full_requirements.txt
-pyopengl==3.1.10
-    # via -r /tmp/full_requirements.txt
+
 python-dotenv==1.2.2
     # via pydantic-settings
 pyyaml==6.0.3
     # via -r /tmp/full_requirements.txt
 requests==2.32.5
     # via -r /tmp/full_requirements.txt
-safetensors==0.7.0
-    # via -r /tmp/full_requirements.txt
-scipy==1.17.1
-    # via -r /tmp/full_requirements.txt
-sentencepiece==0.2.1
-    # via -r /tmp/full_requirements.txt
+
 simpleeval==1.0.4
     # via -r /tmp/full_requirements.txt
 sqlalchemy==2.0.48
