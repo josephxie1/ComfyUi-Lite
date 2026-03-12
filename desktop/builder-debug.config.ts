@@ -21,7 +21,7 @@ const debugConfig: Configuration = {
     hardenedRuntime: true,
     entitlements: null,
     entitlementsInherit: null,
-    notarize: true,
+    notarize: false, // 手动公证：xcrun notarytool
   },
   linux: {
     icon: './assets/UI/Comfy_Logo_x256.png',
