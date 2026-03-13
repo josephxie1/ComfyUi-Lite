@@ -7,6 +7,7 @@ const debugConfig: Configuration = {
     { from: './assets/uv', to: 'uv' },
     { from: './assets/UI', to: 'UI' },
     { from: './assets/desktop-ui', to: 'desktop-ui' },
+    { from: './assets/requirements', to: 'requirements' },
   ],
   beforeBuild: './scripts/preMake.js',
   win: {
