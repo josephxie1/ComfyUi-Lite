@@ -42,7 +42,10 @@ try:
 except ImportError:
     interpolate = None
 from tqdm.auto import trange
-from einops import rearrange
+try:
+    from einops import rearrange
+except ImportError:
+    rearrange = None
 from comfy.cli_args import args
 import json
 import time
