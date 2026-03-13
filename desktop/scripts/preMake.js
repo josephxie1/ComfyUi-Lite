@@ -13,10 +13,10 @@ const preMake = () => {
 
   console.log(`<BUILDING COMFYCLI ON ${os.platform()} ${isNvidia && 'Nvidia Ver'}>`);
 
-  // If this folder is here assume comfy has already been installed
+  // Always re-sync ComfyUI source to pick up code changes
   if (fs.existsSync('./assets/ComfyUI')) {
-    console.log('>COMFYUI ALREADY BUILT<');
-    return;
+    console.log('>REMOVING OLD COMFYUI ASSETS<');
+    fs.removeSync('./assets/ComfyUI');
   }
 
   if (os.platform() === 'darwin') {
