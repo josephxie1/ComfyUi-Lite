@@ -1,0 +1,6058 @@
+[
+  {
+    "moduleName": "default",
+    "type": "image",
+    "category": "Тип генерации",
+    "icon": "icon-[lucide--image]",
+    "title": "Изображение",
+    "templates": [
+      {
+        "name": "api_google_nano_banana2_image_edit",
+        "title": "Nano Banana 2: Редактирование изображений",
+        "description": "Загрузите изображение и текстовый запрос для его редактирования. Создайте новое изображение, которое изменяет оригинал в соответствии с вашими инструкциями, сохраняя согласованность объекта и высокую визуальную точность.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Редактирование изображения"
+        ],
+        "models": [
+          "Google",
+          "Nano Banana 2"
+        ],
+        "logos": [
+          {
+            "provider": "Google"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 7237,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "man_with_dog.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveImage",
+              "file": "api_google_nano_banana2_image_edit.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_nano_banana_pro",
+        "title": "Nano Banana Pro",
+        "description": "Nano-banana Pro (Gemini 3.0 Pro Image) - Создание и редактирование изображений 4K студийного качества с улучшенной отрисовкой текста и согласованностью персонажей.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "hoverDissolve",
+        "tags": [
+          "API",
+          "Изображение",
+          "Редактирование изображения"
+        ],
+        "models": [
+          "Gemini3 Pro Image Preview",
+          "Google",
+          "Nano Banana Pro"
+        ],
+        "date": "2025-11-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 8082,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_nano_banana_pro_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_nano_banana_pro_input_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "api_nano_banana_pro.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "Google"
+          }
+        ],
+        "searchRank": 0,
+        "username": "hellorob"
+      },
+      {
+        "name": "api_bytedance_seedream_5_0_lite_image_edit",
+        "title": "Seedream 5.0 Lite: Редактирование изображений",
+        "description": "Загрузите изображение и текстовый запрос для его редактирования. Создайте измененное изображение, детали которого соответствуют вашим инструкциям.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Редактирование изображения"
+        ],
+        "models": [
+          "Seedream 5.0 Lite"
+        ],
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "date": "2026-02-24",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2834,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "man_with_old_computers.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 32,
+              "nodeType": "LoadImage",
+              "file": "inflated_character.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream_5_0_lite_image_edit.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_grok_image_edit",
+        "title": "Grok: Редактирование изображения",
+        "description": "Загрузите изображение для редактирования с помощью модели Grok. Создайте измененную версию с выразительной, кинематографичной графикой",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Редактирование изображения"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 7572,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "cyberpunk_robot.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Grok"
+          }
+        ],
+        "username": "hellorob"
+      },
+      {
+        "name": "api_grok_text_to_image",
+        "title": "Grok: Текст в изображение",
+        "description": "Введите текстовые подсказки для быстрого создания высококачественных изображений с помощью модели Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Текст в изображение"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 2217,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Grok"
+          }
+        ],
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "api_grok_text_to_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_seedream_5_0_lite_t2i",
+        "title": "Seedream 5.0 Lite: Текст в изображение",
+        "description": "Введите свой текстовый запрос для создания детального изображения. Этот рабочий процесс создает визуальное представление вашего описания с точным контролем стиля и макета.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Текст в изображение"
+        ],
+        "models": [
+          "Seedream 5.0 Lite"
+        ],
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "date": "2026-02-24",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 847,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream_5_0_lite_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_google_gemini_image",
+        "title": "Google Gemini Изображение",
+        "description": "Nano-banana (Gemini-2.5-Flash Image) - редактирование изображений с согласованностью.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение",
+          "API",
+          "Текст в изображение"
+        ],
+        "models": [
+          "Gemini-2.5-Flash",
+          "Nano Banana",
+          "Google"
+        ],
+        "date": "2025-08-27",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1219,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "comfyui_logo.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_v4_t2i",
+        "title": "Recraft v4: Текст в изображение",
+        "description": "Введите текстовый запрос для создания изображения высокого разрешения. Используйте модель Recraft V4 для улучшенного реализма, точности текста и детализированной векторной графики. Выведите изображение размером 1024x1024 или 2048x2048 в зависимости от выбранной версии.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение",
+          "Текст в изображение"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-17",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 262,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_recraft_v4_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_image",
+        "title": "Kling O3: Генерация изображений",
+        "description": "Загрузите до 10 эталонных изображений для управления синтезом. Создайте новое изображение с помощью модели Kling O3 на основе предоставленных вами визуальных данных.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Редактирование изображения",
+          "Текст в изображение"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 709,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadImage",
+              "file": "vintage_portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 32,
+              "nodeType": "LoadImage",
+              "file": "Urban_Fashion.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "SaveImage",
+              "file": "api_kling_o3_image.json",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux2_max_sofa_swap",
+        "title": "BFL FLUX.2 [max]: Замена объекта",
+        "description": "Замена объектов в изображениях с высочайшим качеством через FLUX.2 [max]. Подходит для съёмки товаров, замены мебели и единого вида сцены.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Flux.2",
+          "Flux"
+        ],
+        "date": "2025-12-22",
+        "searchRank": 7,
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 384,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "minimalist_wooden_sofa_living_room.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "fluffy_beige_sofa.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "black_coat_model.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_t2i",
+        "title": "Kling 3.0: Текст в изображение",
+        "description": "Создайте изображение по текстовому запросу с помощью модели Kling 3.0. Введите описательный текст, чтобы получить высококачественный визуальный результат, точно соответствующий запросу.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Изображение"
+        ],
+        "models": [
+          "Kling",
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 279,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "SaveImage",
+              "file": "api_kling_v3_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_style_reference",
+        "title": "Генерация эталона стиля Recraft",
+        "description": "Загрузите несколько изображений, чтобы создать единый стилевой референс. Генерируйте новые изображения с использованием этого референса для сохранения визуальной согласованности результатов.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Изображение",
+          "Стилевая ссылка"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-05",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 131,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 38,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-2.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 39,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-4.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "SaveImage",
+              "file": "api_recraft_style_reference.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_v4_text_to_vector",
+        "title": "Recraft v4: Текст в вектор",
+        "description": "Вводите текстовые подсказки для создания чистых, редактируемых векторных SVG-графиков. Создавайте логотипы, иконки или иллюстрации со структурированными контурами, подходящими для инструментов дизайна.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение",
+          "Вектор"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-17",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 79,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_seedream4",
+        "title": "ByteDance Seedream 4.0",
+        "description": "Мультимодальная модель ИИ для генерации изображений из текста и редактирования изображений. Генерация изображений 2K менее чем за 2 секунды с управлением на естественном языке.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Изображение",
+          "Редактирование изображения",
+          "Текст в изображение"
+        ],
+        "models": [
+          "ByteDance",
+          "Seedream 4.0"
+        ],
+        "date": "2025-09-11",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1613,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "comfyui_logo.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream4.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_flux2",
+        "title": "Flux.2 Pro",
+        "description": "Создавайте фотореалистичные изображения с многореференсной согласованностью и профессиональной отрисовкой текста.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение",
+          "API",
+          "Текст в изображение"
+        ],
+        "models": [
+          "Flux.2",
+          "Flux"
+        ],
+        "date": "2025-11-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 420,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_4.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 18,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 19,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_2_inpaint",
+        "title": "OpenAI: Dall-E 2 Инпейнтинг",
+        "description": "Редактирование изображений с использованием inpainting с API OpenAI Dall-E 2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Восстановление",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-2",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 12,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 19,
+              "nodeType": "LoadImage",
+              "file": "api_openai_dall_e_2_inpaint_input_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_image",
+        "title": "Kling O1：Изображение",
+        "description": "Генерируйте высококачественные изображения из текстовых подсказок с помощью Kling O1, с поддержкой до 10 эталонных изображений для управления стилем и содержимым. Включает гибкие соотношения сторон и опции разрешения 1K/2K.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Ссылка на персонажа",
+          "Текст в изображение"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-05",
+        "openSource": false,
+        "usage": 116,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_kling_omni_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_from_photo_2_miniature",
+        "title": "Стиль от фото к модели",
+        "description": "Преобразуйте фотографии реальных зданий в архитектурные чертежи, а затем в подробные физические модели в миниатюре. Полный конвейер архитектурной визуализации от фото до макета.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение",
+          "3D"
+        ],
+        "models": [
+          "Gemini3 Pro Image Preview",
+          "Nano Banana Pro",
+          "Google"
+        ],
+        "date": "2025-11-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 113,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_from_photo_2_miniature_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 37,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bria_image_edit",
+        "title": "Bria: Редактирование изображений",
+        "description": "FIBO обеспечивает точное и предсказуемое редактирование изображений за счет структурированного управления через JSON освещением, композицией и настройками камеры",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Редактирование изображения",
+          "API"
+        ],
+        "models": [
+          "BRIA"
+        ],
+        "date": "2026-01-20",
+        "openSource": false,
+        "usage": 105,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "sunlit_rooftop_capture.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bria_image_outpainting",
+        "title": "Bria: Расширение изображения",
+        "description": "Профессиональный шаблон аутпейнтинга на основе Bria, предназначенный для бесшовного расширения изображений и расширения сцен с учетом границ",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Внешняя отрисовка",
+          "API"
+        ],
+        "models": [
+          "BRIA"
+        ],
+        "date": "2026-01-20",
+        "openSource": false,
+        "usage": 46,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "baby_otter.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_text_to_image",
+        "title": "Wan2.5: Текст в Изображение",
+        "description": "Генерация изображений с отличным соблюдением промптов и визуальным качеством с помощью FLUX.1 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 221,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_reference_to_image",
+        "title": "Runway: ссылка в изображение",
+        "description": "Генерация новых изображений на основе стилей и композиций ссылок с ИИ Runway.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "api_runway_reference_to_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_i2i",
+        "title": "Stability AI: изображение в изображение",
+        "description": "Преобразование изображений с генерацией высокого качества с использованием Stability AI, идеально подходит для профессионального редактирования и переноса стиля.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 67,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "api_stability_ai_i2i_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_fashion_billboard_generator",
+        "title": "Генератор модных билбордов",
+        "description": "Преобразуйте фото одежды в профессиональную рекламу с реалистичными моделями.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение",
+          "API",
+          "Мода",
+          "Макет"
+        ],
+        "models": [
+          "GPT-Image-1.5",
+          "OpenAI"
+        ],
+        "date": "2025-12-18",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 24,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "outfit-streetwear.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 16,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_pro_image",
+        "title": "Flux.1 Kontext Pro",
+        "description": "Редактирование изображений с Flux.1 Kontext pro image.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 94,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_pro_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_text_to_image",
+        "title": "Runway: текст в изображение",
+        "description": "Генерация изображений высокого качества по текстовым запросам с использованием ИИ-модели Runway.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 45,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_photon_i2i",
+        "title": "Luma Photon: изображение в изображение",
+        "description": "Управление генерацией изображений с использованием комбинации изображений и запроса.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 59,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_style_transfer",
+        "title": "Magnific: Справочник по стилю",
+        "description": "Загрузите целевое изображение и изображение-образец стиля. Создайте новое изображение, объединяющее художественный стиль образца со структурой вашей цели.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Стилевая ссылка"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 112,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "girl_riding_unicorn.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "magnific_style_reference.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_sd3.5_i2i",
+        "title": "Stability AI: SD3.5 изображение в изображение",
+        "description": "Генерация изображений высокого качества с отличным соблюдением запросов. Идеально подходит для профессиональных случаев использования при разрешении 1 мегапиксель.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_stability_ai_sd3.5_i2i_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_multiple_images_input",
+        "title": "Flux.1 Kontext Множественный ввод изображений",
+        "description": "Ввод нескольких изображений и их редактирование с Flux.1 Kontext.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 80,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_girl.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 91,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_sofa.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 96,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_dog.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_pro_t2i",
+        "title": "Flux.1 [Pro]: Текст в изображение",
+        "description": "Генерация изображений с отличным следованием запросам и визуальным качеством с использованием FLUX.1 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-1-pro-ultra-image",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение"
+        ],
+        "models": [
+          "Flux.1",
+          "Flux"
+        ],
+        "date": "2025-05-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 104,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_stable_image_ultra_t2i",
+        "title": "Stability AI: Stable Image Ultra текст в изображение",
+        "description": "Генерация изображений высокого качества с отличным соблюдением запросов. Идеально подходит для профессиональных случаев использования при разрешении 1 мегапиксель.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 57,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_i2i",
+        "title": "OpenAI: GPT-Image-1 изображение в изображение",
+        "description": "Генерация изображений из входных изображений с использованием API OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 57,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_inpaint",
+        "title": "OpenAI: GPT-Image-1 Инпейнтинг",
+        "description": "Редактирование изображений с использованием inpainting с API OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Восстановление",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image_mask.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_t2i",
+        "title": "OpenAI: GPT-Image-1 текст в изображение",
+        "description": "Генерация изображений по текстовым запросам с использованием API OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 8,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_2_t2i",
+        "title": "OpenAI: Dall-E 2 текст в изображение",
+        "description": "Генерация изображений по текстовым запросам с использованием API OpenAI Dall-E 2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-2",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 20,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_3_t2i",
+        "title": "OpenAI: Dall-E 3 текст в изображение",
+        "description": "Генерация изображений по текстовым запросам с использованием API OpenAI Dall-E 3.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-3",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 24,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_image_gen_with_color_control",
+        "title": "Recraft: генерация изображений с управлением цветом",
+        "description": "Генерация изображений с пользовательскими цветовыми палитрами и визуалами, специфичными для бренда, с использованием Recraft.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_vector_gen",
+        "title": "Recraft: векторная генерация",
+        "description": "Генерация векторных изображений высокого качества по текстовым запросам с использованием векторного генератора ИИ Recraft.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API",
+          "Вектор"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_image_gen_with_style_control",
+        "title": "Recraft: генерация изображений с управлением стилем",
+        "description": "Управление стилем с помощью визуальных примеров, выравнивание позиционирования и точная настройка объектов. Сохранение и обмен стилями для идеального соответствия бренду.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_max_image",
+        "title": "Flux.1 Kontext Max",
+        "description": "Редактирование изображений с Flux.1 Kontext max image.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "Редактирование изображения",
+          "Изображение"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_max_image_style_ref.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_multi_inputs",
+        "title": "OpenAI: GPT-Image-1 множественные входы",
+        "description": "Генерация изображений из нескольких входов с использованием API OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 58,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_hat.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_sd3.5_t2i",
+        "title": "Stability AI: SD3.5 текст в изображение",
+        "description": "Генерация изображений высокого качества с отличным соблюдением запросов. Идеально подходит для профессиональных случаев использования при разрешении 1 мегапиксель.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 25,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ideogram_v3_t2i",
+        "title": "Ideogram V3: текст в изображение",
+        "description": "Генерация изображений профессионального качества с отличным соответствием запросам, фотореализмом и визуализацией текста с использованием Ideogram V3.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Ideogram"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 60,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 59,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_photon_style_ref",
+        "title": "Luma Photon: ссылка на стиль",
+        "description": "Генерация изображений путем смешивания стилевых ссылок с точным управлением с использованием Luma Photon.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Текст в изображение",
+          "Изображение",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 31,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_ref_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 52,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_ref_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "video",
+    "category": "Тип генерации",
+    "icon": "icon-[lucide--film]",
+    "title": "Видео",
+    "templates": [
+      {
+        "name": "api_grok_video",
+        "title": "Grok: Генерация видео",
+        "description": "Введите текстовые подсказки или начальный кадр изображения, чтобы сгенерировать видео длительностью до 15 секунд с синхронизированным аудио с помощью модели Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "Изображение в видео",
+          "Текст в видео",
+          "API"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 4469,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "sci-fi_mech.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "api_grok_video.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "hellorob"
+      },
+      {
+        "name": "api_grok_video_edit",
+        "title": "Grok: Редактирование видео",
+        "description": "Загрузите видео для редактирования. Введите желаемые изменения. Создайте отредактированное видео с помощью API Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Редактирование видео"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 361,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadVideo",
+              "file": "futuristic_motorcycle.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "api_grok_video_edit.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_motion_control3",
+        "title": "Kling 3.0: Motion Control",
+        "description": "Загрузите изображение персонажа и видео-образец движения. Создайте новое видео, в котором ваш персонаж выполняет действия из образца, с улучшенной согласованностью лица с помощью опциональной привязки элементов.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Управление движением"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-03-06",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "future_robot.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadVideo",
+              "file": "boxing_man.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_video",
+        "title": "Kling 3.0: Генерация видео",
+        "description": "Введите текстовые или графические подсказки для создания 15-секундных видеопоследовательностей с многокадровыми композициями, сложными движениями камеры и согласованными объектами.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Изображение в видео",
+          "Видео"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1945,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "boxing.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_image_to_video",
+        "title": "Seedance 1.5 Pro: Изображение в видео",
+        "description": "Превращайте изображения в живых персонажей с речью, движением и синхронизированными звуковыми эффектами с помощью seedance1.5 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео"
+        ],
+        "models": [
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2104,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "young_baseball_player.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_avatar2",
+        "title": "Kling: Avatar 2.0",
+        "description": "Загрузите портрет и аудиофайл, чтобы создать видео с говорящим аватаром с синхронизированными движениями губ и естественной мимикой.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Синхронизация губ",
+          "API"
+        ],
+        "models": [
+          "Kling"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 251,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "woman_in_red.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadAudio",
+              "file": "kling_avatar_input.mp3",
+              "mediaType": "audio"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveVideo",
+              "file": "api_kling_avatar2.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_image_to_video",
+        "title": "ByteDance: Изображение в Видео",
+        "description": "Преобразование статичных изображений в динамичные видео с помощью модели Seedance от ByteDance. Анализирует структуру изображения и генерирует естественное движение с согласованным визуальным стилем и последовательными видеопоследовательностями.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Изображение в видео",
+          "Видео"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1804,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_dual_characters_effects",
+        "title": "Kling: Эффект двойного персонажа",
+        "description": "Загрузите два изображения персонажей рядом. Создайте видео, в котором персонажи обнимаются, целуются или вместе образуют жест в виде сердца.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео"
+        ],
+        "models": [
+          "Kling 1.6",
+          "Kling"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-03-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 45,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "deep_curl_portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "blue_tone_woman.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "SaveVideo",
+              "file": "api_kling_dual_characters_effects.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_flf2v",
+        "title": "Kling 3.0: От первого и последнего кадра к видео",
+        "description": "Введите изображение первого и последнего кадра, чтобы создать непрерывную видеопоследовательность с многокадровой генерацией, точным контролем элементов и поддержкой многоязычных подсказок.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Видео",
+          "Видео по первому-последнему кадру"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 773,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "goldenfish_in_bag.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "man_in_daydream.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "Kling_v3_flf2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_video_edit",
+        "title": "Kling O3: Редактирование видео",
+        "description": "Загрузите видео и эталонное изображение для редактирования с помощью Kling O3. Создайте профессионально отредактированное видео с точным редактированием объекта, композицией сцены и нативной синхронизацией аудио и видео.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Редактирование видео",
+          "API",
+          "Видео"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 358,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "giant_trees_sky_pyramid.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 25,
+              "nodeType": "LoadVideo",
+              "file": "kling_o3_video_input.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_flf2v",
+        "title": "Kling O3: FLF2V",
+        "description": "Загрузите эталонные изображения или укажите начальный и конечный кадры. Создайте видео с точным семантическим управлением, большей продолжительностью и улучшенной повествовательной связностью.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Видео по первому-последнему кадру"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 169,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_right_front_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 34,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 35,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_left_side_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_right_side_view.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_king_o3_t2v",
+        "title": "Kling O3: Текст в видео",
+        "description": "Загрузите текст, аудио или изображения, чтобы создать 15-секундное видео с синхронизированным аудио, согласованностью персонажей и контролем раскадровки.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Текст в видео"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 217,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "api_king_o3_t2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_v2v",
+        "title": "Kling O1: Видео в видео",
+        "description": "Преобразуйте видео с помощью Kling O1. Редактируйте содержимое видео, изменяйте стили или заменяйте персонажей, используя текстовые подсказки и эталонные изображения.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "hoverDissolve",
+        "tags": [
+          "Ссылка на персонажа",
+          "Видео"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-10",
+        "openSource": false,
+        "usage": 335,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "blue_shirt_rabbit.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 7,
+              "nodeType": "LoadVideo",
+              "file": "dancing_women.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_i2v",
+        "title": "Kling O3: Ссылка на видео",
+        "description": "Загрузите эталонное изображение и необязательный аудио- или текстовый запрос. Создайте видео с согласованным персонажем, нативным аудиовыходом и точным контролем раскадровки.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Ссылка на персонажа",
+          "Изображение в видео"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 366,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "chasing_the_light.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 20,
+              "nodeType": "SaveVideo",
+              "file": "kling_o3_i2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q3_text_to_video",
+        "title": "Аудиовизуальное видеогенерация Vidu Q3",
+        "description": "Введите текстовый запрос или загрузите изображение, чтобы создать видео длительностью 1–16 секунд с синхронизированным звуком и автоматическими переходами между сценами.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео"
+        ],
+        "models": [
+          "Vidu",
+          "Vidu Q3"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 54,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q3_image_to_video",
+        "title": "Vidu Q3 Изображение в видео с аудио",
+        "description": "Загрузите изображение и введите текстовый запрос, чтобы создать видео длительностью от 1 до 16 секунд с синхронизированным звуком и интеллектуальными переходами между сценами.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео"
+        ],
+        "models": [
+          "Vidu",
+          "Vidu Q3"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "usage": 241,
+        "size": 0,
+        "vram": 0,
+        "logos": [
+          {
+            "provider": "Vidu"
+          }
+        ],
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "two_characters.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan2_6_i2v",
+        "title": "Wan2.6: Изображение в видео",
+        "description": "Преобразуйте изображения в высококачественные видео с улучшенным качеством изображения, более плавным движением, поддержкой разрешения 1080P и естественной генерацией движения для профессиональных результатов.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "date": "2025-12-20",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 624,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "red_car.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_flf2v",
+        "title": "Seedance 1.5 Pro: FLF2V",
+        "description": "Загрузите начальный и конечный кадры, и Seedance 1.5 Pro автоматически создаст плавный видеопереход с синхронизированным звуком между ними.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео по первому-последнему кадру",
+          "Изображение в видео",
+          "API"
+        ],
+        "models": [
+          "ByteDance",
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 391,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "dancing_capybara.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "dj_capybara.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_motion_control",
+        "title": "Kling2.6: Управление движением",
+        "description": "Применяйте точные действия и выражения персонажа из эталонного видео к вашему изображению персонажа с синхронизированным управлением движением.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "Управление движением",
+          "API"
+        ],
+        "models": [
+          "Kling 2.6",
+          "Kling"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 1407,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadVideo",
+              "file": "street_dancer.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "streetwear_fox.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_veo3",
+        "title": "Veo3: изображение в видео",
+        "description": "Генерация видео высокого качества продолжительностью 8 секунд из текстовых запросов или изображений с использованием продвинутого API Google Veo 3. Включает генерацию аудио, улучшение запросов и варианты двойной модели для скорости или качества.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Текст в видео",
+          "API"
+        ],
+        "models": [
+          "Veo",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 338,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_veo3_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling2_6_i2v",
+        "title": "Kling2.6: Преобразование изображений в видео с озвучкой",
+        "description": "Преобразуйте статичные изображения в видео с диалогами, пением, звуками и атмосферой",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API",
+          "Аудио"
+        ],
+        "models": [
+          "Kling 2.6",
+          "Kling"
+        ],
+        "date": "2025-12-22",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 279,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "lizard_rapper_in_bar.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_i2v",
+        "title": "Vidu Q2: Изображение в видео",
+        "description": "Преобразуйте статические изображения в динамические видео 1080p с кинематографическим управлением камерой и согласованностью нескольких объектов.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 75,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "cozy_bear.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_edit_video",
+        "title": "Kling O1: Редактирование видео",
+        "description": "Редактируйте видео с помощью команд на естественном языке. Режим видеореференса позволяет быстро создавать качественные переносы стиля, добавление элементов и изменение фона.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "API",
+          "Редактирование видео",
+          "Текст в видео",
+          "Изображение в видео"
+        ],
+        "models": [
+          "Kling"
+        ],
+        "date": "2025-12-02",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 244,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_4.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_2.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 23,
+              "nodeType": "LoadVideo",
+              "file": "api_kling_omni_edit_video_input_video.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 24,
+              "nodeType": "LoadImage",
+              "file": "api_kling_omni_edit_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_i2v",
+        "title": "Kling O1: Изображение в видео",
+        "description": "Преобразуйте статические изображения в динамические видео с помощью Kling O1. Добавьте движение, движения камеры и живость к вашим изображениям, используя текстовые подсказки.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "Ссылка на персонажа"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 41,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "sheep_knit.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "quokka_bath.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "quokka_relax.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_image_to_video",
+        "title": "Wan2.5: Изображение в Видео",
+        "description": "Преобразование изображений в видео с синхронизированным аудио, улучшенным движением и превосходным качеством.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 270,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadAudio",
+              "file": "audio_ace_step_1_m2m_editing_input_audio.mp3",
+              "mediaType": "audio"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_wan_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_flf",
+        "title": "Kling: FLF2V",
+        "description": "Генерация видео путем управления первыми и последними кадрами.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "API",
+          "Видео по первому-последнему кадру"
+        ],
+        "models": [
+          "Kling",
+          "Kling 1.6"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 80,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_kling_flf_first_frame.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "api_kling_flf_last_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 38,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_i2v",
+        "title": "Kling: изображение в видео",
+        "description": "Генерация видео с отличным соблюдением запросов для действий, выражений и движений камеры с использованием Kling.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Kling",
+          "Kling 2.0"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 134,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_kling_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 38,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_sora_video",
+        "title": "Sora 2: Текст и Изображение в Видео",
+        "description": "Генерация видео OpenAI Sora-2 и Sora-2 Pro с синхронизированным аудио.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Текст в видео",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-10-08",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 252,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_openai_sora_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_flf2v",
+        "title": "Vidu Q2: FLF2V",
+        "description": "Плавные переходы видео между первой и последней сценой с кинематографичной камерой и многосубъектной согласованностью.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео по первому-последнему кадру",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 76,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "nun_in_church-1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "nun_in_church-2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_flf2v",
+        "title": "ByteDance: Начало-Конец в Видео",
+        "description": "Генерация кинематографических видеопереходов между начальными и конечными кадрами с плавным движением, согласованностью сцен и профессиональной отделкой с помощью модели Seedance от ByteDance.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Видео по первому-последнему кадру",
+          "Видео"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 87,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 35,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_flf2v_first_frame.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_flf2v_last_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_r2v",
+        "title": "Vidu Q2: Ссылка на видео",
+        "description": "Генерируйте видео с согласованностью на основе ссылок для до 3 субъектов, сохраняя непрерывность персонажей и стилей по всей видеопоследовательности с кинематографическими движениями камеры.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Ссылка на персонажа",
+          "Изображение в видео",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 39,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_q2_r2v_red_haired_girl.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "vintage_robot.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_t2v",
+        "title": "Kling O1: Текст в Видео",
+        "description": "Генерируйте видео из текста с помощью Kling O1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 19,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ltxv_image_to_video",
+        "title": "LTX-2: Изображение в видео",
+        "description": "Преобразуйте статичные изображения в динамичные видео с помощью LTX-2 Pro. Создавайте кинематографические видеоролики с естественным движением, синхронизированным звуком и поддержкой до 4K при 50 к/с.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "LTX-2",
+          "Lightricks"
+        ],
+        "date": "2025-10-28",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 118,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 47,
+              "nodeType": "LoadImage",
+              "file": "api_ltxv_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 41,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_gen4_turo_image_to_video",
+        "title": "Runway: Gen4 Turbo изображение в видео",
+        "description": "Генерация динамических видео из изображений с использованием Runway Gen4 Turbo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 86,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_runway_gen4_turo_image_to_video_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan2_6_t2v",
+        "title": "Wan2.5: Текст в Видео",
+        "description": "Генерация видео с синхронизированным аудио, улучшенным движением и превосходным качеством.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "date": "2025-12-20",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 101,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_r2v",
+        "title": "WAN2.6: Видео ссылки персонажа",
+        "description": "Создавайте видео с сохранением особенностей персонажа, естественными движениями и кинематографичным качеством.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Ссылка на персонажа",
+          "Видео"
+        ],
+        "date": "2026-01-03",
+        "openSource": false,
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "usage": 23,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "LoadVideo",
+              "file": "armored_warrior.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 35,
+              "nodeType": "LoadVideo",
+              "file": "spear_warrior.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_reference_to_video",
+        "title": "Vidu Q1: Ссылка на видео",
+        "description": "Генерация видео с согласованными субъектами с использованием нескольких опорных изображений (до 7) для согласованности персонажей и стиля во всей видеопоследовательности.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "Изображение в видео",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_2.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 30,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_1.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 45,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_3.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_text_to_video",
+        "title": "Seedance1.5 Pro: Текст в Видео",
+        "description": "Создавайте полные аудиовизуальные истории из текста с синхронизированными голосами, музыкой и звуковыми эффектами.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Текст в видео"
+        ],
+        "models": [
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "usage": 145,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling2_6_t2v",
+        "title": "Kling2.6: Создание видео-рассказов с озвучкой из текста",
+        "description": "Оживите истории: видео с диалогом, музыкой и звуками",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Аудио",
+          "Текст в видео",
+          "Видео"
+        ],
+        "models": [
+          "Kling",
+          "Kling 2.6"
+        ],
+        "date": "2025-12-22",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 13,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_first_last_frame",
+        "title": "Runway: первый последний кадр в видео",
+        "description": "Генерация плавных видеопереходов между двумя ключевыми кадрами с точностью Runway.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "API",
+          "Видео по первому-последнему кадру"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "api_runway_first_last_frame_first_frame.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_runway_first_last_frame_last_frame.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_gen3a_turbo_image_to_video",
+        "title": "Runway: Gen3a Turbo изображение в видео",
+        "description": "Генерация кинематографических видео из статических изображений с использованием Runway Gen3a Turbo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 18,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_runway_gen3a_turbo_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_t2v",
+        "title": "Vidu Q2: Текст в Видео",
+        "description": "Создавайте высококачественные видео 1080p из текстовых запросов с помощью модели Vidu Q2",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 14,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_veo2_i2v",
+        "title": "Veo2: изображение в видео",
+        "description": "Генерация видео из изображений с использованием API Google Veo2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Veo",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 16,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 61,
+              "nodeType": "LoadImage",
+              "file": "api_veo2_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 62,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_text_to_video",
+        "title": "Wan2.5: Текст в видео",
+        "description": "Генерируйте видео с синхронизированным аудио, улучшенным движением и превосходным качеством.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 23,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadAudio",
+              "file": "audio_ace_step_1_m2m_editing_input_audio.mp3",
+              "mediaType": "audio"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_start_end_to_video",
+        "title": "Vidu Q1: От Начала и Конца к Видео",
+        "description": "Создание плавных видеопереходов между определенными начальными и конечными кадрами с естественной интерполяцией движения и согласованным визуальным качеством.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "API",
+          "Видео по первому-последнему кадру"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 14,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_start_end_to_video_start_frame.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 30,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_start_end_to_video_last_frame.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_t2v",
+        "title": "PixVerse: текст в видео",
+        "description": "Генерация видео с точной интерпретацией запросов и потрясающей динамикой видео.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 5,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_image_to_video",
+        "title": "Moonvalley: изображение в видео",
+        "description": "Генерация кинематографических видео 1080p с изображением через модель, обученную исключительно на лицензированных данных.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "api_moonvalley_image_to_video_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_video_to_video_motion_transfer",
+        "title": "Moonvalley: передача движения",
+        "description": "Применение движения из одного видео к другому.",
+        "mediaType": "image",
+        "thumbnailVariant": "hoverDissolve",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 48,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadVideo",
+              "file": "api_moonvalley_video_to_video_motion_transfer_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_video_to_video_pose_control",
+        "title": "Moonvalley: управление позой",
+        "description": "Применение позы человека и движения из одного видео к другому.",
+        "mediaType": "image",
+        "thumbnailVariant": "hoverDissolve",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadVideo",
+              "file": "api_moonvalley_video_to_video_pose_control_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_i2v",
+        "title": "MiniMax: изображение в видео",
+        "description": "Генерация уточненных видео из изображений и текста с интеграцией CGI с использованием MiniMax.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 5,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_hailuo_minimax_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_i2v",
+        "title": "Luma: изображение в видео",
+        "description": "Превращение статических изображений в магические анимации высокого качества.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "api_luma_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ltxv_text_to_video",
+        "title": "LTX-2: текст в видео",
+        "description": "Создавайте высококачественные видео по текстовым подсказкам с использованием Lightricks LTX-2 и синхронизированного аудио. Поддерживается до 4K при 50 кадрах/с с режимами Fast, Pro и Ultra для различных производственных задач.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "LTX-2",
+          "Lightricks"
+        ],
+        "date": "2025-10-28",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 87,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_text_to_video",
+        "title": "Vidu Q1: Текст в Видео",
+        "description": "Генерация видео высокого качества 1080p по текстовым запросам с регулируемой амплитудой движения и управлением продолжительностью с использованием продвинутой ИИ-модели Vidu.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_text_to_video",
+        "title": "ByteDance: Текст в Видео",
+        "description": "Генерация высококачественных видео напрямую из текстовых промптов с помощью модели Seedance от ByteDance. Поддержка множества разрешений и соотношений сторон с естественным движением и кинематографическим качеством.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "API",
+          "Текст в видео"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 65,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_image_to_video",
+        "title": "Vidu Q1: Изображение в видео",
+        "description": "Преобразование статических изображений в динамические видео 1080p с точным управлением движением и настраиваемой амплитудой движения с использованием Vidu.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 22,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_t2v",
+        "title": "MiniMax: текст в видео",
+        "description": "Генерация видео высокого качества непосредственно из текстовых запросов. Изучите расширенные возможности ИИ MiniMax для создания разнообразных визуальных нарративов с профессиональными эффектами CGI и стилистическими элементами, чтобы оживить ваши описания.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_effects",
+        "title": "Kling: видеоэффекты",
+        "description": "Генерация динамических видео путем применения визуальных эффектов к изображениям с использованием Kling.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Kling",
+          "Kling 1.6"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_kling_effects_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_video",
+        "title": "MiniMax: видео",
+        "description": "Генерация видео высокого качества по текстовым запросам с опциональным управлением первым кадром с использованием модели MiniMax Hailuo-02. Поддерживает несколько разрешений (768P/1080P) и продолжительностей (6/10s) с интеллектуальной оптимизацией запросов.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "api_hailuo_minimax_video_first_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_t2v",
+        "title": "Luma: текст в видео",
+        "description": "Видео высокого качества могут быть сгенерированы с использованием простых запросов.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 6,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_i2v",
+        "title": "PixVerse: изображение в видео",
+        "description": "Генерация динамических видео из статических изображений с движением и эффектами с использованием PixVerse.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 4,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "api_runway_reference_to_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_template_i2v",
+        "title": "PixVerse шаблоны: изображение в видео",
+        "description": "Генерация динамических видео из статических изображений с движением и эффектами с использованием PixVerse.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "LoadImage",
+              "file": "api_pixverse_template_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_text_to_video",
+        "title": "Moonvalley: текст в видео",
+        "description": "Генерация кинематографических видео 1080p из текстовых запросов через модель, обученную исключительно на лицензированных данных.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в видео",
+          "Видео",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "audio",
+    "category": "Тип генерации",
+    "icon": "icon-[lucide--volume-2]",
+    "title": "Аудио",
+    "templates": [
+      {
+        "name": "api_elevenlabs_text_to_speech",
+        "title": "ElevenLabs: Преобразование текста в речь",
+        "description": "Введите текст для генерации сверхреалистичного голоса или загрузите голосовой образец для его клонирования и синтеза.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Преобразование текста в речь",
+          "Аудио",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 473,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_text_to_dialogue",
+        "title": "ElevenLabs: Текст в Диалог",
+        "description": "Введите текст и выберите голосовой профиль, чтобы создать высококачественный эмоционально выразительный аудиодиалог.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Преобразование текста в речь"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 42,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_speech_to_speech",
+        "title": "ElevenLabs: Речь в речь",
+        "description": "Загрузите исходный аудиофайл, чтобы применить новый тон голоса или клонировать другой голос, создавая измененный аудиовыход.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Клонирование Голоса",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            },
+            {
+              "nodeId": 221,
+              "nodeType": "LoadAudio",
+              "file": "api_elevenlabs_speech_to_speech.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_voice_isolation",
+        "title": "ElevenLabs: Изоляция голоса",
+        "description": "Загрузите аудиофайл с фоновым шумом. Используйте API ElevenLabs для изоляции и вывода чистой голосовой дорожки.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Изоляция Голоса"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 12,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 131,
+              "nodeType": "LoadAudio",
+              "file": "noisy_background.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenLabs_speech_to_text",
+        "title": "ElevenLabs: Речь в текст",
+        "description": "Загрузите аудио- или видеофайл, чтобы преобразовать его речь в точный, редактируемый текст.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Речь в текст",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 14,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 219,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_text_to_sound_effects",
+        "title": "ElevenLabs: Текст в звуковые эффекты",
+        "description": "Введите текстовый запрос для создания пользовательских звуковых эффектов и фонового аудио.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Аудио",
+          "Звуковые эффекты",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 68,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 137,
+              "nodeType": "SaveAudioMP3",
+              "file": "api_elevenlabs_text_to_sound_effects.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_audio_to_audio",
+        "title": "Stable Audio 2.5: Аудио в аудио",
+        "description": "Преобразуйте аудио в новые композиции с помощью Stable Audio 2.5. Загрузите аудио, и ИИ создаст полноценные треки.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "Аудио",
+          "Аудио в аудио"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 30,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadAudio",
+              "file": "api_stability_ai_audio_to_audio_input_audio.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_text_to_audio",
+        "title": "Stable Audio 2.5: Текст в аудио",
+        "description": "Генерируйте музыку из текста с помощью Stable Audio 2.5. Создавайте минутные треки за считанные секунды.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "Аудио",
+          "Текст в аудио"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 47,
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_audio_inpaint",
+        "title": "Stability Audio 2.5: Восстановление аудио",
+        "description": "Завершайте или расширяйте аудиотреки с помощью Stable Audio 2.5. Загрузите аудио, и ИИ сгенерирует остальное.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "Аудио",
+          "Аудио в аудио"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 6,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadAudio",
+              "file": "api_stability_ai_audio_inpaint_input_audio.wav",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "3d",
+    "category": "Тип генерации",
+    "icon": "icon-[lucide--box]",
+    "title": "3D модель",
+    "templates": [
+      {
+        "name": "api_hunyuan3d_part",
+        "title": "HY 3D: Декомпозиция 3D-деталей",
+        "description": "Загрузите 3D-модель, чтобы автоматически разделить её на составные части, создав полностью разложенный 3D-объект для повторного использования и редактирования.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "3D-модель",
+          "API"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_image_to_model",
+        "title": "Hunyuan3D: Изображение в модель",
+        "description": "Загрузите изображение для создания 3D-модели с геометрией и PBR-текстурами.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D-модель",
+          "Изображение в модель",
+          "API"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 463,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "pink_robot_front.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "pink_robot_back.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_text_to_model",
+        "title": "HunYuan3D: Текст в Модель",
+        "description": "Введите текстовый запрос или загрузите эталонное изображение для создания детального 3D-модельного ресурса.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "3D",
+          "Текст в модель"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 66,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_smart_topology",
+        "title": "Hunyuan3D: Умная топология",
+        "description": "Загрузите файл высокополигональной 3D-модели. Сгенерируйте низкополигональную, топологически оптимизированную 3D-модель с указанным уровнем упрощения.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "3D-модель"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_multi_image_to_model",
+        "title": "Meshy 6: Из нескольких изображений в модель",
+        "description": "Создавайте высококачественные 3D-модели из нескольких изображений с помощью Meshy 6. Чем больше фотографий, тем лучше захват деталей, точные пропорции и более чистая структура сетки.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 90,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "joker_front.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "joker_back.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "joker_side.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_image_to_model",
+        "title": "Meshy 6: Изображение в модель",
+        "description": "Загрузите изображение и создайте 3D-модель с помощью Meshy 6. Создавайте персонажей, объекты или механические детали с геометрией производственного качества и чистой топологией.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "Изображение в модель",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "usage": 212,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "robot-warrior.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_text_to_model",
+        "title": "Meshy 6: Текст в модель",
+        "description": "Создавайте высококачественные 3D-модели из текстовых запросов с помощью Meshy 6. Создавайте персонажей с утонченной геометрией, механические объекты с острыми краями или низкополигональные ассеты, готовые для игр.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "Текст в модель",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 51,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo3_0_image_to_model",
+        "title": "Tripo3.0: Изображение в модель",
+        "description": "Преобразуйте изображения или эскизы в 3D-модели с чёткой геометрией и готовыми к производству PBR-текстурами Tripo 3.0.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в модель",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-12-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 155,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "3d_character_front_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "3d_character_back_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "3d_character_left_view.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo3_0_text_to_model",
+        "title": "Tripo3.0: Текст в модель",
+        "description": "Создавайте точные 3D-модели по тексту: сверхчеткая геометрия и реалистичные PBR-материалы.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в модель",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-12-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 23,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_text_to_model",
+        "title": "Tripo: текст в модель",
+        "description": "Создание 3D-объектов из описаний с текстовым моделированием Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Текст в модель",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 21,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_image_to_model",
+        "title": "Tripo: изображение в модель",
+        "description": "Генерация профессиональных 3D-активов из 2D-изображений с использованием движка Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "Изображение в модель",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 24,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_image_to_model_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 51,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_multiview_to_model",
+        "title": "Tripo: многовидовой в модель",
+        "description": "Создание 3D-моделей с нескольких углов с использованием продвинутого сканера Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в 3D",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 34,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_multiview_to_model_front_image.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_multiview_to_model_back_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_gen2",
+        "title": "Rodin: Gen-2 Изображение в Модель",
+        "description": "Генерация детальных 3D моделей с 4-кратным качеством сетки из фотографий с помощью Rodin Gen2",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в 3D",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 36,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 82,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_gen2_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_image_to_model",
+        "title": "Rodin: изображение в модель",
+        "description": "Генерация детализированных 3D-моделей из отдельных фотографий с использованием Rodin AI.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в 3D",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 63,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 49,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_image_to_model_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 56,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 61,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 59,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 60,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_multiview_to_model",
+        "title": "Rodin: многовидовой в модель",
+        "description": "Создание комплексных 3D-моделей с использованием многоракурсной реконструкции Rodin.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Изображение в 3D",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_left.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 41,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_front.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 56,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_back.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 61,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 62,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 63,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 64,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_retopo_uv",
+        "title": "Huyuan3D: Ретопология моделей и UV-развертка",
+        "description": "Введите плотную сетку (из AI-генерации или фотограмметрических сканов) и создайте легковесную модель с хорошей топологией и развернутыми UV. Отлично подходит для оптимизации 3D-ассетов игр.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "3D-модель"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_model2uv",
+        "title": "Hunyuan3D: Развёртка UV",
+        "description": "Загрузите 3D-модель для выполнения UV-развертки. Сгенерируйте обработанную модель с оптимизированной UV-разверткой для текстурирования.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "3D-модель"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "image",
+    "category": "Тип генерации",
+    "icon": "icon-[lucide--message-square-text]",
+    "title": "LLM API",
+    "templates": [
+      {
+        "name": "api_openai_chat",
+        "title": "OpenAI: чат",
+        "description": "Общение с продвинутыми языковыми моделями OpenAI для интеллектуальных разговоров.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Генерация текста",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_google_gemini",
+        "title": "Google Gemini",
+        "description": "Опыт мультимодального ИИ от Google с возможностями рассуждения Gemini.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Генерация текста",
+          "API"
+        ],
+        "models": [
+          "Google Gemini",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 162,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "image",
+    "isEssential": true,
+    "category": "Тип генерации",
+    "icon": "icon-[lucide--settings]",
+    "title": "Утилита",
+    "templates": [
+      {
+        "name": "api_magnific_image_upscale_creative",
+        "title": "Magnific: Креативное Увеличение Изображений",
+        "description": "Загрузите изображение и установите уровень увеличения. Создайте улучшенную версию изображения с поддержкой увеличения до 16 раз.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Увеличение изображения"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "logos": [
+          {
+            "provider": "Magnific"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 219,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "1950_new_york.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "ComfyUI_00915_.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_upscale_precise",
+        "title": "Magnific: Точное Увеличение Изображений",
+        "description": "Загрузите изображение для точного увеличения с помощью модели Magnific, создавая версию с высоким разрешением и улучшенной детализацией.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Увеличение изображения"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "logos": [
+          {
+            "provider": "Magnific"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 142,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "young_woman_portrait.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "api_magnific_image_upscale_precise.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_topaz_image_enhance",
+        "title": "Улучшение изображения Topaz",
+        "description": "Профессиональное улучшение изображения с помощью модели Reimagine от Topaz, включая улучшение лиц и восстановление деталей.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Увеличение изображения",
+          "API"
+        ],
+        "models": [
+          "Reimagine",
+          "Topaz"
+        ],
+        "date": "2025-11-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 85,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Topaz"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_topaz_image_enhance_input_image.webp",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_topaz_video_enhance",
+        "title": "Креативное Улучшение Видео — Topaz Astra",
+        "description": "Улучшайте видео с помощью Topaz AI. Поддерживает увеличение разрешения через модель Starlight (Astra) Fast и интерполяцию кадров с моделью apo-8.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Улучшение Видео"
+        ],
+        "models": [
+          "Topaz"
+        ],
+        "date": "2025-11-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 173,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadVideo",
+              "file": "api_topaz_video_enhance_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_upscale_fast",
+        "title": "Stability AI: Быстрое увеличение изображений",
+        "description": "Загрузите изображение, чтобы быстро увеличить его в 4 раза через API Stability AI, идеально подходит для улучшения качества сжатых или низкокачественных изображений.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Увеличение изображения"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 76,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "woman_with_red_hat.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveImage",
+              "file": "api_stability_upscale_fast.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespped_seedvr2_ai_image_fix",
+        "title": "Upscale: Восстановление изображений с помощью ИИ и WaveSpeed SeedVR2",
+        "description": "Загрузите изображение, созданное ИИ, для восстановления деталей и увеличения масштаба. Рабочий процесс сохраняет цвета и резкость, сводя к минимуму артефакты. Результат — высококачественная увеличенная версия вашего исходного изображения.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Увеличение изображения"
+        ],
+        "models": [
+          "SeedVR2",
+          "WaveSpeed"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 51,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "midnight_coasta.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespped_image_upscale",
+        "title": "WaveSpeed: Увеличение изображения",
+        "description": "Загрузите изображение для повышения его разрешения. Создайте улучшенный вывод 2K, 4K или 8K, который сохраняет детали и уменьшает артефакты в форматах JPEG, PNG или WEBP.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Увеличение изображения"
+        ],
+        "models": [
+          "WaveSpeed"
+        ],
+        "date": "2026-01-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 114,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "woman_behind_veil.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespeed_flshvsr_video_upscale",
+        "title": "WaveSpeed: Увеличение разрешения видео FlashVSR",
+        "description": "Загрузите видео, чтобы повысить его качество до 720p, 1080p, 2K или 4K. Рабочий процесс улучшает детализацию, снижает артефакты и обеспечивает плавность движения для получения высококачественного, естественно выглядящего результата.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Улучшение Видео"
+        ],
+        "models": [
+          "FlashVSR",
+          "WaveSpeed"
+        ],
+        "date": "2026-01-23",
+        "openSource": false,
+        "usage": 67,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadVideo",
+              "file": "lighter.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_video_extension",
+        "title": "Vidu: Расширение для видео",
+        "description": "Загрузите видео и используйте модель Vidu Q2, чтобы продлить его до 7 секунд и повысить разрешение до 1080p.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Видео",
+          "Видео расширение",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-02-01",
+        "openSource": false,
+        "logos": [
+          {
+            "provider": "Vidu"
+          }
+        ],
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadVideo",
+              "file": "lawyer.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_relight",
+        "title": "Magnific: Переосвещение Изображений",
+        "description": "Загрузите исходное изображение и эталонное изображение освещения. Сгенерируйте переосвещенную версию вашего исходного изображения, применяя условия освещения из эталона.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Пересвет",
+          "API"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 14,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "magical-portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "vintage-girl.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_skin_enhancer",
+        "title": "Magnific: Улучшитель кожи",
+        "description": "Улучшите кожу и общее качество изображения, загрузив свое изображение и выбрав предустановку для настройки освещения, цветокоррекции и реалистичности.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Портрет",
+          "Улучшение"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 222,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "close_up_girl_skin.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux1_expand_image",
+        "title": "Flux.1: Расширение изображения",
+        "description": "Загрузите изображение, чтобы расширить его холст с помощью Flux.1. Сгенерируйте изображение с внешней отрисовкой и расширенным содержимым.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Внешняя отрисовка"
+        ],
+        "models": [
+          "Flux",
+          "Flux.1"
+        ],
+        "date": "2026-02-09",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 92,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "man_on_desert.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_bfl_flux1_expand_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  }
+]

@@ -1,0 +1,6058 @@
+[
+  {
+    "moduleName": "default",
+    "type": "image",
+    "category": "Tipo de generación",
+    "icon": "icon-[lucide--image]",
+    "title": "Imagen",
+    "templates": [
+      {
+        "name": "api_google_nano_banana2_image_edit",
+        "title": "Nano Banana 2: Edición de imagen",
+        "description": "Sube una imagen y un texto de instrucción para editarla. Genera una nueva imagen que modifique la original según tus indicaciones, manteniendo la coherencia del sujeto y una alta fidelidad visual.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Edición de imagen"
+        ],
+        "models": [
+          "Google",
+          "Nano Banana 2"
+        ],
+        "logos": [
+          {
+            "provider": "Google"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 7237,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "man_with_dog.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveImage",
+              "file": "api_google_nano_banana2_image_edit.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_nano_banana_pro",
+        "title": "Nano Banana Pro",
+        "description": "Nano-banana Pro (Gemini 3.0 Pro Image) - Generación y edición de imágenes 4K de calidad de estudio con renderizado de texto mejorado y consistencia de personajes.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "hoverDissolve",
+        "tags": [
+          "API",
+          "Imagen",
+          "Edición de imagen"
+        ],
+        "models": [
+          "Gemini3 Pro Image Preview",
+          "Google",
+          "Nano Banana Pro"
+        ],
+        "date": "2025-11-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 8082,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_nano_banana_pro_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_nano_banana_pro_input_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "api_nano_banana_pro.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "Google"
+          }
+        ],
+        "searchRank": 0,
+        "username": "hellorob"
+      },
+      {
+        "name": "api_bytedance_seedream_5_0_lite_image_edit",
+        "title": "Seedream 5.0 Lite: Edición de imagen",
+        "description": "Sube una imagen y un texto de instrucción para editarla. Genera una imagen modificada donde los detalles se ajusten a tus instrucciones.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Edición de imagen"
+        ],
+        "models": [
+          "Seedream 5.0 Lite"
+        ],
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "date": "2026-02-24",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2834,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "man_with_old_computers.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 32,
+              "nodeType": "LoadImage",
+              "file": "inflated_character.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream_5_0_lite_image_edit.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_grok_image_edit",
+        "title": "Grok: Edición de imagen",
+        "description": "Sube una imagen para editar con el modelo Grok. Genera una versión modificada con efectos visuales expresivos y cinematográficos",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Edición de imagen"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 7572,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "cyberpunk_robot.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Grok"
+          }
+        ],
+        "username": "hellorob"
+      },
+      {
+        "name": "api_grok_text_to_image",
+        "title": "Grok: Texto a Imagen",
+        "description": "Introduce indicaciones de texto para generar imágenes de alta calidad rápidamente utilizando el modelo Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Texto a Imagen"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 2217,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Grok"
+          }
+        ],
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "api_grok_text_to_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_seedream_5_0_lite_t2i",
+        "title": "Seedream 5.0 Lite: Texto a Imagen",
+        "description": "Ingrese su indicación de texto para generar una imagen detallada. Este flujo de trabajo crea una representación visual de su descripción con control preciso sobre el estilo y el diseño.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Texto a Imagen"
+        ],
+        "models": [
+          "Seedream 5.0 Lite"
+        ],
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "date": "2026-02-24",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 847,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream_5_0_lite_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_google_gemini_image",
+        "title": "Google Gemini Imagen",
+        "description": "Nano-banana (Gemini-2.5-Flash Image) - edición de imágenes con consistencia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Edición de imagen",
+          "Imagen",
+          "API",
+          "Texto a Imagen"
+        ],
+        "models": [
+          "Gemini-2.5-Flash",
+          "Nano Banana",
+          "Google"
+        ],
+        "date": "2025-08-27",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1219,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "comfyui_logo.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_v4_t2i",
+        "title": "Recraft v4: Texto a imagen",
+        "description": "Introduzca un texto de entrada para generar una imagen de alta resolución. Utilice el modelo Recraft V4 para mejorar el realismo, la precisión del texto y los gráficos vectoriales detallados. Genere una imagen de 1024x1024 o 2048x2048 según la versión seleccionada.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen",
+          "Texto a Imagen"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-17",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 262,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_recraft_v4_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_image",
+        "title": "Kling O3: Generación de imágenes",
+        "description": "Sube hasta 10 imágenes de referencia para guiar la síntesis. Genera una nueva imagen utilizando el modelo Kling O3 basado en tus entradas visuales proporcionadas.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Edición de imagen",
+          "Texto a Imagen"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 709,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadImage",
+              "file": "vintage_portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 32,
+              "nodeType": "LoadImage",
+              "file": "Urban_Fashion.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "SaveImage",
+              "file": "api_kling_o3_image.json",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux2_max_sofa_swap",
+        "title": "BFL FLUX.2 [max]: Cambio de objeto",
+        "description": "Reemplaza objetos en imágenes con FLUX.2 [max] de alta calidad. Perfecto para fotografía de productos y cambiar muebles manteniendo la coherencia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Edición de imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Flux.2",
+          "Flux"
+        ],
+        "date": "2025-12-22",
+        "searchRank": 7,
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 384,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "minimalist_wooden_sofa_living_room.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "fluffy_beige_sofa.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "black_coat_model.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_t2i",
+        "title": "Kling 3.0: Texto a Imagen",
+        "description": "Genera una imagen a partir de un texto descriptivo utilizando el modelo Kling 3.0. Ingresa tu texto descriptivo para recibir una salida visual de alta calidad y precisa al texto.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Imagen"
+        ],
+        "models": [
+          "Kling",
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 279,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "SaveImage",
+              "file": "api_kling_v3_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_style_reference",
+        "title": "Generación de Referencia de Estilo Recraft",
+        "description": "Sube varias imágenes para crear una referencia de estilo consistente. Genera nuevas imágenes usando esta referencia para mantener la coherencia visual en todas las salidas.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Imagen",
+          "Referencia de Estilo"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-05",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 131,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 38,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-2.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 39,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-4.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "SaveImage",
+              "file": "api_recraft_style_reference.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_v4_text_to_vector",
+        "title": "Recraft v4: Texto a vector",
+        "description": "Introduce indicaciones de texto para generar gráficos SVG vectoriales limpios y editables. Crea logotipos, iconos o ilustraciones con rutas estructuradas adecuadas para herramientas de diseño.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen",
+          "Vector"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-17",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 79,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_seedream4",
+        "title": "ByteDance Seedream 4.0",
+        "description": "Modelo de IA multimodal para texto a imagen y edición de imágenes. Genera imágenes 2K en menos de 2 segundos con control en lenguaje natural.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Imagen",
+          "Edición de imagen",
+          "Texto a Imagen"
+        ],
+        "models": [
+          "ByteDance",
+          "Seedream 4.0"
+        ],
+        "date": "2025-09-11",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1613,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "comfyui_logo.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream4.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_flux2",
+        "title": "Flux.2 Pro",
+        "description": "Genera imágenes fotorrealistas con coherencia multirreferencia y renderizado profesional de texto.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Edición de imagen",
+          "Imagen",
+          "API",
+          "Texto a Imagen"
+        ],
+        "models": [
+          "Flux.2",
+          "Flux"
+        ],
+        "date": "2025-11-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 420,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_4.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 18,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 19,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_2_inpaint",
+        "title": "OpenAI: Inpaint Dall-E 2",
+        "description": "Editar imágenes usando inpainting con la API de OpenAI Dall-E 2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Restauración",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-2",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 12,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 19,
+              "nodeType": "LoadImage",
+              "file": "api_openai_dall_e_2_inpaint_input_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_image",
+        "title": "Kling O1：Imagen",
+        "description": "Genera imágenes de alta calidad a partir de indicaciones de texto usando Kling O1, con soporte para hasta 10 imágenes de referencia para guiar el estilo y el contenido. Incluye relaciones de aspecto flexibles y opciones de resolución 1K/2K.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Referencia de Personaje",
+          "Texto a Imagen"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-05",
+        "openSource": false,
+        "usage": 116,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_kling_omni_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_from_photo_2_miniature",
+        "title": "Estilo de foto a modelo",
+        "description": "Transforma fotos reales de edificios en planos arquitectónicos y luego en modelos físicos en miniatura detallados. Una cadena completa de visualización arquitectónica desde la foto hasta la maqueta.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Edición de imagen",
+          "Imagen",
+          "3D"
+        ],
+        "models": [
+          "Gemini3 Pro Image Preview",
+          "Nano Banana Pro",
+          "Google"
+        ],
+        "date": "2025-11-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 113,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_from_photo_2_miniature_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 37,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bria_image_edit",
+        "title": "Bria: Edición de imágenes",
+        "description": "FIBO permite una edición de imágenes precisa y predecible mediante el control estructurado por JSON de la iluminación, composición y configuración de la cámara",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Edición de imagen",
+          "API"
+        ],
+        "models": [
+          "BRIA"
+        ],
+        "date": "2026-01-20",
+        "openSource": false,
+        "usage": 105,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "sunlit_rooftop_capture.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bria_image_outpainting",
+        "title": "Bria: Extensión de imagen",
+        "description": "Una plantilla profesional de outpaint impulsada por Bria diseñada para la extensión de imágenes sin interrupciones y la expansión de escenas con conciencia de bordes",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Pintura Externa",
+          "API"
+        ],
+        "models": [
+          "BRIA"
+        ],
+        "date": "2026-01-20",
+        "openSource": false,
+        "usage": 46,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "baby_otter.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_text_to_image",
+        "title": "Wan2.5: Texto a Imagen",
+        "description": "Genera imágenes con excelente seguimiento de prompts y calidad visual usando FLUX.1 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 221,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_reference_to_image",
+        "title": "Runway: Referencia a imagen",
+        "description": "Generar nuevas imágenes basadas en estilos y composiciones de referencia con la IA de Runway.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "api_runway_reference_to_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_i2i",
+        "title": "Stability AI: Imagen a imagen",
+        "description": "Transformar imágenes con generación de alta calidad usando Stability AI, perfecto para edición profesional y transferencia de estilo.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 67,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "api_stability_ai_i2i_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_fashion_billboard_generator",
+        "title": "Generador de cartel publicitario de moda",
+        "description": "Convierte fotos de ropa en anuncios profesionales en centros comerciales con modelos realistas.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Edición de imagen",
+          "Imagen",
+          "API",
+          "Moda",
+          "Maqueta"
+        ],
+        "models": [
+          "GPT-Image-1.5",
+          "OpenAI"
+        ],
+        "date": "2025-12-18",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 24,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "outfit-streetwear.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 16,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_pro_image",
+        "title": "Flux.1 Kontext Pro",
+        "description": "Editar imágenes con imagen pro de Flux.1 Kontext.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "Edición de imagen",
+          "Imagen"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 94,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_pro_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_text_to_image",
+        "title": "Runway: Texto a imagen",
+        "description": "Generar imágenes de alta calidad a partir de indicaciones de texto usando el modelo AI de Runway.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 45,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_photon_i2i",
+        "title": "Luma Photon: Imagen a imagen",
+        "description": "Guiar la generación de imágenes usando una combinación de imágenes e indicaciones.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 59,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_style_transfer",
+        "title": "Magnific: Referencia de Estilo",
+        "description": "Sube una imagen objetivo y una imagen de referencia de estilo. Genera una nueva imagen que combine el estilo artístico de la referencia con la estructura de tu objetivo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Referencia de Estilo"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 112,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "girl_riding_unicorn.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "magnific_style_reference.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_sd3.5_i2i",
+        "title": "Stability AI: Imagen a imagen SD3.5",
+        "description": "Generar imágenes de alta calidad con excelente adherencia a las indicaciones. Perfecto para casos de uso profesionales en resolución de 1 megapíxel.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_stability_ai_sd3.5_i2i_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_multiple_images_input",
+        "title": "Flux.1 Kontext Entrada Múltiple de Imágenes",
+        "description": "Ingresar múltiples imágenes y editarlas con Flux.1 Kontext.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "Edición de imagen",
+          "Imagen"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 80,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_girl.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 91,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_sofa.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 96,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_dog.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_pro_t2i",
+        "title": "Flux.1 [Pro]: Texto a Imagen",
+        "description": "Generar imágenes con excelente seguimiento de indicaciones y calidad visual usando FLUX.1 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-1-pro-ultra-image",
+        "tags": [
+          "Edición de imagen",
+          "Imagen"
+        ],
+        "models": [
+          "Flux.1",
+          "Flux"
+        ],
+        "date": "2025-05-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 104,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_stable_image_ultra_t2i",
+        "title": "Stability AI: Texto a imagen Stable Image Ultra",
+        "description": "Generar imágenes de alta calidad con excelente adherencia a las indicaciones. Perfecto para casos de uso profesionales en resolución de 1 megapíxel.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 57,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_i2i",
+        "title": "OpenAI: Imagen a imagen GPT-Image-1",
+        "description": "Generar imágenes a partir de imágenes de entrada usando la API de OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 57,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_inpaint",
+        "title": "OpenAI: Inpaint GPT-Image-1",
+        "description": "Editar imágenes usando inpainting con la API de OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Restauración",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image_mask.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_t2i",
+        "title": "OpenAI: Texto a imagen GPT-Image-1",
+        "description": "Generar imágenes a partir de indicaciones de texto usando la API de OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 8,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_2_t2i",
+        "title": "OpenAI: Texto a imagen Dall-E 2",
+        "description": "Generar imágenes a partir de indicaciones de texto usando la API de OpenAI Dall-E 2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-2",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 20,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_3_t2i",
+        "title": "OpenAI: Texto a imagen Dall-E 3",
+        "description": "Generar imágenes a partir de indicaciones de texto usando la API de OpenAI Dall-E 3.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-3",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 24,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_image_gen_with_color_control",
+        "title": "Recraft: Generación de imágenes con control de color",
+        "description": "Generar imágenes con paletas de colores personalizadas y visuales específicos de marca usando Recraft.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_vector_gen",
+        "title": "Recraft: Generación vectorial",
+        "description": "Generar imágenes vectoriales de alta calidad a partir de indicaciones de texto usando el generador vectorial AI de Recraft.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API",
+          "Vector"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_image_gen_with_style_control",
+        "title": "Recraft: Generación de imágenes con control de estilo",
+        "description": "Controlar estilo con ejemplos visuales, alinear posicionamiento y ajustar objetos finamente. Almacenar y compartir estilos para consistencia perfecta de marca.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_max_image",
+        "title": "Flux.1 Kontext Max",
+        "description": "Editar imágenes con imagen max de Flux.1 Kontext.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "Edición de imagen",
+          "Imagen"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_max_image_style_ref.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_multi_inputs",
+        "title": "OpenAI: Múltiples entradas GPT-Image-1",
+        "description": "Generar imágenes a partir de múltiples entradas usando la API de OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 58,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_hat.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_sd3.5_t2i",
+        "title": "Stability AI: Texto a imagen SD3.5",
+        "description": "Generar imágenes de alta calidad con excelente adherencia a las indicaciones. Perfecto para casos de uso profesionales en resolución de 1 megapíxel.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 25,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ideogram_v3_t2i",
+        "title": "Ideogram V3: Texto a imagen",
+        "description": "Generar imágenes de calidad profesional con excelente alineación de indicaciones, fotorrealismo y renderizado de texto usando Ideogram V3.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Ideogram"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 60,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 59,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_photon_style_ref",
+        "title": "Luma Photon: Referencia de estilo",
+        "description": "Generar imágenes mezclando referencias de estilo con control preciso usando Luma Photon.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Texto a Imagen",
+          "Imagen",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 31,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_ref_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 52,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_ref_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "video",
+    "category": "Tipo de generación",
+    "icon": "icon-[lucide--film]",
+    "title": "Vídeo",
+    "templates": [
+      {
+        "name": "api_grok_video",
+        "title": "Grok: Generación de video",
+        "description": "Introduce indicaciones de texto o un fotograma de imagen inicial para generar vídeos de hasta 15 segundos con audio sincronizado utilizando el modelo Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "Imagen a Video",
+          "Texto a Video",
+          "API"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 4469,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "sci-fi_mech.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "api_grok_video.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "hellorob"
+      },
+      {
+        "name": "api_grok_video_edit",
+        "title": "Grok: Edición de video",
+        "description": "Sube un video para editar. Ingresa las modificaciones deseadas. Genera un video editado usando la API de Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Edición de video"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 361,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadVideo",
+              "file": "futuristic_motorcycle.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "api_grok_video_edit.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_motion_control3",
+        "title": "Kling 3.0: Motion Control",
+        "description": "Sube una imagen del personaje y un video de referencia de movimiento. Genera un nuevo video donde tu personaje realice las acciones de la referencia, con consistencia facial mejorada mediante enlace de elementos opcional.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Control de Movimiento"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-03-06",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "future_robot.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadVideo",
+              "file": "boxing_man.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_video",
+        "title": "Kling 3.0: Generación de video",
+        "description": "Introduce texto o imágenes para generar secuencias de video de 15 segundos con composiciones de múltiples tomas, movimientos complejos de cámara y sujetos consistentes.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Imagen a Video",
+          "Video"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1945,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "boxing.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_image_to_video",
+        "title": "Seedance 1.5 Pro: De imagen a video",
+        "description": "Transforma imágenes en personajes vivos con voz, movimiento y efectos de sonido sincronizados usando seedance1.5 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video"
+        ],
+        "models": [
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2104,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "young_baseball_player.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_avatar2",
+        "title": "Kling: Avatar 2.0",
+        "description": "Sube un retrato y un archivo de audio para generar un video de avatar parlante con movimientos de labios sincronizados y expresiones faciales naturales.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Sincronización de labios",
+          "API"
+        ],
+        "models": [
+          "Kling"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 251,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "woman_in_red.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadAudio",
+              "file": "kling_avatar_input.mp3",
+              "mediaType": "audio"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveVideo",
+              "file": "api_kling_avatar2.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_image_to_video",
+        "title": "ByteDance: Imagen a Video",
+        "description": "Transforma imágenes estáticas en videos dinámicos usando el modelo Seedance de ByteDance. Analiza la estructura de la imagen y genera movimiento natural con estilo visual consistente y secuencias de video coherentes.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Imagen a Video",
+          "Video"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1804,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_dual_characters_effects",
+        "title": "Kling: Efecto de Personaje Dual",
+        "description": "Sube dos imágenes de personajes una al lado de la otra. Genera un video en el que los personajes se abracen, besen o formen un gesto de corazón juntos.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video"
+        ],
+        "models": [
+          "Kling 1.6",
+          "Kling"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-03-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 45,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "deep_curl_portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "blue_tone_woman.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "SaveVideo",
+              "file": "api_kling_dual_characters_effects.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_flf2v",
+        "title": "Kling 3.0: De la primera y última imagen al video",
+        "description": "Introduce una imagen del primer y último fotograma para generar una secuencia de vídeo continua con generación de múltiples tomas, control preciso de elementos y soporte para indicaciones multilingües.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Video",
+          "Video de marco inicial-final"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 773,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "goldenfish_in_bag.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "man_in_daydream.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "Kling_v3_flf2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_video_edit",
+        "title": "Kling O3: Edición de video",
+        "description": "Sube un video y una imagen de referencia para editar con Kling O3. Genera un video editado profesionalmente con edición precisa del sujeto, composición de escena y sincronización nativa de audio y video.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Edición de video",
+          "API",
+          "Video"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 358,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "giant_trees_sky_pyramid.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 25,
+              "nodeType": "LoadVideo",
+              "file": "kling_o3_video_input.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_flf2v",
+        "title": "Kling O3: FLF2V",
+        "description": "Sube imágenes de referencia o especifica los fotogramas de inicio y fin. Genera un vídeo con control semántico preciso, mayor duración y mejor coherencia narrativa.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Video de marco inicial-final"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 169,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_right_front_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 34,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 35,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_left_side_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_right_side_view.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_king_o3_t2v",
+        "title": "Kling O3: Texto a video",
+        "description": "Sube texto, audio o imágenes para generar un video de 15 segundos con audio sincronizado, consistencia de personajes y control del guion gráfico.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Texto a Video"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 217,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "api_king_o3_t2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_v2v",
+        "title": "Kling O1: Video a Video",
+        "description": "Transforma videos con Kling O1. Edita contenido de video, cambia estilos o reemplaza personajes usando indicaciones de texto e imágenes de referencia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "hoverDissolve",
+        "tags": [
+          "Referencia de Personaje",
+          "Video"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-10",
+        "openSource": false,
+        "usage": 335,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "blue_shirt_rabbit.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 7,
+              "nodeType": "LoadVideo",
+              "file": "dancing_women.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_i2v",
+        "title": "Kling O3: Referencia de video",
+        "description": "Sube una imagen de referencia y un prompt opcional de audio o texto. Genera un video con coherencia de personaje, salida de audio nativa y control preciso del guion gráfico.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Referencia de Personaje",
+          "Imagen a Video"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 366,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "chasing_the_light.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 20,
+              "nodeType": "SaveVideo",
+              "file": "kling_o3_i2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q3_text_to_video",
+        "title": "Generación de video audiovisual Vidu Q3",
+        "description": "Ingresa un texto o sube una imagen para generar un video de 1 a 16 segundos con audio sincronizado y transiciones automáticas de escenas.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video"
+        ],
+        "models": [
+          "Vidu",
+          "Vidu Q3"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 54,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q3_image_to_video",
+        "title": "Vidu Q3 Imagen a Video con Audio",
+        "description": "Sube una imagen y proporciona un texto descriptivo para generar un video de 1 a 16 segundos con audio sincronizado y transiciones de escena inteligentes.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video"
+        ],
+        "models": [
+          "Vidu",
+          "Vidu Q3"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "usage": 241,
+        "size": 0,
+        "vram": 0,
+        "logos": [
+          {
+            "provider": "Vidu"
+          }
+        ],
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "two_characters.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan2_6_i2v",
+        "title": "Wan2.6: Imagen a Video",
+        "description": "Transforma imágenes en videos de alta calidad con calidad de imagen mejorada, movimiento más suave, soporte para resolución 1080P y generación de movimiento natural para resultados profesionales.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "date": "2025-12-20",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 624,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "red_car.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_flf2v",
+        "title": "Seedance 1.5 Pro: FLF2V",
+        "description": "Sube un fotograma inicial y un fotograma final, y Seedance 1.5 Pro genera automáticamente una transición de video fluida con audio sincronizado entre ellos.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video de marco inicial-final",
+          "Imagen a Video",
+          "API"
+        ],
+        "models": [
+          "ByteDance",
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 391,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "dancing_capybara.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "dj_capybara.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_motion_control",
+        "title": "Kling2.6: Control de Movimiento",
+        "description": "Aplique acciones y expresiones precisas de personajes desde un video de referencia a su imagen de personaje con control de movimiento sincronizado.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "Control de Movimiento",
+          "API"
+        ],
+        "models": [
+          "Kling 2.6",
+          "Kling"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 1407,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadVideo",
+              "file": "street_dancer.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "streetwear_fox.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_veo3",
+        "title": "Veo3: Imagen a video",
+        "description": "Generar videos de 8 segundos de alta calidad a partir de indicaciones de texto o imágenes usando la API avanzada Veo 3 de Google. Cuenta con generación de audio, mejora de indicaciones y opciones duales de modelo para velocidad o calidad.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Texto a Video",
+          "API"
+        ],
+        "models": [
+          "Veo",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 338,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_veo3_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling2_6_i2v",
+        "title": "Kling2.6: Convertir imágenes en video con audio",
+        "description": "Convierte imágenes estáticas en videos dinámicos con diálogos, canto, efectos y audio ambiental sincronizados",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API",
+          "Audio"
+        ],
+        "models": [
+          "Kling 2.6",
+          "Kling"
+        ],
+        "date": "2025-12-22",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 279,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "lizard_rapper_in_bar.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_i2v",
+        "title": "Vidu Q2: Imagen a Video",
+        "description": "Transforma imágenes estáticas en videos dinámicos 1080p con control de cámara cinematográfico y consistencia multi-sujeto.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 75,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "cozy_bear.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_edit_video",
+        "title": "Kling O1: Edición de Video",
+        "description": "Edita videos con comandos de lenguaje natural, con modo de referencia de video para generar rápidamente transferencias de estilo, adiciones de elementos y modificaciones de fondo de alta calidad.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "API",
+          "Edición de video",
+          "Texto a Video",
+          "Imagen a Video"
+        ],
+        "models": [
+          "Kling"
+        ],
+        "date": "2025-12-02",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 244,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_4.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_2.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 23,
+              "nodeType": "LoadVideo",
+              "file": "api_kling_omni_edit_video_input_video.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 24,
+              "nodeType": "LoadImage",
+              "file": "api_kling_omni_edit_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_i2v",
+        "title": "Kling O1: Imagen a Video",
+        "description": "Transforma imágenes estáticas en videos dinámicos con Kling O1. Añade movimiento, movimientos de cámara y vida a tus imágenes usando indicaciones de texto.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "Referencia de Personaje"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 41,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "sheep_knit.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "quokka_bath.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "quokka_relax.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_image_to_video",
+        "title": "Wan2.5: Imagen a Video",
+        "description": "Transforma imágenes en videos con audio sincronizado, movimiento mejorado y calidad superior.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 270,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadAudio",
+              "file": "audio_ace_step_1_m2m_editing_input_audio.mp3",
+              "mediaType": "audio"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_wan_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_flf",
+        "title": "Kling: FLF2V",
+        "description": "Generar videos controlando el primer y último fotograma.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "API",
+          "Video de marco inicial-final"
+        ],
+        "models": [
+          "Kling",
+          "Kling 1.6"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 80,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_kling_flf_first_frame.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "api_kling_flf_last_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 38,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_i2v",
+        "title": "Kling: Imagen a video",
+        "description": "Generar videos con excelente adherencia a las indicaciones para acciones, expresiones y movimientos de cámara usando Kling.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Kling",
+          "Kling 2.0"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 134,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_kling_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 38,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_sora_video",
+        "title": "Sora 2: Texto e Imagen a Video",
+        "description": "Generación de video Sora-2 y Sora-2 Pro de OpenAI con audio sincronizado.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Texto a Video",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-10-08",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 252,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_openai_sora_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_flf2v",
+        "title": "Vidu Q2: FLF2V",
+        "description": "Transiciones de video suaves entre fotogramas inicial y final, con cámara cinematográfica y consistencia en varios sujetos.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video de marco inicial-final",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 76,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "nun_in_church-1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "nun_in_church-2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_flf2v",
+        "title": "ByteDance: Inicio-Fin a Video",
+        "description": "Genera transiciones de video cinematográficas entre fotogramas de inicio y fin con movimiento fluido, consistencia de escena y acabado profesional usando el modelo Seedance de ByteDance.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Video de marco inicial-final",
+          "Video"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 87,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 35,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_flf2v_first_frame.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_flf2v_last_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_r2v",
+        "title": "Vidu Q2: Referencia a video",
+        "description": "Genera videos con consistencia basada en referencias para hasta 3 sujetos, manteniendo la continuidad de personajes y estilos a lo largo de la secuencia de video con movimientos de cámara cinematográficos.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Referencia de Personaje",
+          "Imagen a Video",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 39,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_q2_r2v_red_haired_girl.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "vintage_robot.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_t2v",
+        "title": "Kling O1: Texto a Video",
+        "description": "Genera videos desde texto con Kling O1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 19,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ltxv_image_to_video",
+        "title": "LTX-2: Imagen a Video",
+        "description": "Transforma imágenes estáticas en videos dinámicos con LTX-2 Pro. Genera secuencias cinematográficas con movimiento natural, audio sincronizado y soporte de hasta 4K y 50fps.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "LTX-2",
+          "Lightricks"
+        ],
+        "date": "2025-10-28",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 118,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 47,
+              "nodeType": "LoadImage",
+              "file": "api_ltxv_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 41,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_gen4_turo_image_to_video",
+        "title": "Runway: Gen4 Turbo Imagen a video",
+        "description": "Generar videos dinámicos a partir de imágenes usando Runway Gen4 Turbo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 86,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_runway_gen4_turo_image_to_video_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan2_6_t2v",
+        "title": "Wan2.5: Texto a Video",
+        "description": "Genera videos con audio sincronizado, movimiento mejorado y calidad superior.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "date": "2025-12-20",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 101,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_r2v",
+        "title": "WAN2.6: Video de referencia de personaje",
+        "description": "Crea videos que mantienen las características del personaje, con movimiento natural y calidad cinematográfica.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Referencia de Personaje",
+          "Video"
+        ],
+        "date": "2026-01-03",
+        "openSource": false,
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "usage": 23,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "LoadVideo",
+              "file": "armored_warrior.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 35,
+              "nodeType": "LoadVideo",
+              "file": "spear_warrior.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_reference_to_video",
+        "title": "Vidu Q1: Referencia a video",
+        "description": "Generar videos con sujetos consistentes usando múltiples imágenes de referencia (hasta 7) para continuidad de personaje y estilo a lo largo de la secuencia de video.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "Imagen a Video",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_2.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 30,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_1.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 45,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_3.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_text_to_video",
+        "title": "Seedance1.5 Pro: Texto a Video",
+        "description": "Crea historias audiovisuales completas a partir de texto con voces, música y efectos de sonido sincronizados.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Texto a Video"
+        ],
+        "models": [
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "usage": 145,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling2_6_t2v",
+        "title": "Kling2.6: Generar videos narrativos con audio desde texto",
+        "description": "Convierte tus historias en videos con diálogo, música, efectos y audio ambiental",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Audio",
+          "Texto a Video",
+          "Video"
+        ],
+        "models": [
+          "Kling",
+          "Kling 2.6"
+        ],
+        "date": "2025-12-22",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 13,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_first_last_frame",
+        "title": "Runway: Primer último fotograma a video",
+        "description": "Generar transiciones de video suaves entre dos fotogramas clave con precisión de Runway.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "API",
+          "Video de marco inicial-final"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "api_runway_first_last_frame_first_frame.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_runway_first_last_frame_last_frame.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_gen3a_turbo_image_to_video",
+        "title": "Runway: Gen3a Turbo Imagen a video",
+        "description": "Generar videos cinematográficos a partir de imágenes estáticas usando Runway Gen3a Turbo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 18,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_runway_gen3a_turbo_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_t2v",
+        "title": "Vidu Q2: Texto a Video",
+        "description": "Genera videos de alta calidad en 1080p a partir de indicaciones de texto con el modelo Vidu Q2",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 14,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_veo2_i2v",
+        "title": "Veo2: Imagen a video",
+        "description": "Generar videos a partir de imágenes usando la API de Google Veo2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Veo",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 16,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 61,
+              "nodeType": "LoadImage",
+              "file": "api_veo2_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 62,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_text_to_video",
+        "title": "Wan2.5: Texto a Video",
+        "description": "Genera videos con audio sincronizado, movimiento mejorado y calidad superior.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 23,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadAudio",
+              "file": "audio_ace_step_1_m2m_editing_input_audio.mp3",
+              "mediaType": "audio"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_start_end_to_video",
+        "title": "Vidu Q1: De Inicio y Fin a Video",
+        "description": "Crear transiciones de video suaves entre fotogramas de inicio y fin definidos con interpolación natural de movimiento y calidad visual consistente.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "API",
+          "Video de marco inicial-final"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 14,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_start_end_to_video_start_frame.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 30,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_start_end_to_video_last_frame.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_t2v",
+        "title": "PixVerse: Texto a video",
+        "description": "Generar videos con interpretación precisa de indicaciones y dinámicas de video impresionantes.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 5,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_image_to_video",
+        "title": "Moonvalley: Imagen a video",
+        "description": "Generar videos cinematográficos 1080p con una imagen mediante un modelo entrenado exclusivamente en datos con licencia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "api_moonvalley_image_to_video_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_video_to_video_motion_transfer",
+        "title": "Moonvalley: Transferencia de movimiento",
+        "description": "Aplicar movimiento de un video a otro.",
+        "mediaType": "image",
+        "thumbnailVariant": "hoverDissolve",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 48,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadVideo",
+              "file": "api_moonvalley_video_to_video_motion_transfer_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_video_to_video_pose_control",
+        "title": "Moonvalley: Control de pose",
+        "description": "Aplicar pose y movimiento humano de un video a otro.",
+        "mediaType": "image",
+        "thumbnailVariant": "hoverDissolve",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadVideo",
+              "file": "api_moonvalley_video_to_video_pose_control_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_i2v",
+        "title": "MiniMax: Imagen a video",
+        "description": "Generar videos refinados a partir de imágenes y texto con integración CGI usando MiniMax.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 5,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_hailuo_minimax_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_i2v",
+        "title": "Luma: Imagen a video",
+        "description": "Tomar imágenes estáticas e instantáneamente crear animaciones mágicas de alta calidad.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "api_luma_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ltxv_text_to_video",
+        "title": "LTX-2: Texto a vídeo",
+        "description": "Genera vídeos de alta calidad a partir de indicaciones de texto usando Lightricks LTX-2 con audio sincronizado. Soporta hasta 4K de resolución a 50fps con modos Rápido, Pro y Ultra para diversas necesidades de producción.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "LTX-2",
+          "Lightricks"
+        ],
+        "date": "2025-10-28",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 87,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_text_to_video",
+        "title": "Vidu Q1: Texto a Video",
+        "description": "Generar videos 1080p de alta calidad a partir de indicaciones de texto con control de amplitud de movimiento y duración ajustable usando el modelo AI avanzado de Vidu.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_text_to_video",
+        "title": "ByteDance: Texto a Video",
+        "description": "Genera videos de alta calidad directamente desde prompts de texto usando el modelo Seedance de ByteDance. Compatible con múltiples resoluciones y relaciones de aspecto con movimiento natural y calidad cinematográfica.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "API",
+          "Texto a Video"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 65,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_image_to_video",
+        "title": "Vidu Q1: De imagen a video",
+        "description": "Transformar imágenes estáticas en videos 1080p dinámicos con control de movimiento preciso y amplitud de movimiento personalizable usando Vidu.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 22,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_t2v",
+        "title": "MiniMax: Texto a video",
+        "description": "Generar videos de alta calidad directamente a partir de indicaciones de texto. Explorar las capacidades avanzadas de IA de MiniMax para crear narrativas visuales diversas con efectos CGI profesionales y elementos estilísticos que den vida a sus descripciones.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_effects",
+        "title": "Kling: Efectos de video",
+        "description": "Generar videos dinámicos aplicando efectos visuales a imágenes usando Kling.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Kling",
+          "Kling 1.6"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_kling_effects_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_video",
+        "title": "MiniMax: Video",
+        "description": "Generar videos de alta calidad a partir de indicaciones de texto con control opcional del primer fotograma usando el modelo MiniMax Hailuo-02. Soporta múltiples resoluciones (768P/1080P) y duraciones (6/10s) con optimización inteligente de indicaciones.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "api_hailuo_minimax_video_first_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_t2v",
+        "title": "Luma: Texto a video",
+        "description": "Se pueden generar videos de alta calidad usando indicaciones simples.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 6,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_i2v",
+        "title": "PixVerse: Imagen a video",
+        "description": "Generar videos dinámicos a partir de imágenes estáticas con movimiento y efectos usando PixVerse.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 4,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "api_runway_reference_to_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_template_i2v",
+        "title": "PixVerse Plantillas: Imagen a video",
+        "description": "Generar videos dinámicos a partir de imágenes estáticas con movimiento y efectos usando PixVerse.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "LoadImage",
+              "file": "api_pixverse_template_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_text_to_video",
+        "title": "Moonvalley: Texto a video",
+        "description": "Generar videos cinematográficos 1080p a partir de indicaciones de texto mediante un modelo entrenado exclusivamente en datos con licencia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a Video",
+          "Video",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "audio",
+    "category": "Tipo de generación",
+    "icon": "icon-[lucide--volume-2]",
+    "title": "Audio",
+    "templates": [
+      {
+        "name": "api_elevenlabs_text_to_speech",
+        "title": "ElevenLabs: Texto a voz",
+        "description": "Ingresa texto para generar voz ultrarealista, o sube una muestra de voz para clonarla y sintetizarla.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a voz",
+          "Audio",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 473,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_text_to_dialogue",
+        "title": "ElevenLabs: Texto a Diálogo",
+        "description": "Introduce texto y selecciona un perfil de voz para generar un diálogo de audio de alta calidad y expresivo emocionalmente.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "Texto a voz"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 42,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_speech_to_speech",
+        "title": "ElevenLabs: Voz a voz",
+        "description": "Sube un archivo de audio fuente para aplicar un nuevo tono de voz o clonar una voz diferente, generando una salida de audio modificada.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Clonación de Voz",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            },
+            {
+              "nodeId": 221,
+              "nodeType": "LoadAudio",
+              "file": "api_elevenlabs_speech_to_speech.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_voice_isolation",
+        "title": "ElevenLabs: Aislamiento de Voz",
+        "description": "Sube un archivo de audio que contenga ruido de fondo. Utiliza la API de ElevenLabs para aislar y generar una pista de voz limpia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Aislamiento de Voz"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 12,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 131,
+              "nodeType": "LoadAudio",
+              "file": "noisy_background.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenLabs_speech_to_text",
+        "title": "ElevenLabs: Voz a texto",
+        "description": "Sube un archivo de audio o video para transcribir su voz en texto preciso y editable.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Voz a texto",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 14,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 219,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_text_to_sound_effects",
+        "title": "ElevenLabs: Texto a efectos de sonido",
+        "description": "Ingresa un texto para generar efectos de sonido personalizados y audio ambiental.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Audio",
+          "Efectos de sonido",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 68,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 137,
+              "nodeType": "SaveAudioMP3",
+              "file": "api_elevenlabs_text_to_sound_effects.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_audio_to_audio",
+        "title": "Stable Audio 2.5: Audio a Audio",
+        "description": "Transforma audio en nuevas composiciones usando Stable Audio 2.5. Sube audio y la IA crea pistas completas.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "Audio",
+          "Audio a Audio"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 30,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadAudio",
+              "file": "api_stability_ai_audio_to_audio_input_audio.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_text_to_audio",
+        "title": "Stable Audio 2.5: Texto a audio",
+        "description": "Genera música a partir de texto usando Stable Audio 2.5. Crea pistas de varios minutos en segundos.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "Audio",
+          "Texto a Audio"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 47,
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_audio_inpaint",
+        "title": "Stability Audio 2.5: Restauración de Audio",
+        "description": "Completa o extiende pistas de audio usando Stable Audio 2.5. Sube audio y la IA genera el resto.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "Audio",
+          "Audio a Audio"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 6,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadAudio",
+              "file": "api_stability_ai_audio_inpaint_input_audio.wav",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "3d",
+    "category": "Tipo de generación",
+    "icon": "icon-[lucide--box]",
+    "title": "Modelo 3D",
+    "templates": [
+      {
+        "name": "api_hunyuan3d_part",
+        "title": "HY 3D: Descomposición de Piezas 3D",
+        "description": "Sube un modelo 3D para segmentarlo automáticamente en sus partes constituyentes, generando un activo 3D completamente descompuesto para reutilización y edición.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "Modelo 3D",
+          "API"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_image_to_model",
+        "title": "Hunyuan3D: De imagen a modelo",
+        "description": "Sube una imagen para generar un modelo 3D con geometría y texturas PBR.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Modelo 3D",
+          "Imagen a modelo",
+          "API"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 463,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "pink_robot_front.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "pink_robot_back.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_text_to_model",
+        "title": "HunYuan3D: Texto a Modelo",
+        "description": "Introduce un texto o sube una imagen de referencia para generar un recurso de modelo 3D detallado.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "3D",
+          "Texto a modelo"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 66,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_smart_topology",
+        "title": "Hunyuan3D: Topología Inteligente",
+        "description": "Sube un archivo de modelo 3D de alta poligonización. Genera un modelo 3D de baja poligonización y topológicamente optimizado con un nivel de reducción especificado.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Modelo 3D"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_multi_image_to_model",
+        "title": "Meshy 6: De múltiples imágenes a modelo",
+        "description": "Cree modelos 3D de alta calidad a partir de múltiples imágenes usando Meshy 6. Más fotos significan una mejor captura de detalles, proporciones precisas y una estructura de malla más limpia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 90,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "joker_front.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "joker_back.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "joker_side.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_image_to_model",
+        "title": "Meshy 6: De imagen a modelo",
+        "description": "Sube una imagen y genera un modelo 3D con Meshy 6. Crea personajes, objetos o piezas mecánicas con geometría de calidad de producción y topología limpia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "Imagen a modelo",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "usage": 212,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "robot-warrior.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_text_to_model",
+        "title": "Meshy 6: De texto a modelo",
+        "description": "Genera modelos 3D de alta calidad a partir de indicaciones de texto usando Meshy 6. Crea personajes con geometría refinada, objetos mecánicos con bordes afilados o activos de baja poligonización listos para juegos.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "Texto a modelo",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 51,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo3_0_image_to_model",
+        "title": "Tripo3.0: Imagen a Modelo",
+        "description": "Convierte imágenes o bocetos en modelos 3D con la geometría precisa y texturas PBR listas para producción de Tripo 3.0.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a modelo",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-12-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 155,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "3d_character_front_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "3d_character_back_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "3d_character_left_view.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo3_0_text_to_model",
+        "title": "Tripo3.0: Texto a Modelo",
+        "description": "Genera modelos 3D precisos desde texto, con geometría de alta resolución y materiales PBR realistas.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a modelo",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-12-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 23,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_text_to_model",
+        "title": "Tripo: Texto a modelo",
+        "description": "Crear objetos 3D a partir de descripciones con modelado dirigido por texto de Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Texto a modelo",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 21,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_image_to_model",
+        "title": "Tripo: Imagen a modelo",
+        "description": "Generar activos 3D profesionales a partir de imágenes 2D usando el motor Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "Imagen a modelo",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 24,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_image_to_model_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 51,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_multiview_to_model",
+        "title": "Tripo: Vista múltiple a modelo",
+        "description": "Construir modelos 3D desde múltiples ángulos con el escáner avanzado de Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a 3D",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 34,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_multiview_to_model_front_image.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_multiview_to_model_back_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_gen2",
+        "title": "Rodin: Gen-2 Imagen a Modelo",
+        "description": "Genera modelos 3D detallados con 4X de calidad de malla a partir de fotos usando Rodin Gen2",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a 3D",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 36,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 82,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_gen2_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_image_to_model",
+        "title": "Rodin: Imagen a modelo",
+        "description": "Generar modelos 3D detallados a partir de fotos individuales usando Rodin AI.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a 3D",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 63,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 49,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_image_to_model_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 56,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 61,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 59,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 60,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_multiview_to_model",
+        "title": "Rodin: Vista múltiple a modelo",
+        "description": "Esculpir modelos 3D completos usando reconstrucción multiángulo de Rodin.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Imagen a 3D",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_left.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 41,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_front.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 56,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_back.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 61,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 62,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 63,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 64,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_retopo_uv",
+        "title": "Huyuan3D: Retopología de Modelos y Despliegue UV",
+        "description": "Introduce una malla densa (de generación por IA o escaneos de fotogrametría) y crea un modelo ligero con buena topología y UV desplegados. Ideal para la optimización de activos de juegos 3D.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Modelo 3D"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_model2uv",
+        "title": "Hunyuan3D: Despliegue UV",
+        "description": "Sube un modelo 3D para realizar el desplegado UV. Genera un modelo procesado con un diseño UV optimizado para texturizado.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Modelo 3D"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "image",
+    "category": "Tipo de generación",
+    "icon": "icon-[lucide--message-square-text]",
+    "title": "LLM API",
+    "templates": [
+      {
+        "name": "api_openai_chat",
+        "title": "OpenAI: Chat",
+        "description": "Interactuar con los modelos de lenguaje avanzados de OpenAI para conversaciones inteligentes.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Generación de texto",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_google_gemini",
+        "title": "Google Gemini",
+        "description": "Experimentar la IA multimodal de Google con las capacidades de razonamiento de Gemini.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Generación de texto",
+          "API"
+        ],
+        "models": [
+          "Google Gemini",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 162,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "image",
+    "isEssential": true,
+    "category": "Tipo de generación",
+    "icon": "icon-[lucide--settings]",
+    "title": "Utilidad",
+    "templates": [
+      {
+        "name": "api_magnific_image_upscale_creative",
+        "title": "Magnific: Escalado Creativo de Imágenes",
+        "description": "Sube una imagen y establece el nivel de ampliación. Genera una versión de alta resolución de tu imagen con soporte para ampliaciones de hasta 16x.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Mejora de imagen"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "logos": [
+          {
+            "provider": "Magnific"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 219,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "1950_new_york.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "ComfyUI_00915_.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_upscale_precise",
+        "title": "Magnific: Escalado Preciso de Imágenes",
+        "description": "Sube una imagen para escalarla con precisión usando el modelo Magnific, generando una versión de alta resolución con detalles mejorados.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Mejora de imagen"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "logos": [
+          {
+            "provider": "Magnific"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 142,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "young_woman_portrait.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "api_magnific_image_upscale_precise.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_topaz_image_enhance",
+        "title": "Mejora de imagen Topaz",
+        "description": "Mejora profesional de imágenes usando el modelo Reimagine de Topaz con mejora facial y restauración de detalles.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Mejora de imagen",
+          "API"
+        ],
+        "models": [
+          "Reimagine",
+          "Topaz"
+        ],
+        "date": "2025-11-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 85,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Topaz"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_topaz_image_enhance_input_image.webp",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_topaz_video_enhance",
+        "title": "Mejora Creativa de Video - Topaz Astra",
+        "description": "Mejora vídeos con Topaz AI. Permite aumentar la resolución usando el modelo Starlight (Astra) Fast e interpolar fotogramas con el modelo apo-8.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Mejora de Video"
+        ],
+        "models": [
+          "Topaz"
+        ],
+        "date": "2025-11-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 173,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadVideo",
+              "file": "api_topaz_video_enhance_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_upscale_fast",
+        "title": "Stability AI: Escalado rápido de imágenes",
+        "description": "Sube una imagen para escalarla rápidamente 4x mediante la API de Stability AI, ideal para mejorar imágenes de baja calidad o comprimidas.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Mejora de imagen"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 76,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "woman_with_red_hat.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveImage",
+              "file": "api_stability_upscale_fast.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespped_seedvr2_ai_image_fix",
+        "title": "Upscale: Restauración de imágenes con IA mediante WaveSpeed SeedVR2",
+        "description": "Sube una imagen generada por IA para restaurar detalles y aumentar la resolución. El flujo de trabajo preserva colores y nitidez mientras minimiza artefactos. La salida es una versión ampliada y de alta calidad de tu entrada.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Mejora de imagen"
+        ],
+        "models": [
+          "SeedVR2",
+          "WaveSpeed"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 51,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "midnight_coasta.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespped_image_upscale",
+        "title": "WaveSpeed: Escalado de imagen",
+        "description": "Sube una imagen para mejorar su resolución. Genera una salida mejorada de 2K, 4K u 8K que preserve los detalles y reduzca los artefactos en formato JPEG, PNG o WEBP.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Mejora de imagen"
+        ],
+        "models": [
+          "WaveSpeed"
+        ],
+        "date": "2026-01-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 114,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "woman_behind_veil.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespeed_flshvsr_video_upscale",
+        "title": "WaveSpeed: Superresolución de video FlashVSR",
+        "description": "Sube un vídeo para escalarlo a 720p, 1080p, 2K o 4K. El flujo de trabajo mejora el detalle, reduce artefactos y garantiza un movimiento consistente para una salida de alta calidad y apariencia natural.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Mejora de Video"
+        ],
+        "models": [
+          "FlashVSR",
+          "WaveSpeed"
+        ],
+        "date": "2026-01-23",
+        "openSource": false,
+        "usage": 67,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadVideo",
+              "file": "lighter.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_video_extension",
+        "title": "Vidu: Extensión de video",
+        "description": "Sube un video y usa el modelo Vidu Q2 para extenderlo hasta 7 segundos y mejorar la resolución a 1080p.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "Video",
+          "Extensión de video",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-02-01",
+        "openSource": false,
+        "logos": [
+          {
+            "provider": "Vidu"
+          }
+        ],
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadVideo",
+              "file": "lawyer.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_relight",
+        "title": "Magnific: Reiluminación de Imágenes",
+        "description": "Sube una imagen fuente y una imagen de iluminación de referencia. Genera una versión reiluminada de tu imagen fuente, aplicando las condiciones de iluminación de la referencia.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Reiluminar",
+          "API"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 14,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "magical-portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "vintage-girl.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_skin_enhancer",
+        "title": "Magnific: Mejorador de Piel",
+        "description": "Mejore la piel y la calidad general de la imagen subiendo su imagen y seleccionando un ajuste preestablecido para ajustar la iluminación, la gradación de color y el realismo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "Retrato",
+          "Mejora de imagen"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 222,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "close_up_girl_skin.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux1_expand_image",
+        "title": "Flux.1: Extensión de imagen",
+        "description": "Sube una imagen para expandir su lienzo usando Flux.1. Genera una imagen con pintura exterior con contenido extendido.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "Pintura Externa"
+        ],
+        "models": [
+          "Flux",
+          "Flux.1"
+        ],
+        "date": "2026-02-09",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 92,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "man_on_desert.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_bfl_flux1_expand_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  }
+]

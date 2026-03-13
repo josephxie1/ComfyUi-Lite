@@ -1,0 +1,16 @@
+{
+    "Comfy.RightSidePanel.IsOpen": false,
+    "Comfy.Queue.History.Expanded": false,
+    "Comfy.ColorPalette": "dark",
+    "Comfy.LinkRenderMode": 2,
+    "Comfy.Minimap.Visible": false,
+    "Comfy.Templates.SortBy": "default",
+    "Comfy.VueNodes.Enabled": true,
+    "Comfy.Workflow.SortNodeIdOnSave": true,
+    "Comfy.WorkflowActions.SeenItems": [
+        "enter-app-mode",
+        "enter-builder-mode"
+    ],
+    "Comfy.InstalledVersion": "1.42.2",
+    "Comfy.TutorialCompleted": true
+}

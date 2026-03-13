@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "comfyui_workflow_templates"
+version = "0.9.19"
+description = "ComfyUI workflow templates package"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Comfy-Org"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "comfyui-workflow-templates-core==0.3.166",
+    "comfyui-workflow-templates-media-api==0.3.62",
+    "comfyui-workflow-templates-media-video==0.3.58",
+    "comfyui-workflow-templates-media-image==0.3.102",
+    "comfyui-workflow-templates-media-other==0.3.139",
+]
+
+[project.optional-dependencies]
+api = ["comfyui-workflow-templates-media-api==0.3.62"]
+video = ["comfyui-workflow-templates-media-video==0.3.58"]
+image = ["comfyui-workflow-templates-media-image==0.3.102"]
+other = ["comfyui-workflow-templates-media-other==0.3.139"]
+all = [
+    "comfyui-workflow-templates-media-api==0.3.62",
+    "comfyui-workflow-templates-media-video==0.3.58",
+    "comfyui-workflow-templates-media-image==0.3.102",
+    "comfyui-workflow-templates-media-other==0.3.139",
+]
+
+[tool.setuptools.packages.find]
+where = ["packages/meta/src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F"]

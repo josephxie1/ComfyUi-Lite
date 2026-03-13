@@ -1,0 +1,1 @@
+{"diff": "--- previous\n+++ current\n@@ -1 +1 @@\n-[object Object]\n+{\"test.json\":\"/api/view?filename=ComfyUI_00021_.png&type=output\"}", "full_content": "{\"test.json\":\"/api/view?filename=ComfyUI_00021_.png&type=output\"}"}

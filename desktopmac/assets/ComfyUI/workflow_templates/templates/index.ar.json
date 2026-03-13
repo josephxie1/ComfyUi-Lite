@@ -1,0 +1,6058 @@
+[
+  {
+    "moduleName": "default",
+    "type": "image",
+    "category": "نوع التوليد",
+    "icon": "icon-[lucide--image]",
+    "title": "صورة",
+    "templates": [
+      {
+        "name": "api_google_nano_banana2_image_edit",
+        "title": "Nano Banana 2: تحرير الصور",
+        "description": "قم بتحميل صورة وموجه نصي لتحريرها. أنشئ صورة جديدة تعدل الصورة الأصلية بناءً على تعليماتك، مع الحفاظ على اتساق الموضوع ودقة بصرية عالية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "تحرير صورة"
+        ],
+        "models": [
+          "Google",
+          "Nano Banana 2"
+        ],
+        "logos": [
+          {
+            "provider": "Google"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 7237,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "man_with_dog.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveImage",
+              "file": "api_google_nano_banana2_image_edit.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_nano_banana_pro",
+        "title": "Nano Banana Pro",
+        "description": "Nano-banana Pro (Gemini 3.0 Pro Image) - توليد وتحرير صور بدقة 4K بجودة استوديو مع عرض نصوص محسّن واتساق للشخصيات。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "hoverDissolve",
+        "tags": [
+          "API",
+          "صورة",
+          "تحرير صورة"
+        ],
+        "models": [
+          "Gemini3 Pro Image Preview",
+          "Google",
+          "Nano Banana Pro"
+        ],
+        "date": "2025-11-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 8082,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_nano_banana_pro_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_nano_banana_pro_input_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "api_nano_banana_pro.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "Google"
+          }
+        ],
+        "searchRank": 0,
+        "username": "hellorob"
+      },
+      {
+        "name": "api_bytedance_seedream_5_0_lite_image_edit",
+        "title": "Seedream 5.0 Lite: تحرير الصور",
+        "description": "قم بتحميل صورة وموجه نصي لتحريرها. قم بإنشاء صورة معدلة حيث تتوافق التفاصيل مع تعليماتك.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تحرير صورة"
+        ],
+        "models": [
+          "Seedream 5.0 Lite"
+        ],
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "date": "2026-02-24",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2834,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "man_with_old_computers.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 32,
+              "nodeType": "LoadImage",
+              "file": "inflated_character.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream_5_0_lite_image_edit.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_grok_image_edit",
+        "title": "Grok: تحرير الصورة",
+        "description": "قم بتحميل صورة لتعديلها باستخدام نموذج Grok. أنشئ نسخة معدلة بمرئيات تعبيرية وسينمائية",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تحرير صورة"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 7572,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "cyberpunk_robot.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Grok"
+          }
+        ],
+        "username": "hellorob"
+      },
+      {
+        "name": "api_grok_text_to_image",
+        "title": "Grok: نص إلى صورة",
+        "description": "أدخل نصوصًا توجيهية لتوليد صور عالية الجودة بسرعة باستخدام نموذج Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "نص إلى صورة"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 2217,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Grok"
+          }
+        ],
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "api_grok_text_to_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_seedream_5_0_lite_t2i",
+        "title": "Seedream 5.0 Lite: النص إلى الصورة",
+        "description": "أدخل مطالبتك النصية لإنشاء صورة مفصلة. يخلق سير العمل هذا تمثيلًا مرئيًا لوصفك مع تحكم دقيق في النمط والتخطيط.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "نص إلى صورة"
+        ],
+        "models": [
+          "Seedream 5.0 Lite"
+        ],
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "date": "2026-02-24",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 847,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream_5_0_lite_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_google_gemini_image",
+        "title": "صورة Google Gemini",
+        "description": "Nano-banana (Gemini-2.5-Flash Image) - تحرير الصور مع الحفاظ على الاتساق.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "تحرير صورة",
+          "صورة",
+          "API",
+          "نص إلى صورة"
+        ],
+        "models": [
+          "Gemini-2.5-Flash",
+          "Nano Banana",
+          "Google"
+        ],
+        "date": "2025-08-27",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1219,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "comfyui_logo.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_v4_t2i",
+        "title": "Recraft v4: نص إلى صورة",
+        "description": "أدخل نصًا لإنشاء صورة عالية الدقة. استخدم نموذج Recraft V4 لتحسين الواقعية ودقة النصوص والرسومات المتجهة التفصيلية. أنتج صورة بحجم 1024x1024 أو 2048x2048 بناءً على الإصدار الذي تختاره.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة",
+          "نص إلى صورة"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-17",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 262,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_recraft_v4_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_image",
+        "title": "Kling O3: توليد الصور",
+        "description": "قم بتحميل ما يصل إلى 10 صور مرجعية لتوجيه التركيب. قم بإنشاء صورة جديدة باستخدام نموذج Kling O3 استنادًا إلى المدخلات البصرية التي قدمتها.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "تحرير صورة",
+          "نص إلى صورة"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 709,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadImage",
+              "file": "vintage_portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 32,
+              "nodeType": "LoadImage",
+              "file": "Urban_Fashion.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "SaveImage",
+              "file": "api_kling_o3_image.json",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux2_max_sofa_swap",
+        "title": "BFL FLUX.2 [max]: تبديل الكائن",
+        "description": "استبدل الكائنات بدقة عالية باستخدام FLUX.2 [max]، مثالي لتصوير المنتجات وتبديل الأثاث والحفاظ على تناسق المشهد.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "تحرير صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Flux.2",
+          "Flux"
+        ],
+        "date": "2025-12-22",
+        "searchRank": 7,
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 384,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "minimalist_wooden_sofa_living_room.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "fluffy_beige_sofa.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "black_coat_model.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_t2i",
+        "title": "Kling 3.0: النص إلى الصورة",
+        "description": "قم بإنشاء صورة من نص وصفي باستخدام نموذج Kling 3.0. أدخل النص الوصفي الخاص بك للحصول على مخرجات بصرية عالية الجودة ودقيقة وفق النص.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "صورة"
+        ],
+        "models": [
+          "Kling",
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 279,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "SaveImage",
+              "file": "api_kling_v3_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_style_reference",
+        "title": "توليد مرجع النمط Recraft",
+        "description": "قم بتحميل صور متعددة لإنشاء مرجع نمط متسق. قم بإنشاء صور جديدة باستخدام هذا المرجع للحفاظ على التماسك البصري عبر المخرجات.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "صورة",
+          "مرجع النمط"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-05",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 131,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 38,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-2.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 39,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-4.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "SaveImage",
+              "file": "api_recraft_style_reference.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_v4_text_to_vector",
+        "title": "Recraft v4: النص إلى متجه",
+        "description": "أدخل نصوصًا توجيهية لتوليد رسومات SVG متجهية نظيفة وقابلة للتعديل. أنشئ شعارات أو أيقونات أو رسومًا توضيحية بمسارات منظمة مناسبة لأدوات التصميم.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة",
+          "متجه"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-17",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 79,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_seedream4",
+        "title": "ByteDance Seedream 4.0",
+        "description": "نموذج ذكاء اصطناعي متعدد الوسائط لتحويل النص إلى صورة وتحرير الصور. توليد صور بدقة 2K في أقل من ثانيتين مع التحكم باللغة الطبيعية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "صورة",
+          "تحرير صورة",
+          "نص إلى صورة"
+        ],
+        "models": [
+          "ByteDance",
+          "Seedream 4.0"
+        ],
+        "date": "2025-09-11",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1613,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "comfyui_logo.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream4.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_flux2",
+        "title": "Flux.2 Pro",
+        "description": "أنشئ صوراً فوتوغرافية واقعية مع توافق متعدد المراجع وعرض نص احترافي.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "تحرير صورة",
+          "صورة",
+          "API",
+          "نص إلى صورة"
+        ],
+        "models": [
+          "Flux.2",
+          "Flux"
+        ],
+        "date": "2025-11-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 420,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_4.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 18,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 19,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_2_inpaint",
+        "title": "OpenAI: Dall-E 2 إعادة رسم داخلي",
+        "description": "تحرير الصور باستخدام الإعادة الرسم الداخلي مع واجهة OpenAI Dall-E 2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "الترميم",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-2",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 12,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 19,
+              "nodeType": "LoadImage",
+              "file": "api_openai_dall_e_2_inpaint_input_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_image",
+        "title": "Kling O1：صورة",
+        "description": "أنشئ صورًا عالية الجودة من المطالبات النصية باستخدام Kling O1، مع دعم ما يصل إلى 10 صور مرجعية لتوجيه النمط والمحتوى. يتضمن نسب عرض إلى ارتفاع مرنة وخيارات دقة 1K/2K.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "مرجع الشخصية",
+          "نص إلى صورة"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-05",
+        "openSource": false,
+        "usage": 116,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_kling_omni_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_from_photo_2_miniature",
+        "title": "نمط من الصورة إلى النموذج",
+        "description": "حوّل صور المباني الحقيقية إلى مخططات معمارية ثم إلى نماذج مصغرة مفصلة. سلسلة متكاملة لتصور معماري تبدأ بالصورة وتنتهي بالنموذج المصغر.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "تحرير صورة",
+          "صورة",
+          "3D"
+        ],
+        "models": [
+          "Gemini3 Pro Image Preview",
+          "Nano Banana Pro",
+          "Google"
+        ],
+        "date": "2025-11-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 113,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_from_photo_2_miniature_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 37,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bria_image_edit",
+        "title": "Bria: تحرير الصور",
+        "description": "تمكّن FIBO من تحرير الصور بدقة ويمكن التنبؤ به من خلال التحكم المنظم بتنسيق JSON في الإضاءة والتكوين وإعدادات الكاميرا",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "تحرير صورة",
+          "API"
+        ],
+        "models": [
+          "BRIA"
+        ],
+        "date": "2026-01-20",
+        "openSource": false,
+        "usage": 105,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "sunlit_rooftop_capture.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bria_image_outpainting",
+        "title": "Bria: توسيع الصورة",
+        "description": "قالب احترافي للرسم الخارجي مدعوم بـ Bria مصمم لتوسيع الصور بسلاسة وتوسيع المشهد مع مراعاة الحواف",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "الرسم الخارجي",
+          "API"
+        ],
+        "models": [
+          "BRIA"
+        ],
+        "date": "2026-01-20",
+        "openSource": false,
+        "usage": 46,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "baby_otter.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_text_to_image",
+        "title": "Wan2.5: من نص إلى صورة",
+        "description": "توليد صور مع اتباع ممتاز للأوامر النصية وجودة بصرية عالية باستخدام FLUX.1 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 221,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_reference_to_image",
+        "title": "Runway: من مرجع إلى صورة",
+        "description": "توليد صور جديدة بناءً على أساليب وتركيبات مرجعية باستخدام الذكاء الاصطناعي من Runway.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "api_runway_reference_to_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_i2i",
+        "title": "Stability AI: من صورة إلى صورة",
+        "description": "تحويل الصور بتوليد عالي الجودة باستخدام Stability AI، مثالي للتحرير الاحترافي ونقل الأساليب.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 67,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "api_stability_ai_i2i_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_fashion_billboard_generator",
+        "title": "مولّد لوحات أزياء إعلانية",
+        "description": "حوّل صور الملابس إلى إعلانات أزياء احترافية بعارضين واقعيين.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "تحرير صورة",
+          "صورة",
+          "API",
+          "أزياء",
+          "نموذج"
+        ],
+        "models": [
+          "GPT-Image-1.5",
+          "OpenAI"
+        ],
+        "date": "2025-12-18",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 24,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "outfit-streetwear.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 16,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_pro_image",
+        "title": "Flux.1 Kontext Pro",
+        "description": "تحرير الصور باستخدام Flux.1 Kontext pro image.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "تحرير صورة",
+          "صورة"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 94,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_pro_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_text_to_image",
+        "title": "Runway: من نص إلى صورة",
+        "description": "توليد صور عالية الجودة من مطالبات نصية باستخدام نموذج الذكاء الاصطناعي من Runway.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 45,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_photon_i2i",
+        "title": "Luma Photon: من صورة إلى صورة",
+        "description": "توجيه توليد الصور باستخدام مزيج من الصور والأوامر النصية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 59,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_style_transfer",
+        "title": "Magnific: مرجع النمط",
+        "description": "قم بتحميل صورة الهدف وصورة مرجعية للنمط. أنشئ صورة جديدة تدمج النمط الفني للمرجع مع هيكل هدفك.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "مرجع النمط"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 112,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "girl_riding_unicorn.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "magnific_style_reference.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_sd3.5_i2i",
+        "title": "Stability AI: SD3.5 من صورة إلى صورة",
+        "description": "توليد صور عالية الجودة مع التزام ممتاز بالأوامر النصية. مثالي للتوليد الاحترافي بدقة 1 ميجابكسل.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_stability_ai_sd3.5_i2i_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_multiple_images_input",
+        "title": "Flux.1 Kontext إدخال متعدد للصور",
+        "description": "إدخال صور متعددة وتحريرها باستخدام Flux.1 Kontext.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "تحرير صورة",
+          "صورة"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 80,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_girl.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 91,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_sofa.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 96,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_dog.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_pro_t2i",
+        "title": "Flux.1 [Pro]: نص إلى صورة",
+        "description": "توليد صور مع اتباع ممتاز للأوامر النصية وجودة بصرية عالية باستخدام FLUX.1 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-1-pro-ultra-image",
+        "tags": [
+          "تحرير صورة",
+          "صورة"
+        ],
+        "models": [
+          "Flux.1",
+          "Flux"
+        ],
+        "date": "2025-05-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 104,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_stable_image_ultra_t2i",
+        "title": "Stability AI: Stable Image Ultra من نص إلى صورة",
+        "description": "توليد صور عالية الجودة مع التزام ممتاز بالأوامر النصية. مثالي للتوليد الاحترافي بدقة 1 ميجابكسل.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 57,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_i2i",
+        "title": "OpenAI: GPT-Image-1 من صورة إلى صورة",
+        "description": "توليد صور من صور إدخال باستخدام واجهة OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 57,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_inpaint",
+        "title": "OpenAI: GPT-Image-1 إعادة رسم داخلي",
+        "description": "تحرير الصور باستخدام الإعادة الرسم الداخلي مع واجهة OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "الترميم",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image_mask.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_t2i",
+        "title": "OpenAI: GPT-Image-1 من نص إلى صورة",
+        "description": "توليد صور من مطالبات نصية باستخدام واجهة OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 8,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_2_t2i",
+        "title": "OpenAI: Dall-E 2 من نص إلى صورة",
+        "description": "توليد صور من مطالبات نصية باستخدام واجهة OpenAI Dall-E 2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-2",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 20,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_3_t2i",
+        "title": "OpenAI: Dall-E 3 من نص إلى صورة",
+        "description": "توليد صور من مطالبات نصية باستخدام واجهة OpenAI Dall-E 3.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-3",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 24,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_image_gen_with_color_control",
+        "title": "Recraft: توليد صور مع التحكم بالألوان",
+        "description": "توليد صور بلوحات ألوان مخصصة ومرئيات خاصة بالعلامة التجارية باستخدام Recraft.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_vector_gen",
+        "title": "Recraft: توليد متجهات",
+        "description": "توليد صور متجهة عالية الجودة من مطالبات نصية باستخدام مولد المتجهات بالذكاء الاصطناعي من Recraft.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API",
+          "متجه"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_image_gen_with_style_control",
+        "title": "Recraft: توليد صور مع التحكم بالأسلوب",
+        "description": "التحكم بالأسلوب باستخدام أمثلة بصرية، ومحاذاة المواضع، وضبط الكائنات بدقة. تخزين ومشاركة الأساليب لاتساق مثالي للعلامة التجارية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_max_image",
+        "title": "Flux.1 Kontext Max",
+        "description": "تحرير الصور باستخدام Flux.1 Kontext max image.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "تحرير صورة",
+          "صورة"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_max_image_style_ref.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_multi_inputs",
+        "title": "OpenAI: GPT-Image-1 مدخلات متعددة",
+        "description": "توليد صور من مدخلات متعددة باستخدام واجهة OpenAI GPT Image 1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 58,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_hat.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_sd3.5_t2i",
+        "title": "Stability AI: SD3.5 من نص إلى صورة",
+        "description": "توليد صور عالية الجودة مع التزام ممتاز بالأوامر النصية. مثالي للتوليد الاحترافي بدقة 1 ميجابكسل.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 25,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ideogram_v3_t2i",
+        "title": "Ideogram V3: من نص إلى صورة",
+        "description": "توليد صور بجودة احترافية مع محاذاة ممتازة للأوامر، وواقعية فوتوغرافية، وعرض نصوص باستخدام Ideogram V3.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Ideogram"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 60,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 59,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_photon_style_ref",
+        "title": "Luma Photon: مرجع الأسلوب",
+        "description": "توليد صور عبر دمج مراجع الأسلوب مع تحكم دقيق باستخدام Luma Photon.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "نص إلى صورة",
+          "صورة",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 31,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_ref_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 52,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_ref_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "video",
+    "category": "نوع التوليد",
+    "icon": "icon-[lucide--film]",
+    "title": "فيديو",
+    "templates": [
+      {
+        "name": "api_grok_video",
+        "title": "Grok: إنشاء الفيديو",
+        "description": "أدخل نصوصًا توجيهية أو إطار صورة أولي لتوليد مقاطع فيديو تصل مدتها إلى 15 ثانية مع صوت متزامن باستخدام نموذج Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "صورة إلى فيديو",
+          "نص إلى فيديو",
+          "API"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 4469,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "sci-fi_mech.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "api_grok_video.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "hellorob"
+      },
+      {
+        "name": "api_grok_video_edit",
+        "title": "Grok: تحرير الفيديو",
+        "description": "قم بتحميل فيديو للتحرير. أدخل التعديلات المطلوبة. قم بإنشاء فيديو محرر باستخدام واجهة برمجة تطبيقات Grok.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تحرير الفيديو"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 361,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadVideo",
+              "file": "futuristic_motorcycle.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "api_grok_video_edit.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_motion_control3",
+        "title": "Kling 3.0: Motion Control",
+        "description": "قم بتحميل صورة شخصية وفيديو مرجعي للحركة. أنشئ فيديو جديدًا حيث يؤدي شخصيتك الإجراءات من المرجع، مع تحسين اتساق الوجه باستخدام ربط العناصر الاختياري.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "التحكم في الحركة"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-03-06",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "future_robot.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadVideo",
+              "file": "boxing_man.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_video",
+        "title": "Kling 3.0: إنشاء الفيديو",
+        "description": "أدخل نصوصًا أو صورًا لإنشاء تسلسلات فيديو مدتها 15 ثانية بتكوينات متعددة اللقطات وحركات كاميرا معقدة ومواضيع متسقة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "صورة إلى فيديو",
+          "فيديو"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1945,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "boxing.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_image_to_video",
+        "title": "Seedance 1.5 Pro: من صورة إلى فيديو",
+        "description": "حوّل الصور إلى شخصيات حية مع كلام وحركة وتأثيرات صوتية متزامنة باستخدام seedance1.5 Pro.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو"
+        ],
+        "models": [
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2104,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "young_baseball_player.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_avatar2",
+        "title": "Kling: Avatar 2.0",
+        "description": "قم بتحميل صورة شخصية وملف صوتي لإنشاء فيديو لأفاتار يتحدث بحركات شفاه متزامنة وتعبيرات وجه طبيعية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "مزامنة الشفاه",
+          "API"
+        ],
+        "models": [
+          "Kling"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 251,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "woman_in_red.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadAudio",
+              "file": "kling_avatar_input.mp3",
+              "mediaType": "audio"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveVideo",
+              "file": "api_kling_avatar2.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_image_to_video",
+        "title": "ByteDance: من صورة إلى فيديو",
+        "description": "تحويل الصور الثابتة إلى فيديوهات ديناميكية باستخدام نموذج Seedance من ByteDance. يحلل هيكل الصورة ويولد حركة طبيعية مع أسلوب بصري متسق وتسلسلات فيديو متماسكة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "صورة إلى فيديو",
+          "فيديو"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1804,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_dual_characters_effects",
+        "title": "Kling: تأثير الشخصية المزدوجة",
+        "description": "قم بتحميل صورتين للشخصيات جنبًا إلى جنب. أنشئ مقطع فيديو تعانق فيه الشخصيات أو تقبل بعضها أو تشكل معًا إيماءة قلب.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو"
+        ],
+        "models": [
+          "Kling 1.6",
+          "Kling"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-03-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 45,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "deep_curl_portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "blue_tone_woman.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "SaveVideo",
+              "file": "api_kling_dual_characters_effects.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_flf2v",
+        "title": "Kling 3.0: من الإطار الأول والأخير إلى الفيديو",
+        "description": "أدخل صورة الإطار الأول والأخير لإنشاء تسلسل فيديو مستمر مع توليد متعدد اللقطات، والتحكم الدقيق في العناصر، ودعم المطالبات متعددة اللغات.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "فيديو",
+          "فيديو الإطار الأول-الأخير"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 773,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "goldenfish_in_bag.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "man_in_daydream.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "Kling_v3_flf2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_video_edit",
+        "title": "Kling O3: تحرير الفيديو",
+        "description": "قم بتحميل مقطع فيديو وصورة مرجعية للتحرير باستخدام Kling O3. أنشئ فيديو محررًا بشكل احترافي مع تحرير دقيق للعنصر، وتكوين المشهد، ومزامنة صوتية بصرية أصلية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "تحرير الفيديو",
+          "API",
+          "فيديو"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 358,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "giant_trees_sky_pyramid.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 25,
+              "nodeType": "LoadVideo",
+              "file": "kling_o3_video_input.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_flf2v",
+        "title": "Kling O3: FLF2V",
+        "description": "قم بتحميل صور مرجعية أو حدد الإطارات البداية والنهاية. أنشئ فيديو مع تحكم دلالي دقيق، ومدة أطول، وتماسك سردي محسن.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "فيديو الإطار الأول-الأخير"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 169,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_right_front_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 34,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 35,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_left_side_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_right_side_view.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_king_o3_t2v",
+        "title": "Kling O3: نص إلى فيديو",
+        "description": "قم بتحميل نص أو صوت أو صور لإنشاء فيديو مدته 15 ثانية مع صوت متزامن واتساق الشخصيات والتحكم في القصة المصورة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "نص إلى فيديو"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 217,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "api_king_o3_t2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_v2v",
+        "title": "Kling O1: من الفيديو إلى الفيديو",
+        "description": "حوّل الفيديوهات باستخدام Kling O1. عدّل محتوى الفيديو، غيّر الأنماط، أو استبدل الشخصيات باستخدام المطالبات النصية والصور المرجعية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "hoverDissolve",
+        "tags": [
+          "مرجع الشخصية",
+          "فيديو"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-10",
+        "openSource": false,
+        "usage": 335,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "blue_shirt_rabbit.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 7,
+              "nodeType": "LoadVideo",
+              "file": "dancing_women.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_i2v",
+        "title": "Kling O3: إشارة إلى الفيديو",
+        "description": "قم بتحميل صورة مرجعية وموجه صوتي أو نصي اختياري. أنشئ فيديو متسقًا مع الشخصية مع إخراج صوتي أصلي وتحكم دقيق في القصة المصورة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "مرجع الشخصية",
+          "صورة إلى فيديو"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 366,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "chasing_the_light.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 20,
+              "nodeType": "SaveVideo",
+              "file": "kling_o3_i2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q3_text_to_video",
+        "title": "توليد الفيديو السمعي البصري Vidu Q3",
+        "description": "أدخل نصًا أو ارفع صورة لإنشاء فيديو مدته من 1 إلى 16 ثانية مع صوت متزامن وانتقالات تلقائية بين المشاهد.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو"
+        ],
+        "models": [
+          "Vidu",
+          "Vidu Q3"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 54,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q3_image_to_video",
+        "title": "Vidu Q3 صورة إلى فيديو مع صوت",
+        "description": "قم بتحميل صورة وقدم نصًا توجيهيًا لإنشاء فيديو مدته من 1 إلى 16 ثانية مع صوت متزامن وانتقالات مشهد ذكية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو"
+        ],
+        "models": [
+          "Vidu",
+          "Vidu Q3"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "usage": 241,
+        "size": 0,
+        "vram": 0,
+        "logos": [
+          {
+            "provider": "Vidu"
+          }
+        ],
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "two_characters.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan2_6_i2v",
+        "title": "Wan2.6: من الصورة إلى الفيديو",
+        "description": "حوّل الصور إلى فيديوهات عالية الجودة مع تحسين جودة الصورة، وحركة أكثر سلاسة، ودعم دقة 1080P، وتوليد حركة طبيعية للحصول على نتائج احترافية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "date": "2025-12-20",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 624,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "red_car.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_flf2v",
+        "title": "Seedance 1.5 Pro: FLF2V",
+        "description": "قم بتحميل إطار البداية وإطار النهاية، وسيقوم Seedance 1.5 Pro تلقائيًا بإنشاء انتقال فيديو سلس مع صوت متزامن بينهما.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو الإطار الأول-الأخير",
+          "صورة إلى فيديو",
+          "API"
+        ],
+        "models": [
+          "ByteDance",
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 391,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "dancing_capybara.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "dj_capybara.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_motion_control",
+        "title": "Kling2.6: التحكم في الحركة",
+        "description": "طبق إجراءات وتعبيرات دقيقة للشخصية من فيديو مرجعي على صورتك الشخصية مع تحكم متزامن في الحركة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "التحكم في الحركة",
+          "API"
+        ],
+        "models": [
+          "Kling 2.6",
+          "Kling"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 1407,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadVideo",
+              "file": "street_dancer.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "streetwear_fox.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_veo3",
+        "title": "Veo3: من صورة إلى فيديو",
+        "description": "توليد فيديوهات عالية الجودة بمدة 8 ثوانٍ من مطالبات نصية أو صور باستخدام واجهة Veo 3 المتقدمة من Google. يتضمن توليد الصوت، وتحسين الأوامر، وخيارات نموذج مزدوج للسرعة أو الجودة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "نص إلى فيديو",
+          "API"
+        ],
+        "models": [
+          "Veo",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 338,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_veo3_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling2_6_i2v",
+        "title": "Kling2.6: تحويل الصور إلى فيديو مع الصوت",
+        "description": "حوّل الصور الثابتة إلى فيديو ديناميكي مع حوار وغناء ومؤثرات وصوت محيطي متزامن",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API",
+          "صوت"
+        ],
+        "models": [
+          "Kling 2.6",
+          "Kling"
+        ],
+        "date": "2025-12-22",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 279,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "lizard_rapper_in_bar.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_i2v",
+        "title": "Vidu Q2: من الصورة إلى الفيديو",
+        "description": "حوّل الصور الثابتة إلى فيديوهات ديناميكية بدقة 1080p مع تحكم كاميرا سينمائي واتساق متعدد المواضيع.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 75,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "cozy_bear.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_edit_video",
+        "title": "Kling O1: تحرير الفيديو",
+        "description": "حرر الفيديوهات بأوامر اللغة الطبيعية، مع وضع مرجع الفيديو لإنشاء تحويلات الأسلوب وإضافات العناصر وتعديلات الخلفية بجودة عالية بسرعة.",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "API",
+          "تحرير الفيديو",
+          "نص إلى فيديو",
+          "صورة إلى فيديو"
+        ],
+        "models": [
+          "Kling"
+        ],
+        "date": "2025-12-02",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 244,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_4.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_2.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 23,
+              "nodeType": "LoadVideo",
+              "file": "api_kling_omni_edit_video_input_video.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 24,
+              "nodeType": "LoadImage",
+              "file": "api_kling_omni_edit_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_i2v",
+        "title": "Kling O1: من الصورة إلى الفيديو",
+        "description": "حوّل الصور الثابتة إلى فيديوهات ديناميكية باستخدام Kling O1. أضف الحركة وحركات الكاميرا والحياة إلى صورك باستخدام المطالبات النصية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "مرجع الشخصية"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 41,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "sheep_knit.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "quokka_bath.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "quokka_relax.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_image_to_video",
+        "title": "Wan2.5: من صورة إلى فيديو",
+        "description": "تحويل الصور إلى فيديوهات مع صوت متزامن، وحركة محسّنة، وجودة فائقة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 270,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadAudio",
+              "file": "audio_ace_step_1_m2m_editing_input_audio.mp3",
+              "mediaType": "audio"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_wan_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_flf",
+        "title": "Kling: FLF2V",
+        "description": "توليد فيديوهات من خلال التحكم بالإطار الأول والأخير.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "API",
+          "فيديو الإطار الأول-الأخير"
+        ],
+        "models": [
+          "Kling",
+          "Kling 1.6"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 80,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_kling_flf_first_frame.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "api_kling_flf_last_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 38,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_i2v",
+        "title": "Kling: من صورة إلى فيديو",
+        "description": "توليد فيديوهات مع التزام ممتاز بالأوامر للحركات والتعابير وحركات الكاميرا باستخدام Kling.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Kling",
+          "Kling 2.0"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 134,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_kling_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 38,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_sora_video",
+        "title": "Sora 2: من نص وصورة إلى فيديو",
+        "description": "توليد فيديو من OpenAI Sora-2 و Sora-2 Pro مع صوت متزامن.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "نص إلى فيديو",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-10-08",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 252,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_openai_sora_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_flf2v",
+        "title": "Vidu Q2: FLF2V",
+        "description": "انتقالات فيديو سلسة بين الإطارات الأولى والأخيرة بكاميرا سينمائية وتناسق مواضيع متعددة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو الإطار الأول-الأخير",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 76,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "nun_in_church-1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "nun_in_church-2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_flf2v",
+        "title": "ByteDance: من البداية والنهاية إلى فيديو",
+        "description": "توليد انتقالات فيديو سينمائية بين إطارات البداية والنهاية مع حركة سلسة واتساق المشهد وبراعة احترافية باستخدام نموذج Seedance من ByteDance.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "فيديو الإطار الأول-الأخير",
+          "فيديو"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 87,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 35,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_flf2v_first_frame.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_flf2v_last_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_r2v",
+        "title": "Vidu Q2: إشارة إلى الفيديو",
+        "description": "أنشئ فيديوهات مع اتساق قائم على المرجع لما يصل إلى 3 مواضيع، مع الحفاظ على استمرارية الشخصية والأسلوب عبر تسلسل الفيديو مع حركات الكاميرا السينمائية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "مرجع الشخصية",
+          "صورة إلى فيديو",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 39,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_q2_r2v_red_haired_girl.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "vintage_robot.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_t2v",
+        "title": "Kling O1: نص إلى فيديو",
+        "description": "أنشئ فيديو من نص باستخدام Kling O1.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 19,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ltxv_image_to_video",
+        "title": "LTX-2: من صورة إلى فيديو",
+        "description": "حوّل الصور الثابتة إلى مقاطع فيديو ديناميكية باستخدام LTX-2 Pro. أنشئ تسلسلات فيديو سينمائية بحركة طبيعية وصوت متزامن ودعم حتى دقة 4K بمعدل 50 إطارًا في الثانية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "LTX-2",
+          "Lightricks"
+        ],
+        "date": "2025-10-28",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 118,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 47,
+              "nodeType": "LoadImage",
+              "file": "api_ltxv_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 41,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_gen4_turo_image_to_video",
+        "title": "Runway: Gen4 Turbo من صورة إلى فيديو",
+        "description": "توليد فيديوهات ديناميكية من صور باستخدام Runway Gen4 Turbo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 86,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_runway_gen4_turo_image_to_video_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan2_6_t2v",
+        "title": "Wan2.5: من نص إلى فيديو",
+        "description": "توليد فيديوهات مع صوت متزامن، وحركة محسّنة، وجودة فائقة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "date": "2025-12-20",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 101,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_r2v",
+        "title": "WAN2.6: فيديو مرجعي للشخصية",
+        "description": "إنشاء فيديوهات تحافظ على ملامح الشخصية مع حركة طبيعية وجودة سينمائية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "مرجع الشخصية",
+          "فيديو"
+        ],
+        "date": "2026-01-03",
+        "openSource": false,
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "usage": 23,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "LoadVideo",
+              "file": "armored_warrior.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 35,
+              "nodeType": "LoadVideo",
+              "file": "spear_warrior.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_reference_to_video",
+        "title": "Vidu Q1: إشارة إلى الفيديو",
+        "description": "توليد فيديوهات مع مواضيع متسقة باستخدام صور مرجعية متعددة (حتى 7) لاستمرارية الشخصية والأسلوب عبر تسلسل الفيديو.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "صورة إلى فيديو",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_2.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 30,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_1.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 45,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_3.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_text_to_video",
+        "title": "Seedance1.5 Pro: نص إلى فيديو",
+        "description": "أنشئ قصصًا سمعية بصرية كاملة من النص مع أصوات وموسيقى ومؤثرات صوتية متزامنة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "نص إلى فيديو"
+        ],
+        "models": [
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "usage": 145,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling2_6_t2v",
+        "title": "Kling2.6: إنشاء فيديو قصصي مع الصوت من النص",
+        "description": "حوّل قصصك إلى فيديو بحوار وموسيقى ومؤثرات وأصوات محيطة",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "صوت",
+          "نص إلى فيديو",
+          "فيديو"
+        ],
+        "models": [
+          "Kling",
+          "Kling 2.6"
+        ],
+        "date": "2025-12-22",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 13,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_first_last_frame",
+        "title": "Runway: من الإطار الأول والأخير إلى فيديو",
+        "description": "توليد انتقالات فيديو سلسة بين إطارين رئيسيين بدقة Runway.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "API",
+          "فيديو الإطار الأول-الأخير"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "api_runway_first_last_frame_first_frame.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_runway_first_last_frame_last_frame.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_gen3a_turbo_image_to_video",
+        "title": "Runway: Gen3a Turbo من صورة إلى فيديو",
+        "description": "توليد فيديوهات سينمائية من صور ثابتة باستخدام Runway Gen3a Turbo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 18,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_runway_gen3a_turbo_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_t2v",
+        "title": "Vidu Q2: نص إلى فيديو",
+        "description": "أنشئ فيديوهات عالية الجودة بدقة 1080ب من نصوص باستخدام نموذج Vidu Q2",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 14,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_veo2_i2v",
+        "title": "Veo2: من صورة إلى فيديو",
+        "description": "توليد فيديوهات من صور باستخدام واجهة Google Veo2.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Veo",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 16,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 61,
+              "nodeType": "LoadImage",
+              "file": "api_veo2_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 62,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_text_to_video",
+        "title": "Wan2.5: من النص إلى الفيديو",
+        "description": "أنشئ فيديوهات مع صوت متزامن وحركة محسّنة وجودة فائقة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 23,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadAudio",
+              "file": "audio_ace_step_1_m2m_editing_input_audio.mp3",
+              "mediaType": "audio"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_start_end_to_video",
+        "title": "Vidu Q1: من البداية والنهاية إلى الفيديو",
+        "description": "إنشاء انتقالات فيديو سلسة بين إطارات البداية والنهاية المحددة مع استيفاء حركة طبيعي وجودة بصرية متسقة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "API",
+          "فيديو الإطار الأول-الأخير"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 14,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_start_end_to_video_start_frame.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 30,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_start_end_to_video_last_frame.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_t2v",
+        "title": "PixVerse: من نص إلى فيديو",
+        "description": "توليد فيديوهات مع تفسير دقيق للأوامر وديناميكيات فيديو مذهلة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 5,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_image_to_video",
+        "title": "Moonvalley: من صورة إلى فيديو",
+        "description": "توليد فيديوهات سينمائية بدقة 1080p باستخدام صورة من خلال نموذج مدرب حصرياً على بيانات مرخصة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "api_moonvalley_image_to_video_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_video_to_video_motion_transfer",
+        "title": "Moonvalley: نقل الحركة",
+        "description": "تطبيق الحركة من فيديو إلى آخر.",
+        "mediaType": "image",
+        "thumbnailVariant": "hoverDissolve",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 48,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadVideo",
+              "file": "api_moonvalley_video_to_video_motion_transfer_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_video_to_video_pose_control",
+        "title": "Moonvalley: التحكم بالوضعية",
+        "description": "تطبيق وضعية وحركة البشر من فيديو إلى آخر.",
+        "mediaType": "image",
+        "thumbnailVariant": "hoverDissolve",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadVideo",
+              "file": "api_moonvalley_video_to_video_pose_control_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_i2v",
+        "title": "MiniMax: من صورة إلى فيديو",
+        "description": "توليد فيديوهات محسّنة من الصور والنصوص مع تكامل CGI باستخدام MiniMax.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 5,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_hailuo_minimax_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_i2v",
+        "title": "Luma: من صورة إلى فيديو",
+        "description": "أخذ الصور الثابتة وإنشاء رسوم متحركة عالية الجودة سحرية على الفور.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "api_luma_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ltxv_text_to_video",
+        "title": "LTX-2: تحويل النص إلى فيديو",
+        "description": "أنشئ مقاطع فيديو عالية الجودة من مطالبات نصية باستخدام Lightricks LTX-2 مع صوت متزامن. يدعم دقة تصل إلى 4K بمعدل 50 إطارًا في الثانية مع أوضاع سريع، احترافي وفائق لتلبية مختلف احتياجات الإنتاج.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "LTX-2",
+          "Lightricks"
+        ],
+        "date": "2025-10-28",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 87,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_text_to_video",
+        "title": "Vidu Q1: نص إلى فيديو",
+        "description": "توليد فيديوهات عالية الجودة بدقة 1080p من مطالبات نصية مع سعة حركة قابلة للتعديل والتحكم بالمدة باستخدام نموذج Vidu المتقدم.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_text_to_video",
+        "title": "ByteDance: من نص إلى فيديو",
+        "description": "توليد فيديوهات عالية الجودة مباشرة من مطالبات نصية باستخدام نموذج Seedance من ByteDance. يدعم دقات متعددة ونسب عرض إلى ارتفاع مع حركة طبيعية وجودة سينمائية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "API",
+          "نص إلى فيديو"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 65,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_image_to_video",
+        "title": "Vidu Q1: من صورة إلى فيديو",
+        "description": "تحويل الصور الثابتة إلى فيديوهات ديناميكية بدقة 1080p مع تحكم دقيق بالحركة وسعة حركة قابلة للتخصيص باستخدام Vidu.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 22,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_t2v",
+        "title": "MiniMax: من نص إلى فيديو",
+        "description": "توليد فيديوهات عالية الجودة مباشرة من مطالبات نصية. اكتشف قدرات الذكاء الاصطناعي المتقدمة من MiniMax لإنشاء سرديات بصرية متنوعة مع تأثيرات CGI احترافية وعناصر أسلوبية لإحياء أوصافك.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_effects",
+        "title": "Kling: تأثيرات الفيديو",
+        "description": "توليد فيديوهات ديناميكية من خلال تطبيق تأثيرات بصرية على الصور باستخدام Kling.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Kling",
+          "Kling 1.6"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_kling_effects_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_video",
+        "title": "MiniMax: فيديو",
+        "description": "توليد فيديوهات عالية الجودة من مطالبات نصية مع تحكم اختياري بالإطار الأول باستخدام نموذج MiniMax Hailuo-02. يدعم دقات متعددة (768P/1080P) ومدد زمنية (6/10 ثانية) مع تحسين ذكي للأوامر.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "api_hailuo_minimax_video_first_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_t2v",
+        "title": "Luma: من نص إلى فيديو",
+        "description": "يمكن توليد فيديوهات عالية الجودة باستخدام أوامر بسيطة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 6,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_i2v",
+        "title": "PixVerse: من صورة إلى فيديو",
+        "description": "توليد فيديوهات ديناميكية من صور ثابتة مع حركة وتأثيرات باستخدام PixVerse.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 4,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "api_runway_reference_to_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_template_i2v",
+        "title": "PixVerse قوالب: من صورة إلى فيديو",
+        "description": "توليد فيديوهات ديناميكية من صور ثابتة مع حركة وتأثيرات باستخدام PixVerse.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "LoadImage",
+              "file": "api_pixverse_template_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_text_to_video",
+        "title": "Moonvalley: من نص إلى فيديو",
+        "description": "توليد فيديوهات سينمائية بدقة 1080p من مطالبات نصية من خلال نموذج مدرب حصرياً على بيانات مرخصة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نص إلى فيديو",
+          "فيديو",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "audio",
+    "category": "نوع التوليد",
+    "icon": "icon-[lucide--volume-2]",
+    "title": "صوتي",
+    "templates": [
+      {
+        "name": "api_elevenlabs_text_to_speech",
+        "title": "ElevenLabs: تحويل النص إلى كلام",
+        "description": "أدخل نصًا لتوليد صوت فائق الواقعية، أو ارفع عينة صوتية لاستنساخها من أجل التوليف.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "تحويل النص إلى كلام",
+          "صوت",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 473,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_text_to_dialogue",
+        "title": "ElevenLabs: نص إلى حوار",
+        "description": "أدخل النص وحدد ملف تعريف صوتي لتوليد حوار صوتي عالي الجودة ومعبر عاطفياً.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "تحويل النص إلى كلام"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 42,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_speech_to_speech",
+        "title": "ElevenLabs: تحويل الكلام إلى كلام",
+        "description": "قم بتحميل ملف صوتي مصدري لتطبيق نبرة صوت جديدة أو استنساخ صوت مختلف، مما يولد مخرجات صوتية معدلة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "استنساخ الصوت",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            },
+            {
+              "nodeId": 221,
+              "nodeType": "LoadAudio",
+              "file": "api_elevenlabs_speech_to_speech.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_voice_isolation",
+        "title": "ElevenLabs: عزل الصوت",
+        "description": "قم بتحميل ملف صوتي يحتوي على ضوضاء في الخلفية. استخدم واجهة برمجة تطبيقات ElevenLaks لعزل وإخراج مسار صوتي نظيف.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "عزل الصوت"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 12,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 131,
+              "nodeType": "LoadAudio",
+              "file": "noisy_background.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenLabs_speech_to_text",
+        "title": "ElevenLabs: الكلام إلى نص",
+        "description": "قم بتحميل ملف صوتي أو فيديو لتحويل كلامه إلى نص دقيق وقابل للتحرير.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "تحويل الكلام إلى نص",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 14,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 219,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_text_to_sound_effects",
+        "title": "ElevenLabs: نص إلى مؤثرات صوتية",
+        "description": "أدخل نصًا لإنشاء مؤثرات صوتية مخصصة وصوتيات بيئية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صوت",
+          "المؤثرات الصوتية",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 68,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 137,
+              "nodeType": "SaveAudioMP3",
+              "file": "api_elevenlabs_text_to_sound_effects.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_audio_to_audio",
+        "title": "Stable Audio 2.5: الصوت إلى الصوت",
+        "description": "تحويل الصوت إلى تراكيب جديدة باستخدام Stable Audio 2.5. تحميل الصوت والذكاء الاصطناعي ينشئ مقاطع كاملة.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "صوت",
+          "صوت إلى صوت"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 30,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadAudio",
+              "file": "api_stability_ai_audio_to_audio_input_audio.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_text_to_audio",
+        "title": "Stable Audio 2.5: النص إلى الصوت",
+        "description": "توليد موسيقى من النص باستخدام Stable Audio 2.5. إنشاء مقاطع بطول دقائق في ثوانٍ.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "صوت",
+          "نص إلى صوت"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 47,
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_audio_inpaint",
+        "title": "Stability Audio 2.5: ترميم الصوت",
+        "description": "إكمال أو تمديد المقاطع الصوتية باستخدام Stable Audio 2.5. تحميل الصوت والذكاء الاصطناعي يولد الباقي.",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "صوت",
+          "صوت إلى صوت"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 6,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadAudio",
+              "file": "api_stability_ai_audio_inpaint_input_audio.wav",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "3d",
+    "category": "نوع التوليد",
+    "icon": "icon-[lucide--box]",
+    "title": "نموذج ثلاثي الأبعاد",
+    "templates": [
+      {
+        "name": "api_hunyuan3d_part",
+        "title": "HY 3D: تفكيك الأجزاء ثلاثية الأبعاد",
+        "description": "قم بتحميل نموذج ثلاثي الأبعاد لتقسيمه تلقائيًا إلى أجزائه المكونة، مما يولد أصلًا ثلاثي الأبعاد مفككًا بالكامل لإعادة الاستخدام والتحرير.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "نموذج ثلاثي الأبعاد",
+          "API"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_image_to_model",
+        "title": "Hunyuan3D: من صورة إلى نموذج",
+        "description": "قم بتحميل صورة لإنشاء نموذج ثلاثي الأبعاد مع هندسة ونسيج PBR.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "نموذج ثلاثي الأبعاد",
+          "صورة إلى نموذج",
+          "API"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 463,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "pink_robot_front.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "pink_robot_back.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_text_to_model",
+        "title": "HunYuan3D: النص إلى النموذج",
+        "description": "أدخل نصًا توجيهيًا أو حمّل صورة مرجعية لإنشاء أصل نموذج ثلاثي الأبعاد مفصل.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "3D",
+          "تحويل النص إلى نموذج"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 66,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_smart_topology",
+        "title": "هونيوان 3D: طوبولوجيا ذكية",
+        "description": "قم بتحميل ملف نموذج ثلاثي الأبعاد عالي المضلعات. قم بإنشاء نموذج ثلاثي الأبعاد منخفض المضلعات ومحسن طوبولوجيًا بمستوى تقليل محدد.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "نموذج ثلاثي الأبعاد"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_multi_image_to_model",
+        "title": "Meshy 6: من صور متعددة إلى نموذج",
+        "description": "أنشئ نماذج ثلاثية الأبعاد عالية الجودة من صور متعددة باستخدام Meshy 6. المزيد من الصور يعني التقاط تفاصيل أفضل ونسب دقيقة وبنية شبكية أنظف.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 90,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "joker_front.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "joker_back.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "joker_side.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_image_to_model",
+        "title": "Meshy 6: من الصورة إلى النموذج",
+        "description": "قم بتحميل صورة وأنشئ نموذجًا ثلاثي الأبعاد باستخدام Meshy 6. أنشئ شخصيات أو كائنات أو أجزاء ميكانيكية بهندسة عالية الجودة وطوبولوجيا نظيفة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "صورة إلى نموذج",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "usage": 212,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "robot-warrior.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_text_to_model",
+        "title": "Meshy 6: من النص إلى النموذج",
+        "description": "قم بإنشاء نماذج ثلاثية الأبعاد عالية الجودة من نصوص باستخدام Meshy 6. أنشئ شخصيات بهندسة دقيقة، أو كائنات ميكانيكية ذات حواف حادة، أو أصول منخفضة المضلعات جاهزة للألعاب.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "تحويل النص إلى نموذج",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 51,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo3_0_image_to_model",
+        "title": "Tripo3.0: من الصورة إلى النموذج",
+        "description": "حوّل الصور أو الرسومات إلى نماذج ثلاثية الأبعاد مع الهندسة الدقيقة ومواد PBR الجاهزة للإنتاج في Tripo 3.0.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى نموذج",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-12-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 155,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "3d_character_front_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "3d_character_back_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "3d_character_left_view.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo3_0_text_to_model",
+        "title": "Tripo3.0: من النص إلى النموذج",
+        "description": "حوّل النص إلى نماذج ثلاثية الأبعاد دقيقة بجودة عالية ومواد PBR واقعية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "تحويل النص إلى نموذج",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-12-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 23,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_text_to_model",
+        "title": "Tripo: من نص إلى نموذج",
+        "description": "صياغة أشياء ثلاثية الأبعاد من الأوصاف باستخدام النمذجة الموجهة بالنص من Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "تحويل النص إلى نموذج",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 21,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_image_to_model",
+        "title": "Tripo: من صورة إلى نموذج",
+        "description": "توليد أصول ثلاثية الأبعاد احترافية من صور ثنائية الأبعاد باستخدام محرك Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "صورة إلى نموذج",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 24,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_image_to_model_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 51,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_multiview_to_model",
+        "title": "Tripo: من زوايا متعددة إلى نموذج",
+        "description": "بناء نماذج ثلاثية الأبعاد من زوايا متعددة باستخدام الماسح المتقدم من Tripo.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى ثلاثي الأبعاد",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 34,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_multiview_to_model_front_image.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_multiview_to_model_back_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_gen2",
+        "title": "Rodin: Gen-2 من صورة إلى نموذج",
+        "description": "توليد نماذج ثلاثية الأبعاد تفصيلية بجودة شبكة 4X من الصور باستخدام Rodin Gen2",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى ثلاثي الأبعاد",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 36,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 82,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_gen2_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_image_to_model",
+        "title": "Rodin: من صورة إلى نموذج",
+        "description": "توليد نماذج ثلاثية الأبعاد تفصيلية من صور فردية باستخدام Rodin AI.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى ثلاثي الأبعاد",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 63,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 49,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_image_to_model_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 56,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 61,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 59,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 60,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_multiview_to_model",
+        "title": "Rodin: من زوايا متعددة إلى نموذج",
+        "description": "نحت نماذج ثلاثية الأبعاد شاملة باستخدام إعادة البناء متعددة الزوايا من Rodin.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "صورة إلى ثلاثي الأبعاد",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_left.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 41,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_front.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 56,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_back.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 61,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 62,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 63,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 64,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_retopo_uv",
+        "title": "Huyuan3D: إعادة طوبولوجيا النماذج وفك UV",
+        "description": "أدخل شبكة كثيفة (من توليد الذكاء الاصطناعي أو مسحات التصوير الضوئي) وأنشئ نموذجًا خفيف الوزن بطوبولوجيا جيدة وUV مفكوك. ممتاز لتحسين أصول ألعاب 3D.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "نموذج ثلاثي الأبعاد"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_model2uv",
+        "title": "هونيوان 3D: فك UV",
+        "description": "قم بتحميل نموذج ثلاثي الأبعاد لإجراء فك UV. قم بإنشاء نموذج معالج بتخطيط UV محسن للتركيب.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "نموذج ثلاثي الأبعاد"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "image",
+    "category": "نوع التوليد",
+    "icon": "icon-[lucide--message-square-text]",
+    "title": "LLM API",
+    "templates": [
+      {
+        "name": "api_openai_chat",
+        "title": "OpenAI: محادثة",
+        "description": "التفاعل مع نماذج اللغة المتقدمة من OpenAI لمحادثات ذكية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "توليد النص",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_google_gemini",
+        "title": "Google Gemini",
+        "description": "تجربة الذكاء الاصطناعي متعدد الوسائط من Google مع قدرات التفكير من Gemini.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "توليد النص",
+          "API"
+        ],
+        "models": [
+          "Google Gemini",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 162,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "image",
+    "isEssential": true,
+    "category": "نوع التوليد",
+    "icon": "icon-[lucide--settings]",
+    "title": "أداة",
+    "templates": [
+      {
+        "name": "api_magnific_image_upscale_creative",
+        "title": "Magnific: تكبير الصور الإبداعي",
+        "description": "قم بتحميل صورة وضبط مستوى التكبير. قم بإنشاء نسخة عالية الدقة من صورتك مع دعم التكبير حتى 16 ضعفًا.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تكبير الصورة"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "logos": [
+          {
+            "provider": "Magnific"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 219,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "1950_new_york.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "ComfyUI_00915_.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_upscale_precise",
+        "title": "Magnific: تكبير الصور بدقة",
+        "description": "قم بتحميل صورة لتحسين دقتها بدقة باستخدام نموذج Magnific، مما ينتج نسخة عالية الدقة مع تفاصيل محسنة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تكبير الصورة"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "logos": [
+          {
+            "provider": "Magnific"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 142,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "young_woman_portrait.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "api_magnific_image_upscale_precise.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_topaz_image_enhance",
+        "title": "تحسين صورة Topaz",
+        "description": "تعزيز احترافي للصور باستخدام نموذج Reimagine من Topaz مع تحسين للوجوه واستعادة التفاصيل.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "تكبير الصورة",
+          "API"
+        ],
+        "models": [
+          "Reimagine",
+          "Topaz"
+        ],
+        "date": "2025-11-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 85,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Topaz"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_topaz_image_enhance_input_image.webp",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_topaz_video_enhance",
+        "title": "الارتقاء الإبداعي للفيديو - Topaz Astra",
+        "description": "عزّز مقاطع الفيديو باستخدام Topaz AI. يدعم ترقية الدقة باستخدام نموذج Starlight (Astra) Fast واستكمال الإطارات بنموذج apo-8.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تحسين جودة الفيديو"
+        ],
+        "models": [
+          "Topaz"
+        ],
+        "date": "2025-11-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 173,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadVideo",
+              "file": "api_topaz_video_enhance_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_upscale_fast",
+        "title": "Stability AI: تكبير الصور بسرعة",
+        "description": "قم بتحميل صورة لتحسين دقتها بسرعة 4 مرات عبر واجهة برمجة تطبيقات Stability AI، مثالي لتحسين جودة الصور المنخفضة أو المضغوطة.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تكبير الصورة"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 76,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "woman_with_red_hat.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveImage",
+              "file": "api_stability_upscale_fast.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespped_seedvr2_ai_image_fix",
+        "title": "Upscale: استعادة الصور بالذكاء الاصطناعي باستخدام WaveSpeed SeedVR2",
+        "description": "قم بتحميل صورة تم إنشاؤها بواسطة الذكاء الاصطناعي لاستعادة التفاصيل وزيادة الدقة. يحافظ سير العمل على الألوان والوضوح مع تقليل التشوهات إلى الحد الأدنى. الناتج هو نسخة عالية الجودة ومكبرة من المدخلات الخاصة بك.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تكبير الصورة"
+        ],
+        "models": [
+          "SeedVR2",
+          "WaveSpeed"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 51,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "midnight_coasta.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespped_image_upscale",
+        "title": "WaveSpeed: تكبير الصورة",
+        "description": "قم بتحميل صورة لتحسين دقتها. أنتج مخرجات محسّنة بدقة 2K أو 4K أو 8K تحافظ على التفاصيل وتقلل من التشوهات بصيغة JPEG أو PNG أو WEBP.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تكبير الصورة"
+        ],
+        "models": [
+          "WaveSpeed"
+        ],
+        "date": "2026-01-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 114,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "woman_behind_veil.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespeed_flshvsr_video_upscale",
+        "title": "WaveSpeed: رفع دقة فيديو FlashVSR",
+        "description": "قم بتحميل مقطع فيديو لرفع دقته إلى 720p أو 1080p أو 2K أو 4K. تدفق العمل يعزز التفاصيل، ويقلل من التشوهات، ويضمن حركة متناسقة للحصول على مخرج عالي الجودة وذو مظهر طبيعي.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تحسين جودة الفيديو"
+        ],
+        "models": [
+          "FlashVSR",
+          "WaveSpeed"
+        ],
+        "date": "2026-01-23",
+        "openSource": false,
+        "usage": 67,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadVideo",
+              "file": "lighter.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_video_extension",
+        "title": "Vidu: امتداد الفيديو",
+        "description": "قم بتحميل مقطع فيديو واستخدم نموذج Vidu Q2 لتمديده حتى 7 ثوانٍ وتحسين الدقة إلى 1080 بكسل.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "فيديو",
+          "امتداد الفيديو",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-02-01",
+        "openSource": false,
+        "logos": [
+          {
+            "provider": "Vidu"
+          }
+        ],
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadVideo",
+              "file": "lawyer.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_relight",
+        "title": "Magnific: إعادة إضاءة الصورة",
+        "description": "قم بتحميل صورة مصدر وصورة إضاءة مرجعية. قم بإنشاء نسخة معاد إضاءتها من صورتك المصدر، مع تطبيق ظروف الإضاءة من المرجع.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "إعادة إضاءة",
+          "API"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 14,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "magical-portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "vintage-girl.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_skin_enhancer",
+        "title": "Magnific: محسن البشرة",
+        "description": "عزز جودة البشرة والصورة العامة عن طريق تحميل صورتك واختيار إعداد مسبق لضبط الإضاءة وتدرج الألوان والواقعية.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "تصويري",
+          "تعزيز الصورة"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 222,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "close_up_girl_skin.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux1_expand_image",
+        "title": "Flux.1: توسيع الصورة",
+        "description": "قم بتحميل صورة لتوسيع لوحتها باستخدام Flux.1. قم بإنشاء صورة مرسومة خارجيًا بمحتوى موسع.",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "الرسم الخارجي"
+        ],
+        "models": [
+          "Flux",
+          "Flux.1"
+        ],
+        "date": "2026-02-09",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 92,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "man_on_desert.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_bfl_flux1_expand_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  }
+]

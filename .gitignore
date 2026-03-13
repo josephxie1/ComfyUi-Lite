@@ -56,3 +56,8 @@ uv.lock
 !.env.example
 *.db
 workflow_templates/.nx/
+
+# desktopmac
+desktopmac/node_modules/
+desktopmac/dist/
+desktopmac/.vite/

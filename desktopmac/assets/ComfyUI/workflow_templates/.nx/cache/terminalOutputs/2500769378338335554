@@ -1,0 +1,3 @@
+> python3 scripts/sync_bundles.py
+
+bundles.json is missing template assignments for: fuse_options, index, index.ar, index.es, index.fr, index.ja, index.ko, index.pt-BR, index.ru, index.schema, index.tr, index.zh, index.zh-TW, index_logo

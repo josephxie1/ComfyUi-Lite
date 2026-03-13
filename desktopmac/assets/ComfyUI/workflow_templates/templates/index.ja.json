@@ -1,0 +1,6058 @@
+[
+  {
+    "moduleName": "default",
+    "type": "image",
+    "category": "生成タイプ",
+    "icon": "icon-[lucide--image]",
+    "title": "画像",
+    "templates": [
+      {
+        "name": "api_google_nano_banana2_image_edit",
+        "title": "Nano Banana 2：画像編集",
+        "description": "画像とテキストプロンプトをアップロードして編集します。元の画像をあなたの指示に基づいて変更し、被写体の一貫性と高い視覚的忠実度を維持した新しい画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "画像編集"
+        ],
+        "models": [
+          "Google",
+          "Nano Banana 2"
+        ],
+        "logos": [
+          {
+            "provider": "Google"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 7237,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "man_with_dog.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveImage",
+              "file": "api_google_nano_banana2_image_edit.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_nano_banana_pro",
+        "title": "Nano Banana Pro",
+        "description": "Nano-banana Pro (Gemini 3.0 Pro Image) - スタジオ品質の4K画像生成と編集、強化されたテキストレンダリングとキャラクター一貫性。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "hoverDissolve",
+        "tags": [
+          "API",
+          "画像",
+          "画像編集"
+        ],
+        "models": [
+          "Gemini3 Pro Image Preview",
+          "Google",
+          "Nano Banana Pro"
+        ],
+        "date": "2025-11-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 8082,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_nano_banana_pro_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_nano_banana_pro_input_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "api_nano_banana_pro.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "Google"
+          }
+        ],
+        "searchRank": 0,
+        "username": "hellorob"
+      },
+      {
+        "name": "api_bytedance_seedream_5_0_lite_image_edit",
+        "title": "Seedream 5.0 Lite：画像編集",
+        "description": "画像とテキストプロンプトをアップロードして編集します。指示に合わせて詳細が調整された修正画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "画像編集"
+        ],
+        "models": [
+          "Seedream 5.0 Lite"
+        ],
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "date": "2026-02-24",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2834,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "man_with_old_computers.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 32,
+              "nodeType": "LoadImage",
+              "file": "inflated_character.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream_5_0_lite_image_edit.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_grok_image_edit",
+        "title": "Grok：画像編集",
+        "description": "Grokモデルで編集する画像をアップロードしてください。表現力豊かで映画的なビジュアルを持つ修正バージョンを生成します",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "画像編集"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 7572,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "cyberpunk_robot.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Grok"
+          }
+        ],
+        "username": "hellorob"
+      },
+      {
+        "name": "api_grok_text_to_image",
+        "title": "Grok：テキストから画像",
+        "description": "Grokモデルを使用して高品質な画像を迅速に生成するためのテキストプロンプトを入力してください。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "テキストから画像へ"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 2217,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Grok"
+          }
+        ],
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "api_grok_text_to_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_seedream_5_0_lite_t2i",
+        "title": "Seedream 5.0 Lite：テキストから画像へ",
+        "description": "詳細な画像を生成するためにテキストプロンプトを入力してください。このワークフローは、スタイルとレイアウトを正確に制御しながら、ご記述内容の視覚的表現を作成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "テキストから画像へ"
+        ],
+        "models": [
+          "Seedream 5.0 Lite"
+        ],
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "date": "2026-02-24",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 847,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream_5_0_lite_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_google_gemini_image",
+        "title": "Google Gemini画像",
+        "description": "Nano-banana (Gemini-2.5-Flash画像) - 一貫性のある画像編集。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像編集",
+          "画像",
+          "API",
+          "テキストから画像へ"
+        ],
+        "models": [
+          "Gemini-2.5-Flash",
+          "Nano Banana",
+          "Google"
+        ],
+        "date": "2025-08-27",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1219,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "comfyui_logo.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_v4_t2i",
+        "title": "Recraft v4：テキストから画像へ",
+        "description": "テキストプロンプトを入力して高解像度画像を生成します。Recraft V4モデルを使用して、リアリズム、テキスト精度、詳細なベクターグラフィックスを強化します。選択したバージョンに基づいて1024x1024または2048x2048の画像を出力します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像",
+          "テキストから画像へ"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-17",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 262,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_recraft_v4_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_image",
+        "title": "Kling O3：画像生成",
+        "description": "合成をガイドするために最大10枚の参照画像をアップロードしてください。提供された視覚入力に基づいて、Kling O3モデルを使用して新しい画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "画像編集",
+          "テキストから画像へ"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 709,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadImage",
+              "file": "vintage_portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 32,
+              "nodeType": "LoadImage",
+              "file": "Urban_Fashion.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "SaveImage",
+              "file": "api_kling_o3_image.json",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux2_max_sofa_swap",
+        "title": "BFL FLUX.2 [max]: オブジェクト入れ替え",
+        "description": "FLUX.2 [max]で高品質なオブジェクト入替。商品撮影や家具交換に最適、シーンの一貫性も維持。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "画像編集",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Flux.2",
+          "Flux"
+        ],
+        "date": "2025-12-22",
+        "searchRank": 7,
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 384,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "minimalist_wooden_sofa_living_room.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "fluffy_beige_sofa.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "black_coat_model.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_t2i",
+        "title": "Kling 3.0：テキストから画像へ",
+        "description": "Kling 3.0 モデルを使用して、テキストプロンプトから画像を生成します。記述的なテキストを入力すると、高品質でプロンプトに忠実な視覚的出力が得られます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "画像"
+        ],
+        "models": [
+          "Kling",
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 279,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "SaveImage",
+              "file": "api_kling_v3_t2i.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_style_reference",
+        "title": "Recraft スタイル参照生成",
+        "description": "複数の画像をアップロードして一貫したスタイルリファレンスを作成します。このリファレンスを使用して新しい画像を生成し、出力全体で視覚的一貫性を維持します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "画像",
+          "スタイル参照"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-05",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 131,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 38,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-2.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 39,
+              "nodeType": "LoadImage",
+              "file": "recraft_style_ref-4.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "SaveImage",
+              "file": "api_recraft_style_reference.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_v4_text_to_vector",
+        "title": "Recraft v4：テキストからベクターへ",
+        "description": "クリーンで編集可能なベクターSVGグラフィックを生成するためのテキストプロンプトを入力します。デザインツールに適した構造化されたパスでロゴ、アイコン、またはイラストを作成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像",
+          "ベクター"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "logos": [
+          {
+            "provider": "Recraft"
+          }
+        ],
+        "date": "2026-02-17",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 79,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_seedream4",
+        "title": "ByteDance Seedream 4.0",
+        "description": "テキストから画像生成と画像編集のためのマルチモーダルAIモデル。自然言語制御で2秒以内に2K画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "画像",
+          "画像編集",
+          "テキストから画像へ"
+        ],
+        "models": [
+          "ByteDance",
+          "Seedream 4.0"
+        ],
+        "date": "2025-09-11",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1613,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "comfyui_logo.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "api_bytedance_seedream4.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_flux2",
+        "title": "Flux.2 Pro",
+        "description": "フォトリアルな画像を、複数参照の一貫性およびプロフェッショナルな文字描画で生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像編集",
+          "画像",
+          "API",
+          "テキストから画像へ"
+        ],
+        "models": [
+          "Flux.2",
+          "Flux"
+        ],
+        "date": "2025-11-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 420,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_4.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 18,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 19,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_2_inpaint",
+        "title": "OpenAI: Dall-E 2インペイント",
+        "description": "OpenAI Dall-E 2 APIを使用して、インペイントで画像を編集します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "画像修復",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-2",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 12,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 19,
+              "nodeType": "LoadImage",
+              "file": "api_openai_dall_e_2_inpaint_input_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_image",
+        "title": "Kling O1：画像",
+        "description": "Kling O1を使用してテキストプロンプトから高品質な画像を生成。最大10枚の参照画像でスタイルとコンテンツをガイド。柔軟なアスペクト比と1K/2K解像度オプションを提供。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "キャラクター参照",
+          "テキストから画像へ"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-05",
+        "openSource": false,
+        "usage": 116,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_kling_omni_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_from_photo_2_miniature",
+        "title": "写真から模型スタイル",
+        "description": "実際の建物の写真を建築図面に変換し、さらに詳細な物理スケールモデルに変換します。写真からミニチュアまでの建築ビジュアライゼーションの完全なパイプラインです。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像編集",
+          "画像",
+          "3D"
+        ],
+        "models": [
+          "Gemini3 Pro Image Preview",
+          "Nano Banana Pro",
+          "Google"
+        ],
+        "date": "2025-11-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 113,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_from_photo_2_miniature_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 30,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 37,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bria_image_edit",
+        "title": "Bria：画像編集",
+        "description": "FIBOは、照明、構図、カメラ設定を構造化されたJSONで制御することで、精密で予測可能な画像編集を実現します",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "画像編集",
+          "API"
+        ],
+        "models": [
+          "BRIA"
+        ],
+        "date": "2026-01-20",
+        "openSource": false,
+        "usage": 105,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "sunlit_rooftop_capture.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bria_image_outpainting",
+        "title": "Bria：画像アウトペインティング",
+        "description": "シームレスな画像拡張とエッジ認識シーン拡張のために設計された、プロフェッショナルなBria搭載アウトペインティングテンプレート",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "アウトペインティング",
+          "API"
+        ],
+        "models": [
+          "BRIA"
+        ],
+        "date": "2026-01-20",
+        "openSource": false,
+        "usage": 46,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "baby_otter.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_text_to_image",
+        "title": "Wan2.5: テキストから画像",
+        "description": "FLUX.1 Proを使用して、優れたプロンプト追従性と視覚品質の画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 221,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_reference_to_image",
+        "title": "Runway: 参照から画像",
+        "description": "RunwayのAIを使用して、参照スタイルと構成に基づいた新しい画像を生成します。",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "api_runway_reference_to_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_i2i",
+        "title": "Stability AI: 画像から画像",
+        "description": "Stability AIを使用して高品質な生成で画像を変換し、プロフェッショナルな編集とスタイル転送に最適です。",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 67,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "api_stability_ai_i2i_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_fashion_billboard_generator",
+        "title": "ファッション広告ビルボード生成",
+        "description": "服の写真をプロのモデル広告に変換。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像編集",
+          "画像",
+          "API",
+          "ファッション",
+          "モックアップ"
+        ],
+        "models": [
+          "GPT-Image-1.5",
+          "OpenAI"
+        ],
+        "date": "2025-12-18",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 24,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "outfit-streetwear.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 16,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_pro_image",
+        "title": "Flux.1 Kontext Pro",
+        "description": "Flux.1 Kontext pro画像で画像を編集します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "画像編集",
+          "画像"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 94,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_pro_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_text_to_image",
+        "title": "Runway: テキストから画像",
+        "description": "RunwayのAIモデルを使用して、高品質な画像をテキストプロンプトから生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 45,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_photon_i2i",
+        "title": "Luma Photon: 画像から画像",
+        "description": "画像とプロンプトの組み合わせを使用して画像生成をガイドします。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 59,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_style_transfer",
+        "title": "Magnific：スタイルリファレンス",
+        "description": "ターゲット画像とスタイル参照画像をアップロードします。参照画像の芸術的スタイルとターゲット画像の構造を融合した新しい画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "スタイル参照"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 112,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "girl_riding_unicorn.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "magnific_style_reference.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_sd3.5_i2i",
+        "title": "Stability AI: SD3.5画像から画像",
+        "description": "優れたプロンプト準拠度で高品質な画像を生成します。1メガピクセル解像度でのプロフェッショナルな使用例に最適です。",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_stability_ai_sd3.5_i2i_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_multiple_images_input",
+        "title": "Flux.1 Kontext 複数画像入力",
+        "description": "複数の画像を入力し、Flux.1 Kontextで編集します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "画像編集",
+          "画像"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 80,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_girl.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 91,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_sofa.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 96,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_multiple_images_input_dog.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_pro_t2i",
+        "title": "Flux.1 [Pro]: テキストから画像",
+        "description": "FLUX.1 Proを使用して、優れたプロンプト追従能力和視覚的品質で画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-1-pro-ultra-image",
+        "tags": [
+          "画像編集",
+          "画像"
+        ],
+        "models": [
+          "Flux.1",
+          "Flux"
+        ],
+        "date": "2025-05-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 104,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_stable_image_ultra_t2i",
+        "title": "Stability AI: Stable Image Ultraテキストから画像",
+        "description": "優れたプロンプト準拠度で高品質な画像を生成します。1メガピクセル解像度でのプロフェッショナルな使用例に最適です。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 57,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_i2i",
+        "title": "OpenAI: GPT-Image-1画像から画像",
+        "description": "OpenAI GPT Image 1 APIを使用して、入力画像から画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "画像",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 57,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_inpaint",
+        "title": "OpenAI: GPT-Image-1インペイント",
+        "description": "OpenAI GPT Image 1 APIを使用して、インペイントで画像を編集します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "画像修復",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image_mask.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_t2i",
+        "title": "OpenAI: GPT-Image-1テキストから画像",
+        "description": "OpenAI GPT Image 1 APIを使用して、テキストプロンプトから画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 8,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_2_t2i",
+        "title": "OpenAI: Dall-E 2テキストから画像",
+        "description": "OpenAI Dall-E 2 APIを使用して、テキストプロンプトから画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-2",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 20,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_dall_e_3_t2i",
+        "title": "OpenAI: Dall-E 3テキストから画像",
+        "description": "OpenAI Dall-E 3 APIを使用して、テキストプロンプトから画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/dall-e-3",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 24,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_image_gen_with_color_control",
+        "title": "Recraft: カラーコントロール画像生成",
+        "description": "Recraftを使用して、カスタムカラーパレットとブランド固有のビジュアルで画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_vector_gen",
+        "title": "Recraft: ベクター生成",
+        "description": "RecraftのAIベクター生成器を使用して、テキストプロンプトから高品質なベクター画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API",
+          "ベクター"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_recraft_image_gen_with_style_control",
+        "title": "Recraft: スタイルコントロール画像生成",
+        "description": "視覚的例でスタイルを制御し、位置を調整し、オブジェクトを微調整します。完璧なブランド一貫性のためにスタイルを保存および共有します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Recraft"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux_1_kontext_max_image",
+        "title": "Flux.1 Kontext Max",
+        "description": "Flux.1 Kontext max画像で画像を編集します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext",
+        "tags": [
+          "画像編集",
+          "画像"
+        ],
+        "models": [
+          "Flux.1 Kontext",
+          "Flux"
+        ],
+        "date": "2025-05-29",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "LoadImage",
+              "file": "api_bfl_flux_1_kontext_max_image_style_ref.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 85,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_image_1_multi_inputs",
+        "title": "OpenAI: GPT-Image-1複数入力",
+        "description": "OpenAI GPT Image 1 APIを使用して、複数の入力から画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "GPT-Image-1",
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 58,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_hat.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_openai_image_1_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_sd3.5_t2i",
+        "title": "Stability AI: SD3.5テキストから画像",
+        "description": "優れたプロンプト準拠度で高品質な画像を生成します。1メガピクセル解像度でのプロフェッショナルな使用例に最適です。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 25,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ideogram_v3_t2i",
+        "title": "Ideogram V3: テキストから画像",
+        "description": "Ideogram V3を使用して、優れたプロンプト整列、写実主義、テキストレンダリングでプロフェッショナル品質の画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Ideogram"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 60,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 59,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_photon_style_ref",
+        "title": "Luma Photon: スタイル参照",
+        "description": "Luma Photonを使用して、スタイル参照を正確な制御でブレンドして画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "テキストから画像へ",
+          "画像",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 31,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 26,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_ref_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 52,
+              "nodeType": "LoadImage",
+              "file": "api_luma_photon_i2i_ref_image_2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "video",
+    "category": "生成タイプ",
+    "icon": "icon-[lucide--film]",
+    "title": "ビデオ",
+    "templates": [
+      {
+        "name": "api_grok_video",
+        "title": "Grok：動画生成",
+        "description": "テキストプロンプトまたは初期画像フレームを入力し、Grok モデルを使用して最大 15 秒の同期音声付き動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "画像から動画へ",
+          "テキストから動画へ",
+          "API"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 4469,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "sci-fi_mech.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "api_grok_video.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "hellorob"
+      },
+      {
+        "name": "api_grok_video_edit",
+        "title": "Grok：ビデオ編集",
+        "description": "編集する動画をアップロードしてください。希望の変更内容を入力してください。Grok APIを使用して編集済み動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "動画編集"
+        ],
+        "models": [
+          "Grok"
+        ],
+        "date": "2026-01-28",
+        "openSource": false,
+        "usage": 361,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadVideo",
+              "file": "futuristic_motorcycle.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "api_grok_video_edit.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_motion_control3",
+        "title": "Kling 3.0: Motion Control",
+        "description": "キャラクター画像とモーションリファレンス動画をアップロードしてください。リファレンスの動作をキャラクターが行う新しい動画を生成し、オプションの要素バインディングを使用して顔の一貫性を強化します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "モーション制御"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-03-06",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "future_robot.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadVideo",
+              "file": "boxing_man.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_video",
+        "title": "Kling 3.0：ビデオ生成",
+        "description": "テキストまたは画像プロンプトを入力して、マルチショット構成、複雑なカメラムーブメント、一貫した被写体を持つ15秒のビデオシーケンスを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "画像から動画へ",
+          "動画"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1945,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "boxing.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_image_to_video",
+        "title": "Seedance 1.5 Pro：画像から動画へ",
+        "description": "seedance1.5 Proで画像を、音声、動き、同期したサウンドエフェクトを持つ生き生きとしたキャラクターに変えましょう。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ"
+        ],
+        "models": [
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2104,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "young_baseball_player.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_avatar2",
+        "title": "Kling：Avatar 2.0",
+        "description": "肖像と音声ファイルをアップロードして、同期した口の動きと自然な表情を持つ話すアバター動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "リップシンク",
+          "API"
+        ],
+        "models": [
+          "Kling"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 251,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "woman_in_red.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadAudio",
+              "file": "kling_avatar_input.mp3",
+              "mediaType": "audio"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveVideo",
+              "file": "api_kling_avatar2.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_image_to_video",
+        "title": "ByteDance: 画像から動画",
+        "description": "ByteDanceのSeedanceモデルを使用して静止画像を動的ビデオに変換します。画像構造を分析し、一貫した視覚スタイルと整合性のあるビデオシーケンスで自然な動きを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "画像から動画へ",
+          "動画"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1804,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "ByteDance"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_dual_characters_effects",
+        "title": "Kling：デュアルキャラクター効果",
+        "description": "2枚のキャラクター画像を並べてアップロードしてください。キャラクターが抱擁、キス、または一緒にハートのジェスチャーをする動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画"
+        ],
+        "models": [
+          "Kling 1.6",
+          "Kling"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-03-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 45,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "deep_curl_portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "blue_tone_woman.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "SaveVideo",
+              "file": "api_kling_dual_characters_effects.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_v3_flf2v",
+        "title": "Kling 3.0：最初と最後のフレームから動画生成",
+        "description": "最初と最後のフレーム画像を入力して、連続したビデオシーケンスを生成します。マルチショット生成、精密な要素制御、多言語プロンプトに対応しています。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "動画",
+          "先末フレーム動画"
+        ],
+        "models": [
+          "Kling 3.0"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 773,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "goldenfish_in_bag.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "man_in_daydream.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "Kling_v3_flf2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_video_edit",
+        "title": "Kling O3：ビデオ編集",
+        "description": "動画と参照画像をアップロードし、Kling O3で編集します。正確な被写体編集、シーン構成、ネイティブな音声・映像同期を備えたプロフェッショナルな編集動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "動画編集",
+          "API",
+          "動画"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 358,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "giant_trees_sky_pyramid.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 25,
+              "nodeType": "LoadVideo",
+              "file": "kling_o3_video_input.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_flf2v",
+        "title": "Kling O3：FLF2V",
+        "description": "参照画像をアップロードするか、開始フレームと終了フレームを指定してください。正確な意味制御、より長い継続時間、および改善された物語の一貫性を備えた動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "先末フレーム動画"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 169,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_right_front_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 34,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 35,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_left_side_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "ivory_rider_right_side_view.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_king_o3_t2v",
+        "title": "Kling O3：テキストから動画へ",
+        "description": "テキスト、オーディオ、または画像をアップロードして、同期されたオーディオ、キャラクターの一貫性、ストーリーボード制御を備えた15秒の動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "テキストから動画へ"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 217,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "api_king_o3_t2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_v2v",
+        "title": "Kling O1: 動画から動画へ",
+        "description": "Kling O1で動画を変換。テキストプロンプトと参照画像を使用して、動画コンテンツを編集、スタイルを変更、またはキャラクターを置き換えます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "hoverDissolve",
+        "tags": [
+          "キャラクター参照",
+          "動画"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-10",
+        "openSource": false,
+        "usage": 335,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "blue_shirt_rabbit.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 7,
+              "nodeType": "LoadVideo",
+              "file": "dancing_women.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_o3_i2v",
+        "title": "Kling O3：ビデオ参照",
+        "description": "参照画像とオプションの音声またはテキストプロンプトをアップロードしてください。キャラクターに一貫性のあるビデオを、ネイティブ音声出力と精密なストーリーボード制御で生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "キャラクター参照",
+          "画像から動画へ"
+        ],
+        "models": [
+          "Kling O3"
+        ],
+        "logos": [
+          {
+            "provider": "Kling"
+          }
+        ],
+        "date": "2026-02-10",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 366,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "chasing_the_light.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 20,
+              "nodeType": "SaveVideo",
+              "file": "kling_o3_i2v.mp4",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q3_text_to_video",
+        "title": "Vidu Q3 オーディオビジュアル動画生成",
+        "description": "テキストプロンプトを入力するか画像をアップロードして、同期された音声と自動シーントランジション付きの1〜16秒の動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画"
+        ],
+        "models": [
+          "Vidu",
+          "Vidu Q3"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 54,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q3_image_to_video",
+        "title": "Vidu Q3 画像からビデオへの変換（オーディオ付き）",
+        "description": "画像をアップロードし、テキストプロンプトを入力すると、同期されたオーディオとインテリジェントなシーントランジションを備えた1〜16秒の動画を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画"
+        ],
+        "models": [
+          "Vidu",
+          "Vidu Q3"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "usage": 241,
+        "size": 0,
+        "vram": 0,
+        "logos": [
+          {
+            "provider": "Vidu"
+          }
+        ],
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "LoadImage",
+              "file": "two_characters.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 15,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan2_6_i2v",
+        "title": "Wan2.6: 画像から動画へ",
+        "description": "画像を高品質な動画に変換。画質向上、滑らかな動き、1080P解像度対応、自然な動き生成により、プロフェッショナルな結果を実現。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "date": "2025-12-20",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 624,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "red_car.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_flf2v",
+        "title": "Seedance 1.5 Pro: FLF2V",
+        "description": "開始フレームと終了フレームをアップロードすると、Seedance 1.5 Pro がそれらの間に同期されたオーディオ付きの滑らかなビデオトランジションを自動生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "先末フレーム動画",
+          "画像から動画へ",
+          "API"
+        ],
+        "models": [
+          "ByteDance",
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 391,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "dancing_capybara.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "dj_capybara.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_motion_control",
+        "title": "Kling2.6：モーションコントロール",
+        "description": "同期モーション制御により、参照動画の正確なキャラクターの動作と表情をあなたのキャラクター画像に適用します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "モーション制御",
+          "API"
+        ],
+        "models": [
+          "Kling 2.6",
+          "Kling"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 1407,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadVideo",
+              "file": "street_dancer.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "streetwear_fox.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_veo3",
+        "title": "Veo3: 画像からビデオ",
+        "description": "Googleの高度なVeo 3 APIを使用して、テキストプロンプトまたは画像から高品質な8秒ビデオを生成します。オーディオ生成、プロンプト強化、速度または品質のためのデュアルモデルオプションを提供します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "テキストから動画へ",
+          "API"
+        ],
+        "models": [
+          "Veo",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 338,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_veo3_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling2_6_i2v",
+        "title": "Kling2.6：画像を音声付きで動画化",
+        "description": "静止画像を会話・歌・効果音・環境音付きの動画に変換",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API",
+          "オーディオ"
+        ],
+        "models": [
+          "Kling 2.6",
+          "Kling"
+        ],
+        "date": "2025-12-22",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 279,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "lizard_rapper_in_bar.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_i2v",
+        "title": "Vidu Q2: 画像から動画へ",
+        "description": "静的画像を動的な1080p動画に変換。映画的なカメラ制御とマルチ被写体の一貫性を実現。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 75,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "cozy_bear.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_edit_video",
+        "title": "Kling O1: ビデオ編集",
+        "description": "自然言語コマンドで動画を編集。動画参照モードを搭載し、スタイル変換、要素追加、背景修正などの高品質な動画制作を素早く実現。",
+        "mediaType": "image",
+        "thumbnailVariant": "compareSlider",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "API",
+          "動画編集",
+          "テキストから動画へ",
+          "画像から動画へ"
+        ],
+        "models": [
+          "Kling"
+        ],
+        "date": "2025-12-02",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 244,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_4.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_2.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 14,
+              "nodeType": "LoadImage",
+              "file": "api_flux2_input_image_3.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 23,
+              "nodeType": "LoadVideo",
+              "file": "api_kling_omni_edit_video_input_video.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 24,
+              "nodeType": "LoadImage",
+              "file": "api_kling_omni_edit_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_i2v",
+        "title": "Kling O1: 画像から動画へ",
+        "description": "Kling O1で静的画像を動的な動画に変換。テキストプロンプトを使用して、画像に動き、カメラの動き、生命感を追加します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "キャラクター参照"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 41,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "sheep_knit.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "quokka_bath.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "quokka_relax.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_image_to_video",
+        "title": "Wan2.5: 画像から動画",
+        "description": "同期音声、強化されたモーション、優れた品質で画像をビデオに変換します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 270,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadAudio",
+              "file": "audio_ace_step_1_m2m_editing_input_audio.mp3",
+              "mediaType": "audio"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_wan_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_flf",
+        "title": "Kling: FLF2V",
+        "description": "最初と最後のフレームを制御してビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "API",
+          "先末フレーム動画"
+        ],
+        "models": [
+          "Kling",
+          "Kling 1.6"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 80,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_kling_flf_first_frame.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "api_kling_flf_last_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 38,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_i2v",
+        "title": "Kling: 画像からビデオ",
+        "description": "Klingを使用して、アクション、表情、カメラムーブメントに優れたプロンプト準拠度を持つビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Kling",
+          "Kling 2.0"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 134,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_kling_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 38,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_openai_sora_video",
+        "title": "Sora 2: テキストと画像から動画",
+        "description": "OpenAIのSora-2およびSora-2 Proによる同期音声付きビデオ生成。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "テキストから動画へ",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-10-08",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 252,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "api_openai_sora_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_flf2v",
+        "title": "Vidu Q2: FLF2V",
+        "description": "開始と終了フレーム間を映画のようなカメラと複数の一貫した被写体で滑らかに動画遷移。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "先末フレーム動画",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 76,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "nun_in_church-1.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "nun_in_church-2.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_flf2v",
+        "title": "ByteDance: 開始終了から動画",
+        "description": "ByteDanceのSeedanceモデルを使用して、流動的な動き、シーンの一貫性、プロフェッショナルな仕上がりで開始フレームと終了フレーム間の映画的なビデオトランジションを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "先末フレーム動画",
+          "動画"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 87,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 35,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_flf2v_first_frame.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "api_bytedance_flf2v_last_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_r2v",
+        "title": "Vidu Q2：ビデオ参照",
+        "description": "参照ベースの一貫性を持つ動画を生成。最大3つの被写体に対応し、動画シーケンス全体でキャラクターとスタイルの連続性を維持し、映画的なカメラの動きを実現。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "キャラクター参照",
+          "画像から動画へ",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 39,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_q2_r2v_red_haired_girl.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 42,
+              "nodeType": "LoadImage",
+              "file": "vintage_robot.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_omni_t2v",
+        "title": "Kling O1：テキストからビデオ",
+        "description": "Kling O1でテキストから動画生成。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画"
+        ],
+        "models": [
+          "Kling O1"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 19,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ltxv_image_to_video",
+        "title": "LTX-2：画像から動画へ",
+        "description": "LTX-2 Pro を使って静止画像をダイナミックな動画に変換します。自然な動きと同期オーディオ、最大4K解像度50fps対応のシネマティック動画を生成できます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "LTX-2",
+          "Lightricks"
+        ],
+        "date": "2025-10-28",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 118,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 47,
+              "nodeType": "LoadImage",
+              "file": "api_ltxv_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 41,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_gen4_turo_image_to_video",
+        "title": "Runway: Gen4 Turbo画像からビデオ",
+        "description": "Runway Gen4 Turboを使用して、画像からダイナミックなビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 86,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_runway_gen4_turo_image_to_video_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan2_6_t2v",
+        "title": "Wan2.5: テキストから動画",
+        "description": "同期音声、強化されたモーション、優れた品質のビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "date": "2025-12-20",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 101,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 43,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_r2v",
+        "title": "WAN2.6: キャラクターリファレンスビデオ生成",
+        "description": "キャラクターの特徴を保ち、自然な動きとシネマティックな映像の動画を作成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "キャラクター参照",
+          "動画"
+        ],
+        "date": "2026-01-03",
+        "openSource": false,
+        "models": [
+          "Wan2.6",
+          "Wan"
+        ],
+        "usage": 23,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "LoadVideo",
+              "file": "armored_warrior.mp4",
+              "mediaType": "video"
+            },
+            {
+              "nodeId": 35,
+              "nodeType": "LoadVideo",
+              "file": "spear_warrior.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_reference_to_video",
+        "title": "Vidu Q1：ビデオ参照",
+        "description": "最大7枚の参照画像を使用して、ビデオシーケンス全体でキャラクターとスタイルの一貫性を維持する一貫したテーマを持つビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "画像から動画へ",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 27,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_2.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 30,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_1.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 45,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_reference_to_video_reference_image_3.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedace_seedance1_5_text_to_video",
+        "title": "Seedance1.5 Pro：テキストからビデオへ",
+        "description": "テキストから同期された音声、音楽、サウンドエフェクトを含む完全な視聴覚ストーリーを作成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "テキストから動画へ"
+        ],
+        "models": [
+          "Seedance"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "usage": 145,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling2_6_t2v",
+        "title": "Kling2.6：テキストから音声付きストーリービデオ生成",
+        "description": "物語を対話・音楽・効果音・環境音付きの動画に変換",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "オーディオ",
+          "テキストから動画へ",
+          "動画"
+        ],
+        "models": [
+          "Kling",
+          "Kling 2.6"
+        ],
+        "date": "2025-12-22",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 13,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_first_last_frame",
+        "title": "Runway: 最初最後フレームからビデオ",
+        "description": "Runwayの精度で、2つのキーフレーム間で滑らかなビデオ遷移を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "API",
+          "先末フレーム動画"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 22,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "api_runway_first_last_frame_first_frame.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "api_runway_first_last_frame_last_frame.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_runway_gen3a_turbo_image_to_video",
+        "title": "Runway: Gen3a Turbo画像からビデオ",
+        "description": "Runway Gen3a Turboを使用して、静止画像から映画的なビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Runway"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 18,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "api_runway_gen3a_turbo_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_q2_t2v",
+        "title": "Vidu Q2：テキストから動画",
+        "description": "Vidu Q2モデルでテキストプロンプトから高品質な1080p動画を生成",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-01-12",
+        "openSource": false,
+        "usage": 14,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 37,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_veo2_i2v",
+        "title": "Veo2: 画像からビデオ",
+        "description": "Google Veo2 APIを使用して、画像からビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Veo",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 16,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 61,
+              "nodeType": "LoadImage",
+              "file": "api_veo2_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 62,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wan_text_to_video",
+        "title": "Wan2.5: テキストから動画へ",
+        "description": "同期されたオーディオ、強化された動き、優れた品質の動画を生成。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Wan2.5",
+          "Wan"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 23,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "LoadAudio",
+              "file": "audio_ace_step_1_m2m_editing_input_audio.mp3",
+              "mediaType": "audio"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_start_end_to_video",
+        "title": "Vidu Q1：開始終了からビデオへ",
+        "description": "定義された開始フレームと終了フレームの間に、自然なモーション補間と一貫した視覚的品質で滑らかなビデオ遷移を作成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "API",
+          "先末フレーム動画"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 14,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 28,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_start_end_to_video_start_frame.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 30,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_start_end_to_video_last_frame.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_t2v",
+        "title": "PixVerse: テキストからビデオ",
+        "description": "正確なプロンプト解釈と素晴らしいビデオダイナミクスでビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 5,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_image_to_video",
+        "title": "Moonvalley: 画像からビデオ",
+        "description": "ライセンスされたデータのみで学習されたモデルを通じて、画像で映画的な1080pビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 29,
+              "nodeType": "LoadImage",
+              "file": "api_moonvalley_image_to_video_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_video_to_video_motion_transfer",
+        "title": "Moonvalley: モーション転送",
+        "description": "あるビデオから別のビデオにモーションを適用します。",
+        "mediaType": "image",
+        "thumbnailVariant": "hoverDissolve",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 48,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadVideo",
+              "file": "api_moonvalley_video_to_video_motion_transfer_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_video_to_video_pose_control",
+        "title": "Moonvalley: ポーズ制御",
+        "description": "あるビデオから別のビデオに人間のポーズと動きを適用します。",
+        "mediaType": "image",
+        "thumbnailVariant": "hoverDissolve",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "LoadVideo",
+              "file": "api_moonvalley_video_to_video_pose_control_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_i2v",
+        "title": "MiniMax: 画像からビデオ",
+        "description": "MiniMaxを使用して、CGI統合で画像とテキストから洗練されたビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 5,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_hailuo_minimax_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_i2v",
+        "title": "Luma: 画像からビデオ",
+        "description": "静止画像を取り込み、即座に魔法のような高品質なアニメーションを作成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "api_luma_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_ltxv_text_to_video",
+        "title": "LTX-2：テキストからビデオへ",
+        "description": "Lightricks LTX-2と同期オーディオを使い、テキストプロンプトから高品質な動画を生成します。最大4K解像度・50fps対応で、ファスト・プロ・ウルトラ各モードにより様々な制作ニーズに応えます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "LTX-2",
+          "Lightricks"
+        ],
+        "date": "2025-10-28",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 87,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_text_to_video",
+        "title": "Vidu Q1：テキストから動画",
+        "description": "Viduの高度なAIモデルを使用して、動きの振幅と持続時間の調整可能な高品質な1080pビデオをテキストプロンプトから生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bytedance_text_to_video",
+        "title": "ByteDance: テキストから動画",
+        "description": "ByteDanceのSeedanceモデルを使用してテキストプロンプトから直接高品質ビデオを生成します。自然な動きと映画的な品質で複数の解像度とアスペクト比をサポートします。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "API",
+          "テキストから動画へ"
+        ],
+        "models": [
+          "Seedance1.0 Pro",
+          "ByteDance"
+        ],
+        "date": "2025-10-06",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 65,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_image_to_video",
+        "title": "Vidu Q1：画像から動画へ",
+        "description": "Viduを使用して、静止画像を正確なモーション制御とカスタマイズ可能な動きの振幅でダイナミックな1080pビデオに変換します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Vidu Q1",
+          "Vidu"
+        ],
+        "date": "2025-08-23",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 22,
+              "nodeType": "LoadImage",
+              "file": "api_vidu_image_to_video_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 21,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_t2v",
+        "title": "MiniMax: テキストからビデオ",
+        "description": "テキストプロンプトから直接高品質なビデオを生成します。MiniMaxの高度なAI機能を探索して、プロフェッショナルなCGI効果とスタイル要素で多様な視覚的ナラティブを作成し、説明を生き生きとさせます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 9,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_kling_effects",
+        "title": "Kling: ビデオ効果",
+        "description": "Klingを使用して、画像に視覚効果を適用してダイナミックなビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Kling",
+          "Kling 1.6"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 1,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_kling_effects_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hailuo_minimax_video",
+        "title": "MiniMax: ビデオ",
+        "description": "MiniMax Hailuo-02モデルを使用して、オプションの最初のフレーム制御で高品質なビデオをテキストプロンプトから生成します。768P/1080Pの複数の解像度と6/10秒の持続時間をサポートし、インテリジェントなプロンプト最適化を提供します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "MiniMax"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "api_hailuo_minimax_video_first_frame.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_luma_t2v",
+        "title": "Luma: テキストからビデオ",
+        "description": "シンプルなプロンプトで高品質なビデオを生成できます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Luma"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 6,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_i2v",
+        "title": "PixVerse: 画像からビデオ",
+        "description": "PixVerseを使用して、モーションとエフェクトで静止画像からダイナミックなビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 4,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "LoadImage",
+              "file": "api_runway_reference_to_image_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_pixverse_template_i2v",
+        "title": "PixVerseテンプレート: 画像からビデオ",
+        "description": "PixVerseを使用して、モーションとエフェクトで静止画像からダイナミックなビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "PixVerse"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 3,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 34,
+              "nodeType": "LoadImage",
+              "file": "api_pixverse_template_i2v_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_moonvalley_text_to_video",
+        "title": "Moonvalley: テキストからビデオ",
+        "description": "ライセンスされたデータのみで学習されたモデルを通じて、テキストプロンプトから映画的な1080pビデオを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストから動画へ",
+          "動画",
+          "API"
+        ],
+        "models": [
+          "Moonvalley"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 2,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 27,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "audio",
+    "category": "生成タイプ",
+    "icon": "icon-[lucide--volume-2]",
+    "title": "オーディオ",
+    "templates": [
+      {
+        "name": "api_elevenlabs_text_to_speech",
+        "title": "ElevenLabs：テキスト読み上げ",
+        "description": "テキストを入力して超リアルな音声を生成するか、音声サンプルをアップロードして合成用にクローンします。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキスト読み上げ",
+          "オーディオ",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 473,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_text_to_dialogue",
+        "title": "ElevenLabs：テキストから対話へ",
+        "description": "テキストを入力し、音声プロファイルを選択して、高品質で感情豊かな音声対話を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "テキスト読み上げ"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 42,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_speech_to_speech",
+        "title": "ElevenLabs：音声から音声へ",
+        "description": "新しい声のトーンを適用したり、別の声をクローンしたりするためにソースオーディオファイルをアップロードし、変更されたオーディオ出力を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "音声クローニング",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 210,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            },
+            {
+              "nodeId": 221,
+              "nodeType": "LoadAudio",
+              "file": "api_elevenlabs_speech_to_speech.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_voice_isolation",
+        "title": "ElevenLabs：音声分離",
+        "description": "背景ノイズを含むオーディオファイルをアップロードしてください。ElevenLabs API を使用して、クリーンな音声トラックを分離・出力します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "音声分離"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 12,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 131,
+              "nodeType": "LoadAudio",
+              "file": "noisy_background.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenLabs_speech_to_text",
+        "title": "ElevenLabs：音声からテキストへ",
+        "description": "音声または動画ファイルをアップロードして、その音声を正確で編集可能なテキストに書き起こします。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "音声テキスト変換",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 14,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 219,
+              "nodeType": "LoadAudio",
+              "file": "voice_demo.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_elevenlabs_text_to_sound_effects",
+        "title": "ElevenLabs：テキストから効果音へ",
+        "description": "テキストプロンプトを入力して、カスタムサウンドエフェクトと環境音を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "オーディオ",
+          "サウンドエフェクト",
+          "API"
+        ],
+        "models": [
+          "ElevenLabs"
+        ],
+        "logos": [
+          {
+            "provider": "ElevenLabs"
+          }
+        ],
+        "date": "2026-02-21",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 68,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 137,
+              "nodeType": "SaveAudioMP3",
+              "file": "api_elevenlabs_text_to_sound_effects.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_audio_to_audio",
+        "title": "Stable Audio 2.5：オーディオからオーディオへ",
+        "description": "Stable Audio 2.5を使ってオーディオを新しい楽曲に変換します。オーディオをアップロードするとAIが完全なトラックを作成します。",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "オーディオ",
+          "オーディオからオーディオへ"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 30,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadAudio",
+              "file": "api_stability_ai_audio_to_audio_input_audio.mp3",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_text_to_audio",
+        "title": "Stable Audio 2.5：テキストからオーディオへ",
+        "description": "Stable Audio 2.5を使ってテキストから音楽を生成します。数分間のトラックを数秒で作成できます。",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "オーディオ",
+          "テキストからオーディオへ"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 47,
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_ai_audio_inpaint",
+        "title": "Stability Audio 2.5：オーディオインペインティング",
+        "description": "Stable Audio 2.5を使ってオーディオトラックを補完または拡張します。オーディオをアップロードするとAIが残りを生成します。",
+        "mediaType": "audio",
+        "mediaSubtype": "mp3",
+        "tags": [
+          "API",
+          "オーディオ",
+          "オーディオからオーディオへ"
+        ],
+        "date": "2025-09-09",
+        "models": [
+          "Stability",
+          "Stable Audio"
+        ],
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 6,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadAudio",
+              "file": "api_stability_ai_audio_inpaint_input_audio.wav",
+              "mediaType": "audio"
+            }
+          ]
+        },
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "searchRank": 0,
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "3d",
+    "category": "生成タイプ",
+    "icon": "icon-[lucide--box]",
+    "title": "3Dモデル",
+    "templates": [
+      {
+        "name": "api_hunyuan3d_part",
+        "title": "HY 3D：3Dパーツ分解",
+        "description": "3Dモデルをアップロードすると、自動的に構成パーツに分割され、再利用と編集のための完全に分解された3Dアセットが生成されます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "3Dモデル",
+          "API"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_image_to_model",
+        "title": "混元3D：画像からモデルへ",
+        "description": "画像をアップロードして、ジオメトリとPBRテクスチャを備えた3Dモデルを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3Dモデル",
+          "画像からモデルへ",
+          "API"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 463,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 1,
+              "nodeType": "LoadImage",
+              "file": "pink_robot_front.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 10,
+              "nodeType": "LoadImage",
+              "file": "pink_robot_back.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 16,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_text_to_model",
+        "title": "HunYuan3D：テキストからモデルへ",
+        "description": "テキストプロンプトを入力するか、参照画像をアップロードして詳細な3Dモデルアセットを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "API",
+          "3D",
+          "テキストからモデルへ"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 66,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_smart_topology",
+        "title": "混元3D：スマートトポロジー",
+        "description": "高ポリゴンの3Dモデルファイルをアップロードしてください。指定された削減レベルで、低ポリゴンでトポロジー最適化された3Dモデルを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "3Dモデル"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_multi_image_to_model",
+        "title": "Meshy 6：複数画像からモデル生成",
+        "description": "Meshy 6 を使用して複数の画像から高品質な 3D モデルを作成します。写真が多いほど、詳細なキャプチャ、正確なプロポーション、クリーンなメッシュ構造が実現します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 90,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "joker_front.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 12,
+              "nodeType": "LoadImage",
+              "file": "joker_back.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "joker_side.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_image_to_model",
+        "title": "Meshy 6：画像からモデルへ",
+        "description": "画像をアップロードし、Meshy 6 で 3D モデルを生成します。プロダクション品質のジオメトリとクリーンなトポロジーでキャラクター、オブジェクト、または機械部品を作成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "画像からモデルへ",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "usage": 212,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "robot-warrior.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_meshy_text_to_model",
+        "title": "Meshy 6：テキストからモデルへ",
+        "description": "Meshy 6 を使用して、テキストプロンプトから高品質な 3D モデルを生成します。洗練されたジオメトリを持つキャラクター、鋭いエッジを持つ機械的オブジェクト、またはゲーム対応の低ポリゴンアセットを作成できます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "テキストからモデルへ",
+          "API"
+        ],
+        "models": [
+          "Meshy"
+        ],
+        "date": "2026-01-19",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 51,
+        "searchRank": 0,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 6,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo3_0_image_to_model",
+        "title": "Tripo3.0：画像からモデルへ",
+        "description": "画像やスケッチを、Tripo 3.0 のシャープなジオメトリと実用的なPBRテクスチャで3Dモデルに変換します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像からモデルへ",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-12-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 155,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "3d_character_front_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 3,
+              "nodeType": "LoadImage",
+              "file": "3d_character_back_view.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "3d_character_left_view.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 12,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo3_0_text_to_model",
+        "title": "Tripo3.0：テキストからモデルへ",
+        "description": "テキストから高精度3Dモデルを生成。超高解像度ジオメトリとリアルなPBR素材対応。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストからモデルへ",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-12-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 23,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 31,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_text_to_model",
+        "title": "Tripo: テキストからモデル",
+        "description": "Tripoのテキスト駆動モデリングで、説明から3Dオブジェクトを製作します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキストからモデルへ",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 21,
+        "io": {
+          "outputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_image_to_model",
+        "title": "Tripo: 画像からモデル",
+        "description": "Tripoエンジンを使用して、2D画像からプロフェッショナルな3Dアセットを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "3D",
+          "画像からモデルへ",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 24,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 36,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_image_to_model_input_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 51,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_tripo_multiview_to_model",
+        "title": "Tripo: マルチビューからモデル",
+        "description": "Tripoの高度なスキャナーを使用して、複数の角度から3Dモデルを構築します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から3Dへ",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Tripo"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 34,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 7,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_multiview_to_model_front_image.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 8,
+              "nodeType": "LoadImage",
+              "file": "api_tripo_multiview_to_model_back_image.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 32,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_gen2",
+        "title": "Rodin: Gen-2 画像からモデル",
+        "description": "Rodin Gen2を使用して、写真から4倍のメッシュ品質を持つ詳細な3Dモデルを生成します",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から3Dへ",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-09-27",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 36,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 82,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_gen2_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 84,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_image_to_model",
+        "title": "Rodin: 画像からモデル",
+        "description": "Rodin AIを使用して、単一の写真から詳細な3Dモデルを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から3Dへ",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 63,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 49,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_image_to_model_input_image.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 56,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 61,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 59,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 60,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_rodin_multiview_to_model",
+        "title": "Rodin: マルチビューからモデル",
+        "description": "Rodinの多角度再構成を使用して、包括的な3Dモデルを彫刻します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "画像から3Dへ",
+          "3D",
+          "API"
+        ],
+        "models": [
+          "Rodin"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 17,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 40,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_left.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 41,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_front.jpg",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 56,
+              "nodeType": "LoadImage",
+              "file": "api_rodin_multiview_to_model_back.jpg",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 61,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 62,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 63,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            },
+            {
+              "nodeId": 64,
+              "nodeType": "Preview3D",
+              "file": "",
+              "mediaType": "3d"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_retopo_uv",
+        "title": "Huyuan3D：モデルリトポロジーとUV展開",
+        "description": "高密度メッシュ（AI生成またはフォトグラメトリースキャンから）を入力し、良好なトポロジーと展開済みUVを持つ軽量モデルを作成します。3Dゲームアセットの最適化に最適です。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "3Dモデル"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_hunyuan3d_model2uv",
+        "title": "混元3D：UV展開",
+        "description": "UV展開を実行するために3Dモデルをアップロードします。テクスチャリング用に最適化されたUVレイアウトを持つ処理済みモデルを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "3Dモデル"
+        ],
+        "models": [
+          "Hunyuan3D"
+        ],
+        "logos": [
+          {
+            "provider": "Hunyuan"
+          }
+        ],
+        "date": "2026-03-07",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 0,
+        "searchRank": 0,
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "image",
+    "category": "生成タイプ",
+    "icon": "icon-[lucide--message-square-text]",
+    "title": "LLM API",
+    "templates": [
+      {
+        "name": "api_openai_chat",
+        "title": "OpenAI: チャット",
+        "description": "OpenAIの高度な言語モデルで、インテリジェントな会話を行います。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキスト生成",
+          "API"
+        ],
+        "models": [
+          "OpenAI"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 50,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_google_gemini",
+        "title": "Google Gemini",
+        "description": "Geminiの推論機能で、GoogleのマルチモーダルAIを体験します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "テキスト生成",
+          "API"
+        ],
+        "models": [
+          "Google Gemini",
+          "Google"
+        ],
+        "date": "2025-03-01",
+        "tutorialUrl": "",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 162,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "example.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  },
+  {
+    "moduleName": "default",
+    "type": "image",
+    "isEssential": true,
+    "category": "生成タイプ",
+    "icon": "icon-[lucide--settings]",
+    "title": "ユーティリティ",
+    "templates": [
+      {
+        "name": "api_magnific_image_upscale_creative",
+        "title": "Magnific：クリエイティブ画像アップスケール",
+        "description": "画像をアップロードして拡大レベルを設定します。最大16倍の拡大に対応した高解像度バージョンを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "画像拡大"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "logos": [
+          {
+            "provider": "Magnific"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 219,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "1950_new_york.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "ComfyUI_00915_.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_upscale_precise",
+        "title": "Magnific：精密画像アップスケール",
+        "description": "Magnificモデルを使用して画像をアップロードし、詳細を強化した高解像度バージョンを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "画像拡大"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "logos": [
+          {
+            "provider": "Magnific"
+          }
+        ],
+        "date": "2026-02-13",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 142,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "young_woman_portrait.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "api_magnific_image_upscale_precise.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_topaz_image_enhance",
+        "title": "Topaz画像強化",
+        "description": "Topaz： の Reimagine モデルでプロフェッショナルな画像強化を行い、顔の強調とディテール復元も実現します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "画像拡大",
+          "API"
+        ],
+        "models": [
+          "Reimagine",
+          "Topaz"
+        ],
+        "date": "2025-11-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 85,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "Topaz"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadImage",
+              "file": "api_topaz_image_enhance_input_image.webp",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_topaz_video_enhance",
+        "title": "Topaz Astra：クリエイティブ動画アップスケール",
+        "description": "Topaz： AI で動画を高画質化。Starlight（Astra）Fastモデルによる解像度アップスケーリングと、apo-8モデルによるフレーム補間をサポートします。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "動画アップスケール"
+        ],
+        "models": [
+          "Topaz"
+        ],
+        "date": "2025-11-25",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 173,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 8,
+              "nodeType": "LoadVideo",
+              "file": "api_topaz_video_enhance_input_video.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_stability_upscale_fast",
+        "title": "Stability AI：高速画像アップスケール",
+        "description": "画像をアップロードして、Stability AI APIで4倍に高速アップスケール。低品質や圧縮された画像の画質向上に最適です。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "画像拡大"
+        ],
+        "models": [
+          "Stability"
+        ],
+        "logos": [
+          {
+            "provider": "Stability"
+          }
+        ],
+        "date": "2026-02-26",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 76,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "woman_with_red_hat.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveImage",
+              "file": "api_stability_upscale_fast.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespped_seedvr2_ai_image_fix",
+        "title": "Upscale：WaveSpeed SeedVR2 による AI 画像修復",
+        "description": "AI生成画像をアップロードして詳細を復元し、アップスケールします。ワークフローは色とシャープネスを維持しながらアーティファクトを最小限に抑えます。出力は高品質で拡大された入力画像です。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "画像拡大"
+        ],
+        "models": [
+          "SeedVR2",
+          "WaveSpeed"
+        ],
+        "date": "2026-02-02",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 51,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "midnight_coasta.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespped_image_upscale",
+        "title": "WaveSpeed：画像アップスケール",
+        "description": "画像をアップロードして解像度をアップスケールします。詳細を保持し、JPEG、PNG、またはWEBP形式でのアーティファクトを軽減した、強化された2K、4K、または8Kの出力を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "画像拡大"
+        ],
+        "models": [
+          "WaveSpeed"
+        ],
+        "date": "2026-01-23",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 114,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 9,
+              "nodeType": "LoadImage",
+              "file": "woman_behind_veil.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_wavespeed_flshvsr_video_upscale",
+        "title": "WaveSpeed：FlashVSR ビデオアップスケール",
+        "description": "動画をアップロードして720p、1080p、2K、または4Kにアップスケールできます。このワークフローは詳細を強化、アーティファクトを低減し、動きの一貫性を確保することで、高品質で自然な見た目の出力を実現します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "動画アップスケール"
+        ],
+        "models": [
+          "FlashVSR",
+          "WaveSpeed"
+        ],
+        "date": "2026-01-23",
+        "openSource": false,
+        "usage": 67,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "logos": [
+          {
+            "provider": "WaveSpeed"
+          }
+        ],
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadVideo",
+              "file": "lighter.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 3,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_vidu_video_extension",
+        "title": "Vidu：ビデオ拡張機能",
+        "description": "動画をアップロードし、Vidu Q2モデルを使用して最大7秒まで延長し、解像度を1080pに向上させます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "tags": [
+          "動画",
+          "ビデオ拡張機能",
+          "API"
+        ],
+        "models": [
+          "Vidu Q2",
+          "Vidu"
+        ],
+        "date": "2026-02-01",
+        "openSource": false,
+        "logos": [
+          {
+            "provider": "Vidu"
+          }
+        ],
+        "usage": 33,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 2,
+              "nodeType": "LoadVideo",
+              "file": "lawyer.mp4",
+              "mediaType": "video"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "SaveVideo",
+              "file": "",
+              "mediaType": "video"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_image_relight",
+        "title": "Magnific：画像リライト",
+        "description": "ソース画像と参照照明画像をアップロードします。参照画像の照明条件を適用して、ソース画像の再照明バージョンを生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "再照明",
+          "API"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 14,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 11,
+              "nodeType": "LoadImage",
+              "file": "magical-portrait.png",
+              "mediaType": "image"
+            },
+            {
+              "nodeId": 13,
+              "nodeType": "LoadImage",
+              "file": "vintage-girl.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 14,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_magnific_skin_enhancer",
+        "title": "Magnific：スキンエンハンサー",
+        "description": "画像をアップロードし、プリセットを選択して照明、カラーグレーディング、リアリズムを調整することで、肌と全体の画質を向上させます。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "API",
+          "肖像",
+          "画像強調"
+        ],
+        "models": [
+          "Magnific"
+        ],
+        "date": "2026-01-26",
+        "openSource": false,
+        "usage": 222,
+        "size": 0,
+        "vram": 0,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 4,
+              "nodeType": "LoadImage",
+              "file": "close_up_girl_skin.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      },
+      {
+        "name": "api_bfl_flux1_expand_image",
+        "title": "Flux.1：画像拡張",
+        "description": "Flux.1 を使用してキャンバスを拡張するために画像をアップロードします。拡張コンテンツを含むアウトペインティング画像を生成します。",
+        "mediaType": "image",
+        "mediaSubtype": "webp",
+        "thumbnailVariant": "compareSlider",
+        "tags": [
+          "アウトペインティング"
+        ],
+        "models": [
+          "Flux",
+          "Flux.1"
+        ],
+        "date": "2026-02-09",
+        "openSource": false,
+        "size": 0,
+        "vram": 0,
+        "usage": 92,
+        "searchRank": 0,
+        "io": {
+          "inputs": [
+            {
+              "nodeId": 17,
+              "nodeType": "LoadImage",
+              "file": "man_on_desert.png",
+              "mediaType": "image"
+            }
+          ],
+          "outputs": [
+            {
+              "nodeId": 5,
+              "nodeType": "SaveImage",
+              "file": "api_bfl_flux1_expand_image.png",
+              "mediaType": "image"
+            }
+          ]
+        },
+        "username": "ComfyUI"
+      }
+    ]
+  }
+]

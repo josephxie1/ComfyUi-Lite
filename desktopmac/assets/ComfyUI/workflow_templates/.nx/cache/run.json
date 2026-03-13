@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx run tooling:sync --skip-nx-cache",
+    "startTime": "2026-03-11T15:05:10.597Z",
+    "endTime": "2026-03-11T15:05:11.324Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "tooling:sync",
+      "target": "sync",
+      "projectName": "tooling",
+      "hash": "2500769378338335554",
+      "startTime": "2026-03-11T15:05:10.599Z",
+      "endTime": "2026-03-11T15:05:11.324Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}
