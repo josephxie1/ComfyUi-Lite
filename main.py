@@ -59,12 +59,7 @@ if __name__ == "__main__":
         if 'CUBLAS_WORKSPACE_CONFIG' not in os.environ:
             os.environ['CUBLAS_WORKSPACE_CONFIG'] = ":4096:8"
 
-    try:
-        import cuda_malloc
-        if "rocm" in cuda_malloc.get_torch_version_noimport():
-            os.environ['OCL_SET_SVM_SIZE'] = '262144'  # set at the request of AMD
-    except ImportError:
-        cuda_malloc = None
+    # ComfyUI Lite: cuda_malloc removed (no GPU)
 
 
 def handle_comfyui_manager_unavailable():
@@ -196,10 +191,7 @@ except ImportError:
     comfy.model_management = None
 import comfyui_version
 import app.logger
-try:
-    import hook_breaker_ac10a0
-except ImportError:
-    hook_breaker_ac10a0 = None
+# ComfyUI Lite: hook_breaker removed (no torch)
 
 try:
     import comfy.memory_management
@@ -229,21 +221,7 @@ if enables_dynamic_vram() and comfy_aimdo and hasattr(comfy, 'model_management')
         logging.warning("No working comfy-aimdo install detected. DynamicVRAM support disabled. Falling back to legacy ModelPatcher. VRAM estimates may be unreliable especially on Windows")
 
 
-def cuda_malloc_warning():
-    if not hasattr(comfy, 'model_management') or comfy.model_management is None:
-        return
-    try:
-        device = comfy.model_management.get_torch_device()
-        device_name = comfy.model_management.get_torch_device_name(device)
-    except Exception:
-        return
-    cuda_malloc_warning = False
-    if "cudaMallocAsync" in device_name:
-        for b in cuda_malloc.blacklist:
-            if b in device_name:
-                cuda_malloc_warning = True
-        if cuda_malloc_warning:
-            logging.warning("\nWARNING: this card most likely does not support cuda-malloc, if you get \"CUDA error\" please run ComfyUI with: --disable-cuda-malloc\n")
+# ComfyUI Lite: cuda_malloc_warning removed (no GPU)
 
 
 def prompt_worker(q, server_instance):
@@ -323,8 +301,7 @@ def prompt_worker(q, server_instance):
                     comfy.model_management.soft_empty_cache()
                 last_gc_collect = current_time
                 need_gc = False
-                if hook_breaker_ac10a0:
-                    hook_breaker_ac10a0.restore_functions()
+
 
 
 async def run(server_instance, address='', port=8188, verbose=True, call_on_start=None):
@@ -396,12 +373,7 @@ def start_comfyui(asyncio_loop=None):
         folder_paths.set_temp_directory(temp_dir)
     cleanup_temp()
 
-    if args.windows_standalone_build:
-        try:
-            import new_updater
-            new_updater.update_windows_updater()
-        except:
-            pass
+    # ComfyUI Lite: new_updater removed
 
     if not asyncio_loop:
         asyncio_loop = asyncio.new_event_loop()
@@ -411,16 +383,12 @@ def start_comfyui(asyncio_loop=None):
     if args.enable_manager and not args.disable_manager_ui:
         comfyui_manager.start()
 
-    if hook_breaker_ac10a0:
-        hook_breaker_ac10a0.save_functions()
     asyncio_loop.run_until_complete(nodes.init_extra_nodes(
         init_custom_nodes=(not args.disable_all_custom_nodes) or len(args.whitelist_custom_nodes) > 0,
         init_api_nodes=not args.disable_api_nodes
     ))
-    if hook_breaker_ac10a0:
-        hook_breaker_ac10a0.restore_functions()
 
-    cuda_malloc_warning()
+
     setup_database()
 
     prompt_server.add_routes()
