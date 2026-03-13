@@ -18,7 +18,20 @@
 
 ### 简介
 
-ComfyUI Lite 是基于 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 的轻量化分支，专为无 GPU 环境设计。移除了 PyTorch 硬依赖，采用节点并发执行机制，通过远程 API 调用 AI 模型（如 Gemini、GPT 等），适用于轻量级部署与工作流编排场景。
+[ComfyUI](https://github.com/comfyanonymous/ComfyUI) 是目前最强大的开源 AI 图像工作流引擎，但它有一个核心假设：**用户拥有本地 GPU**。
+
+这带来了几个痛点：
+
+- **部署门槛高** — 必须安装 PyTorch + CUDA，环境搭建复杂，包体积 10GB+
+- **无法在轻量设备上运行** — 没有 NVIDIA GPU 的 Mac、云服务器、嵌入式设备都无法使用
+- **执行效率低** — 节点串行执行，调用远程 API 时大量时间浪费在等待上
+- **难以作为工作流编排平台** — 与外部 AI 服务（Gemini、GPT 等）集成时，本地 GPU 反而是多余的负担
+
+**ComfyUI Lite** 正是为了解决这些问题而生。它从 ComfyUI 分支而来，做了三个核心改造：
+
+1. **移除 PyTorch** — 部署体积从 10GB+ 降至 ~200MB，任何设备都能运行
+2. **并发执行引擎** — 节点不再排队等待，独立节点同时执行，API 调用效率提升 5-10x
+3. **远程 API 驱动** — 将 ComfyUI 从「本地推理工具」转变为「AI 工作流编排平台」
 
 ### 与原版的主要区别
 
@@ -178,7 +191,20 @@ ComfyUI-Lite/
 
 ### Introduction
 
-ComfyUI Lite is a lightweight fork of [ComfyUI](https://github.com/comfyanonymous/ComfyUI), designed for GPU-free environments. It removes the hard PyTorch dependency, implements concurrent node execution, and drives AI models through remote APIs (Gemini, GPT, etc.) — ideal for lightweight deployment and workflow orchestration.
+[ComfyUI](https://github.com/comfyanonymous/ComfyUI) is the most powerful open-source AI image workflow engine, but it has one core assumption: **the user has a local GPU**.
+
+This creates several pain points:
+
+- **High deployment barrier** — Requires PyTorch + CUDA, complex environment setup, 10GB+ package size
+- **Can't run on lightweight devices** — Unusable on Macs without NVIDIA GPU, cloud servers, or embedded devices
+- **Low execution efficiency** — Sequential node execution wastes time waiting during remote API calls
+- **Poor fit as a workflow orchestration platform** — When integrating with external AI services (Gemini, GPT, etc.), local GPU becomes unnecessary overhead
+
+**ComfyUI Lite** was built to solve these problems. Forked from ComfyUI, it makes three core changes:
+
+1. **Remove PyTorch** — Deployment size reduced from 10GB+ to ~200MB, runs on any device
+2. **Concurrent execution engine** — Independent nodes execute simultaneously, 5-10x faster for API workflows
+3. **Remote API driven** — Transforms ComfyUI from a "local inference tool" into an "AI workflow orchestration platform"
 
 ### Key Differences from Original
 
