@@ -1,7 +1,7 @@
 # ComfyUI Lite 自定义包（从 GitHub Release 安装）
-https://github.com/josephxie1/ComfyUi-Lite/releases/download/v1.0.0/comfyui_lite_frontend-1.0.0-py3-none-any.whl
-https://github.com/josephxie1/ComfyUi-Lite/releases/download/v1.0.0/comfyui_workflow_templates_core-0.3.166-py3-none-any.whl
-https://github.com/josephxie1/ComfyUi-Lite/releases/download/v1.0.0/comfyui_workflow_templates_media_api-0.3.62-py3-none-any.whl
+comfyui-frontend-package @ https://github.com/josephxie1/ComfyUi-Lite/releases/download/v1.0.0/comfyui_lite_frontend-1.0.0-py3-none-any.whl
+comfyui-workflow-templates-core @ https://github.com/josephxie1/ComfyUi-Lite/releases/download/v1.0.0/comfyui_workflow_templates_core-0.3.166-py3-none-any.whl
+comfyui-workflow-templates-media-api @ https://github.com/josephxie1/ComfyUi-Lite/releases/download/v1.0.0/comfyui_workflow_templates_media_api-0.3.62-py3-none-any.whl
 comfyui-embedded-docs==0.4.3
 
 # Core runtime
